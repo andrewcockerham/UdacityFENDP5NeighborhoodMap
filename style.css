@@ -1,0 +1,220 @@
+html, body, #map-canvas {
+  height: 100%;
+  margin: 0px;
+  padding: 0px
+}
+#locationsList {
+/*	width: 20%;
+	float: left;*/
+
+	background-color: #fff;
+	font-family: Roboto;
+	font-size: 15px;
+	font-weight: 300;
+	margin-left: 12px;
+	padding: 0 11px 0 13px;
+	text-overflow: ellipsis;
+	width: 400px;
+	z-index: 100;
+	top: 2%;
+	display: inline-block;
+	position: absolute;
+}
+#googleMap {
+	/*float: left;*/
+}
+
+/*.proceduresList {
+  border: 2px solid black;
+  display: inline-block;
+  position: absolute;
+  background: #ecf0f1;
+/*  z-index: 100;
+  left: 25%;
+  top: 2%;
+}*/
+
+.hoverOnMap {
+  margin-top: 16px;
+  border: 1px solid transparent;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  height: 32px;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  left: 3%;
+}
+
+#mySearchBox {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 400px;
+  z-index: 100;
+  top: 2%;
+  display: inline-block;
+  position: absolute;
+}
+
+#pac-input:focus {
+  border-color: #4d90fe;
+}
+
+/* FROM CODEPEN LINK FOR CSS TABS*/
+
+@import url("http://fonts.googleapis.com/css?family=Lato");
+* {
+  margin: 0;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  /*padding: 20px;*/
+  text-align: left;
+  font-family: Lato;
+  /*color: #fff;*/
+  /*background: #9b59b6;*/
+}
+
+h1 {
+  font-weight: normal;
+  font-size: 40px;
+  font-weight: normal;
+  text-transform: uppercase;
+  float: left;
+  margin: 20px 0 100px 10px;
+}
+h1 span {
+  font-size: 13px;
+  display: block;
+  padding-left: 4px;
+}
+
+.tabs {
+  width: 400px;
+  /*width: 650px;*/
+  float: left;
+  /*float: none;*/
+  list-style: none;
+  position: relative;
+  margin: 0 0 10 0;
+  /*margin: 10px 0 0 10px;*/
+  text-align: left;
+}
+.tabs li {
+  float: left;
+  display: block;
+}
+.tabs input[type="radio"] {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+.tabs label {
+  display: block;
+  padding: 5px 7px;
+  /*padding: 14px 21px;*/
+  border-radius: 2px 2px 0 0;
+  font-size: 14px;
+  /*font-size: 20px;*/
+  font-weight: normal;
+  text-transform: uppercase;
+  background: white;
+  /*background: #8e44ad;*/
+  color: black;
+  /*color: #8e44ad;*/
+  cursor: pointer;
+  position: relative;
+  top: 4px;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.tabs label:hover {
+  background: #0082F6;
+  /*background: #703688;*/
+}
+.tabs .tab-content {
+  z-index: 2;
+  display: none;
+  overflow: hidden;
+  width: 90%;
+  /*width: 100%;*/
+  font-size: 17px;
+  line-height: 25px;
+  /*padding: 25px;*/
+  /*position: relative;*/
+  position: absolute;
+  /*THIS ONE MAKES THE TABCONTENT IN THE WAY!!*/
+  /*top: 53px;*/
+  left: 0;
+  color: black;
+  /*color: #612e76;*/
+  background: white;
+  /*background: #612e76;*/
+}
+.tabs [id^="tab"]:checked + label {
+  top: 0;
+  padding-top: 17px;
+  background: #0082F6;
+  /*background: #612e76;*/
+}
+.tabs [id^="tab"]:checked ~ [id^="tab-content"] {
+  /*display: inline-block;*/
+  display: block;
+  /*font-weight: normal;*/
+}
+
+p.link {
+  clear: both;
+  margin: 380px 0 0 15px;
+}
+p.link a {
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  padding: 5px 10px;
+  margin: 0 5px;
+  background-color: #612e76;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+p.link a:hover {
+  background-color: #522764;
+}
+
+.placeListItem {
+	/*margin-top: 50px;*/
+}
+a {
+	color: blue;
+	/*color: #612e76;*/
+}
+.extra {
+	height: 200px;
+	position: relative;
+	z-index: -1;
+}
+/*for star rating system*/
+span.stars, span.stars span {
+    display: block;
+    background: url(stars.png) 0 -16px repeat-x;
+    width: 80px;
+    height: 16px;
+}
+
+span.stars span {
+    background-position: 0 0;
+}

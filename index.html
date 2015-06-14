@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+
+	<!-- MAKE TABS OPEN UNDER EACH PLACE WHEN CLICKED, ONE FOR WIKIPEDIA, ONE FOR FLICKR IMAGE, ONE FOR YELP, ONE FOR WEBSITE, one FOR FOURSQUARE, instagram, twitter, etc -->
+	<!-- planes API? -->
+		<div id="locationsList" class="hoverOnMap">
+			<ul data-bind="foreach: placeList" style="-webkit-padding-start: 10px;margin-top: 50px;background: white;">
+				<li data-bind="text: $data.name, click: $parent.changePlace1" class="placeListItem"></li>
+				<div class="tabsDiv" id="" style="display: none; color: #9b59b6;" >
+					<ul class="tabs" >
+					    <li>
+					        <input type="radio" name="tabs" id="tab1" checked class="inputRadio"/>
+					        <label for="tab1">Twitter</label>
+					        <div id="tab-content1" class="tab-content">
+					          <p data-bind="html: $data.twitterWidget"></p>
+					        </div>
+					    </li>
+					    <li>
+					        <input type="radio" name="tabs" id="tab2" class="inputRadio"/>
+					        <label for="tab2">Yelp</label>
+					        <div id="tab-content2" class="tab-content">
+					        	Rating: <span class="stars"></span>
+					          <div data-bind="text: $data.yelpSnippet"></div>
+					          <img src="" class="yelpImage" data-bind="attr: {src: yelpImageSrc}">
+					          <a href="" data-bind="text: $data.yelpLink, attr: {href: $data.yelpLink}"></a>
+					        </div>
+					    </li>
+					    <li>
+					        <input type="radio" name="tabs" id="tab3" class="inputRadio"/>
+					        <label for="tab3">Website</label>
+					        <div id="tab-content3" class="tab-content">
+					          <a href="" data-bind="text: $data.website, attr: {href: $data.website}"></a>
+					        </div>
+					    </li>
+					    <li>
+					        <input type="radio" name="tabs" id="tab4" class="inputRadio"/>
+					        <label for="tab3">Instagram</label>
+					        <div id="tab-content4" class="tab-content">
+					        <div data-bind="html: $data.instagramWidget"></div>
+					        </div>
+					    </li>
+					</ul>
+
+				</div>
+			</ul>
+
+		</div>
+		<div id="searchContainer">
+			<input id="mySearchBox" class="hoverOnMap" type="text" placeholder="Search">
+		</div>
+	</body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+  <!-- include 'libraries=places' for search box -->
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
+  <script src="bower_components/oauth-signature/dist/oauth-signature.js"></script>
+  <script async src="script.js"></script>
+
+  <script async>
+  // get all tabDiv elements and add id with index to each one
+  	var tabsDivArray = document.getElementsByClassName("tabsDiv");
+  	for (var i = 0; i < tabsDivArray.length; i++) {
+  		var tabsDiv = tabsDivArray[i];
+  		tabsDiv.id = 'tabsDiv' + i.toString();
+  	};
+  	var tabsRadioArray = document.getElementsByClassName("inputRadio");
+  	var j = 0
+  	for (var i = 0; i < tabsRadioArray.length; i++) {
+  		if (i % 4 == 0 && i != 0) { j++ };
+  		var tabsRadio = tabsRadioArray[i];
+  		var tabContent = $(tabsRadio).next().next();
+  		var tabLabel = $(tabsRadio).next()[0];
+  		if (i % 4 == 0) {
+  			tabsRadio.id = 'tabRadioWiki' + j.toString(); // wikipedia
+  			tabLabel.htmlFor = 'tabRadioWiki' + j.toString();
+  		} else if (i % 4 == 1) {
+  			tabsRadio.id = 'tabRadioYelp' + j.toString();
+  			tabLabel.htmlFor = 'tabRadioYelp' + j.toString();
+  			$(tabContent).attr("id",'tab-content' + i.toString() + j.toString());
+  		} else if (i % 4 == 2) {
+  			tabsRadio.id = 'tabRadioWeb' + j.toString();
+  			tabLabel.htmlFor = 'tabRadioWeb' + j.toString();
+  		} else if (i % 4 == 3) {
+  			tabsRadio.id = 'tabRadioInstagram' + j.toString();
+  			tabLabel.htmlFor = 'tabRadioInstagram' + j.toString();
+  		};
+  	};
+
+  	$(".tabs, .placeListItem").click(function() {
+    	var tabs = $(".extra").parent().find(".tab-content");
+  		// loop through and find the one that is visible
+  		for (var i = 0; i < tabs.length; i++) {
+  			var tab = tabs[i]
+  			if ($(tab).is(':visible')) {
+  				$(".extra").height($(tab).height() + 55)
+  			};
+  		};
+  	});
+  </script>
+
+   <div id="map-canvas"></div>
+   <div id="pano" style="width: 45%; height: 50%;float:left"></div>
+
+<!-- Inspiration from http://chicago.eater.com/maps/the-most-iconic-sandwiches-in-chicago-->
+<!-- credit http://stackoverflow.com/questions/13588293/streetview-into-infowindow -->
+<!-- tabs credit: http://codepen.io/wallaceerick/pen/ojtal -->
+<!-- http://discussions.udacity.com/t/error-making-ajax-request-to-yelp-invalid-signature-expected-signature-base-string/13759 -->
+<!-- http://discussions.udacity.com/t/how-to-make-ajax-request-to-yelp-api/13699/4 -->
+</html>
