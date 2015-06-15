@@ -313,6 +313,11 @@ var ViewModel = function() {
         new google.maps.LatLng(30.3, -97.85));
     window.map.fitBounds(defaultBounds);
 
+    var infowindow = new google.maps.InfoWindow({
+      size: new google.maps.Size(150,50),
+      // content: '<div id="content">'+ '<h3 id="placeName"></h3>'+ '</div>'
+    });
+
     places.forEach(function(place) {
     	var title = document.createElement("DIV");
     	title.innerText = places[places.indexOf(place)].name;
@@ -326,10 +331,6 @@ var ViewModel = function() {
     	    animation: google.maps.Animation.DROP
     	});
 
-    	var infowindow = new google.maps.InfoWindow({
-    	  size: new google.maps.Size(150,50),
-    	  content: '<div id="content">'+ '<h3>' + place.name + '</h3>'+ '</div>'
-    	});
     	markers.push(marker);
     	google.maps.event.addListener(marker, 'click', function() {
     	  map.setZoom(15);
@@ -340,6 +341,7 @@ var ViewModel = function() {
     	  }, 3300);
 
     	  infowindow.open(map, marker);
+    	  infowindow.setContent('<div id="content">' + '<h3 id="placeName">' + place.name + '</h3>'+ '</div>')
     	  clickedMarker = marker;
 				var pin = new google.maps.MVCObject();
 				function openInfoWindow(marker) {
