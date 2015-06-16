@@ -151,7 +151,7 @@ var Place = function(data) {
 	this.yelpLink = ko.observable(data.yelpLink);
 	this.twitterWidget = ko.observable(data.twitterWidget);
 	this.instagramWidget = ko.observable(data.instagramWidget);
-}
+};
 
 ///// Knockout View Model
 var ViewModel = function() {
@@ -163,140 +163,17 @@ var ViewModel = function() {
   });
   this.currentPlace = ko.observable( this.placeList()[0] );
 
-  // YELP RELATED CODE
-  this.callYelpAPI = function() {
-		/////////////// YELP API STUFF
-		var YELP_CONSUMER_KEY = "N3DofJ4mIItoveG38brAHg";
-		var YELP_CONSUMER_SECRET = "tEeEHCEXinsVqj8L0vhJRT3kEBw";
-		var YELP_TOKEN = "tXgSSy2Kh_8J2gqA1dlKxosMs5vUAy_d";
-		var YELP_TOKEN_SECRET = "R1TICiVW89ybGSpEqy10JxiOTQ8";
-		var YELP_BASE_URL = "http://api.yelp.com/v2/"
-		var yelp_url = YELP_BASE_URL + 'business/' + self.currentPlace().yelpID();
-
-		//// OAUTH related code
-		// Generates a random number and returns it as a string for OAuthentication
-		function generate_nonce() {
-		  return (Math.floor(Math.random() * 1e12).toString());
-		}
-
-  	var parameters = {
-      oauth_consumer_key: YELP_CONSUMER_KEY,
-      oauth_token: YELP_TOKEN,
-      oauth_nonce: generate_nonce(),
-      oauth_timestamp: Math.floor(Date.now()/1000),
-      oauth_signature_method: 'HMAC-SHA1',
-      oauth_version : '1.0',
-      callback: 'cb'  // This is crucial to include for jsonp implementation in
-                      // AJAX or else the oauth-signature will be wrong.
-  	};
-
-  	// USE BELOW FROM UDACITY FORUM EXAMPLE TO SIGN OAUTH TO USE YELP API and twitter api and google plus
-  	var encodedSignature = oauthSignature.generate('GET',yelp_url, parameters, YELP_CONSUMER_SECRET, YELP_TOKEN_SECRET);
-  	parameters.oauth_signature = encodedSignature;
-  	//// end OAuth related code
-
-  	var settings = {
-      url: yelp_url,
-      data: parameters,
-      cache: true,  // This is crucial to include as well to prevent jQuery from adding on a cache-buster parameter "_=23489489749837", invalidating our oauth-signature
-      dataType: 'jsonp',
-      success: function(results) {
-        self.updateYelpContent(results);
-      },
-      fail: function() {
-        console.log('fail');
-      }
-    };
-    $.ajax(settings);
-  } /////// END callYelpAPI function
-
-  self.callYelpAPI();
-
-  this.updateYelpContent = function(results) {
-  	self.currentPlace().yelpImageSrc(results.image_url);
-  	self.currentPlace().yelpSnippet(results.snippet_text.toString());
-  	self.currentPlace().yelpLink(results.url);
-  	var yelpImage = document.getElementsByClassName("yelpImage")[0];
-  	if ($(".yelpSnippet").length > 0) {
-  		$(".yelpSnippet").remove();
-  	};
-  	var br = document.createElement("br")
-  	var newParagraph = document.createElement("p");
-  	var snippet = document.createTextNode(results.snippet_text.toString())
-  	newParagraph.appendChild(snippet);
-  	$(newParagraph).addClass("yelpSnippet");
-  	$(br).insertAfter(yelpImage);
-  	$(function() {
-  	  $('span.stars').stars(results.rating);
-  	});
-  } // end updateYelpContent function
-  ////// end yelp stuff
-
-  // GOOLE MAPS STUFF FOR CHANGEPLACE1
-  myLatlng = new google.maps.LatLng(30.2433481,-97.8703633);
-  mapOptions = {
-    zoom: 13,
-    center: myLatlng
-  }
-  var sv = new google.maps.StreetViewService();
-  markers = [];
-
-  // function called when you click on a place in the list
-  this.changePlace1 = function(place, event) {
- 	  self.currentPlace(place);
- 	  self.callYelpAPI();
-		// all placeList not bold
-		var placeItems = document.getElementsByClassName("placeListItem");
-		for (var i = 0; i < placeItems.length; i++) {
-			var placeItem = placeItems[i];
-			placeItem.style.fontWeight = "normal";
-		};
-
-		var context = ko.contextFor(event.target);
-		var tabsDivArray = document.getElementsByClassName("tabsDiv");
-		for (var i = 0; i < tabsDivArray.length; i++) {
-			var tabsDiv = tabsDivArray[i];
-			if ($(tabsDiv).is(':visible')) {
-				$(tabsDiv).slideToggle();
-			};
-		};
-
-		var tabs = document.getElementById("tabsDiv" + context.$index());
-		// also want to close all open tabDivs...
-		$(tabs).slideToggle();
-		$(".extra").remove()
-		tabs.style.display = "inline-block";
-		$(tabs).prev()[0].style.fontWeight = 'bold'
-		// insert blank div behind to lower other list items
-		$(event.target).next().append("<div class='extra' stye='position: relative;height: 200px;'></div>");
-
-		var nextID = $(event.target).next()[0].id
-		var targetIndex = nextID.substring(nextID.length - 1, nextID.length);
-		document.getElementById("tabRadioWiki" + targetIndex).checked = true;
-
-		// GOOGLE MAPS STUFF called on ChangePlace
-  	// panTo place
-  	var position = new google.maps.LatLng(place.latitude(),place.longitude());
-
-  	window.map.panTo(position);
-  	window.map.setZoom(17);
-
-  	markers.forEach(function(marker) {
-  		if (marker.position.A.toFixed(6) == place.latitude && marker.position.F.toFixed(6) == place.longitude) {
-  			marker.setAnimation(google.maps.Animation.BOUNCE);
-  			window.setTimeout(function() {
-  				marker.setAnimation(null);
-  			}, 3500);
-  		};
-  	})
-  }; // end function changePlace1
-
   ///// START GOOGLE MAPS STUFF
-  var image = {url: 'customPin.svg'};
+  // var image = {url: 'customPin.svg'};
   var shape = {
 		coords: [1, 1, 1, 30, 46, 30, 46, 1],
 		type: 'poly'
    };
+
+	var infowindow = new google.maps.InfoWindow({
+	 size: new google.maps.Size(150,50),
+	 // content: '<div id="content">'+ '<h3 id="placeName"></h3>'+ '</div>'
+	});
 
    // START initializeMap function
   this.initializeMap = function() {
@@ -313,10 +190,10 @@ var ViewModel = function() {
         new google.maps.LatLng(30.3, -97.85));
     window.map.fitBounds(defaultBounds);
 
-    var infowindow = new google.maps.InfoWindow({
-      size: new google.maps.Size(150,50),
-      // content: '<div id="content">'+ '<h3 id="placeName"></h3>'+ '</div>'
-    });
+    // var infowindow = new google.maps.InfoWindow({
+    //   size: new google.maps.Size(150,50),
+    //   // content: '<div id="content">'+ '<h3 id="placeName"></h3>'+ '</div>'
+    // });
 
     places.forEach(function(place) {
     	var title = document.createElement("DIV");
@@ -341,13 +218,13 @@ var ViewModel = function() {
     	  }, 3300);
 
     	  infowindow.open(map, marker);
-    	  infowindow.setContent('<div id="content">' + '<h3 id="placeName">' + place.name + '</h3>'+ '</div>')
+    	  infowindow.setContent('<div id="content">' + '<h3 id="placeName">' + place.name + '</h3>'+ '</div>');
     	  clickedMarker = marker;
-				var pin = new google.maps.MVCObject();
-				function openInfoWindow(marker) {
-				   pin.set("position", marker.getPosition());
-				   infowindow.open(map, marker);
-				}
+				// var pin = new google.maps.MVCObject();
+				// function openInfoWindow(marker) {
+				//    pin.set("position", marker.getPosition());
+				//    infowindow.open(map, marker);
+				// }
     	});// end addListener marker from line ~335
 
     }); // end places.forEach form  316
@@ -361,7 +238,7 @@ var ViewModel = function() {
 	  google.maps.event.addListener(searchBox, 'places_changed', function() {
 	    var searchPlaces = searchBox.getPlaces();
 
-	    if (searchPlaces.length == 0) {
+	    if (searchPlaces.length === 0) {
 	      return;
 	    }
 	    for (var i = 0, searchMarker; searchMarker = searchMarkers[i]; i++) {
@@ -400,16 +277,152 @@ var ViewModel = function() {
 	    var bounds = map.getBounds();
 	    searchBox.setBounds(bounds);
 	  });
-  } // END this.initializeMap
+  }; // END this.initializeMap
+
+
+
+
+
+  // YELP RELATED CODE
+  this.callYelpAPI = function() {
+		/////////////// YELP API STUFF
+		var YELP_CONSUMER_KEY = "N3DofJ4mIItoveG38brAHg";
+		var YELP_CONSUMER_SECRET = "tEeEHCEXinsVqj8L0vhJRT3kEBw";
+		var YELP_TOKEN = "tXgSSy2Kh_8J2gqA1dlKxosMs5vUAy_d";
+		var YELP_TOKEN_SECRET = "R1TICiVW89ybGSpEqy10JxiOTQ8";
+		var YELP_BASE_URL = "http://api.yelp.com/v2/";
+		var yelp_url = YELP_BASE_URL + 'business/' + self.currentPlace().yelpID();
+
+		//// OAUTH related code
+		// Generates a random number and returns it as a string for OAuthentication
+		function generate_nonce() {
+		  return (Math.floor(Math.random() * 1e12).toString());
+		}
+
+  	var parameters = {
+      oauth_consumer_key: YELP_CONSUMER_KEY,
+      oauth_token: YELP_TOKEN,
+      oauth_nonce: generate_nonce(),
+      oauth_timestamp: Math.floor(Date.now()/1000),
+      oauth_signature_method: 'HMAC-SHA1',
+      oauth_version : '1.0',
+      callback: 'cb'  // This is crucial to include for jsonp implementation in
+                      // AJAX or else the oauth-signature will be wrong.
+  	};
+
+  	// USE BELOW FROM UDACITY FORUM EXAMPLE TO SIGN OAUTH TO USE YELP API and twitter api and google plus
+  	var encodedSignature = oauthSignature.generate('GET',yelp_url, parameters, YELP_CONSUMER_SECRET, YELP_TOKEN_SECRET);
+  	parameters.oauth_signature = encodedSignature;
+  	//// end OAuth related code
+
+  	var settings = {
+      url: yelp_url,
+      data: parameters,
+      cache: true,  // This is crucial to include as well to prevent jQuery from adding on a cache-buster parameter "_=23489489749837", invalidating our oauth-signature
+      dataType: 'jsonp',
+      success: function(results) {
+        self.updateYelpContent(results);
+      },
+      fail: function() {
+        console.log('fail');
+      }
+    };
+    $.ajax(settings);
+  }; /////// END callYelpAPI function
+
+  self.callYelpAPI();
+
+  this.updateYelpContent = function(results) {
+  	self.currentPlace().yelpImageSrc(results.image_url);
+  	self.currentPlace().yelpSnippet(results.snippet_text.toString());
+  	self.currentPlace().yelpLink(results.url);
+  	var yelpImage = document.getElementsByClassName("yelpImage")[0];
+  	if ($(".yelpSnippet").length > 0) {
+  		$(".yelpSnippet").remove();
+  	}
+  	var br = document.createElement("br");
+  	var newParagraph = document.createElement("p");
+  	var snippet = document.createTextNode(results.snippet_text.toString());
+  	newParagraph.appendChild(snippet);
+  	$(newParagraph).addClass("yelpSnippet");
+  	$(br).insertAfter(yelpImage);
+  	$(function() {
+  	  $('span.stars').stars(results.rating);
+  	});
+  }; // end updateYelpContent function
+  ////// end yelp stuff
+
+  // GOOLE MAPS STUFF FOR CHANGEPLACE1
+  myLatlng = new google.maps.LatLng(30.2433481,-97.8703633);
+  mapOptions = {
+    zoom: 13,
+    center: myLatlng
+  };
+  // var sv = new google.maps.StreetViewService();
+  markers = [];
+
+  // function called when you click on a place in the list
+  this.changePlace1 = function(place, event) {
+ 	  self.currentPlace(place);
+ 	  self.callYelpAPI();
+ 	  // infowindow.open(map);
+    // infowindow.setContent('<div id="content">' + '<h3 id="placeName">' + place.name + '</h3>'+ '</div>')
+		// all placeList not bold
+		var placeItems = document.getElementsByClassName("placeListItem");
+		for (var i = 0; i < placeItems.length; i++) {
+			var placeItem = placeItems[i];
+			placeItem.style.fontWeight = "normal";
+		}
+
+		var context = ko.contextFor(event.target);
+		var tabsDivArray = document.getElementsByClassName("tabsDiv");
+		for (var i = 0; i < tabsDivArray.length; i++) {
+			var tabsDiv = tabsDivArray[i];
+			if ($(tabsDiv).is(':visible')) {
+				$(tabsDiv).slideToggle();
+			}
+		}
+
+		var tabs = document.getElementById("tabsDiv" + context.$index());
+		// also want to close all open tabDivs...
+		$(tabs).slideToggle();
+		$(".extra").remove();
+		tabs.style.display = "inline-block";
+		$(tabs).prev()[0].style.fontWeight = 'bold';
+		// insert blank div behind to lower other list items
+		$(event.target).next().append("<div class='extra' stye='position: relative;height: 200px;'></div>");
+
+		var nextID = $(event.target).next()[0].id;
+		var targetIndex = nextID.substring(nextID.length - 1, nextID.length);
+		document.getElementById("tabRadioWiki" + targetIndex).checked = true;
+
+		// GOOGLE MAPS STUFF called on ChangePlace
+  	// panTo place
+  	var position = new google.maps.LatLng(place.latitude(),place.longitude());
+
+  	window.map.panTo(position);
+  	window.map.setZoom(17);
+
+  	markers.forEach(function(marker) {
+  		if (marker.position.A.toFixed(6) == place.latitude && marker.position.F.toFixed(6) == place.longitude) {
+  			marker.setAnimation(google.maps.Animation.BOUNCE);
+  			window.setTimeout(function() {
+  				marker.setAnimation(null);
+  			}, 3500);
+  		}
+  	});
+  }; // end function changePlace1
+
+
 
   google.maps.event.addDomListener(window, 'load', this.initializeMap);
-}////**** END
+}; ////**** END
 
 //For showing the Yelp star rating
 $.fn.stars = function(rating) {
   return $(this).each(function() {
     $(this).html($('<span />').width(Math.max(0, (Math.min(5, parseFloat(rating)))) * 16));
   });
-}
+};
 
 ko.applyBindings(new ViewModel());
