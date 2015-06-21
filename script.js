@@ -170,10 +170,10 @@ var ViewModel = function() {
 		type: 'poly'
    };
 
-	var infowindow = new google.maps.InfoWindow({
-	 size: new google.maps.Size(150,50),
-	 // content: '<div id="content">'+ '<h3 id="placeName"></h3>'+ '</div>'
-	});
+	// var infowindow = new google.maps.InfoWindow({
+	//  size: new google.maps.Size(150,50),
+	//  // content: '<div id="content">'+ '<h3 id="placeName"></h3>'+ '</div>'
+	// });
 
    // START initializeMap function
   this.initializeMap = function() {
@@ -182,6 +182,7 @@ var ViewModel = function() {
   	streetview.style.width = "200px";
   	streetview.style.height = "200px";
   	content.appendChild(streetview);
+  	var infobox;
 
   	searchMarkers = [];
     window.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -189,6 +190,22 @@ var ViewModel = function() {
         new google.maps.LatLng(30.2, -97.92),
         new google.maps.LatLng(30.3, -97.85));
     window.map.fitBounds(defaultBounds);
+
+    infobox = new InfoBox({
+			content: document.getElementById("infobox"),
+			disableAutoPan: false,
+			maxWidth: 150,
+			pixelOffset: new google.maps.Size(-140, 0),
+			zIndex: null,
+			boxStyle: {
+			  background: "url('http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/examples/tipbox.gif') no-repeat",
+			  opacity: 0.75,
+			  width: "280px"
+	    },
+	    closeBoxMargin: "12px 4px 2px 2px",
+	    closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif",
+	    infoBoxClearance: new google.maps.Size(1, 1)
+    });
 
     // var infowindow = new google.maps.InfoWindow({
     //   size: new google.maps.Size(150,50),
@@ -217,9 +234,10 @@ var ViewModel = function() {
     	  	marker.setAnimation(null);
     	  }, 3300);
 
-    	  infowindow.open(map, marker);
-    	  infowindow.setContent('<div id="content">' + '<h3 id="placeName">' + place.name + '</h3>'+ '</div>');
-    	  clickedMarker = marker;
+    	  infobox.open(map, marker);
+    	  // infowindow.open(map, marker);
+    	  // infowindow.setContent('<div id="content">' + '<h3 id="placeName">' + place.name + '</h3>'+ '</div>');
+    	  // clickedMarker = marker;
 				// var pin = new google.maps.MVCObject();
 				// function openInfoWindow(marker) {
 				//    pin.set("position", marker.getPosition());
