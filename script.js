@@ -6,7 +6,7 @@ var places = [
 		longitude: -97.85908,
 		content: '<div id="content" style="width:250px;height:300px;">hi</div>',
 		wikipediaContent: 'wikpediaContent',
-		website: "http://www.austin-pizza-garden.com",
+		website: 'http://www.austin-pizza-garden.com',
 		yelpID: "austin-pizza-garden-austin-2",
 		yelpSnippet: "",
 		yelpImageSrc: "",
@@ -225,9 +225,9 @@ var ViewModel = function() {
 				//    pin.set("position", marker.getPosition());
 				//    infowindow.open(map, marker);
 				// }
-    	});// end addListener marker from line ~335
+    	});// end addListener marker
 
-    }); // end places.forEach form  316
+    }); // end places.forEach
 
   	// Create the search box and link it to the UI element.
   	var input = (document.getElementById('mySearchBox'));

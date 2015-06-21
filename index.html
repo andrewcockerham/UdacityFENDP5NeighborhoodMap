@@ -3,8 +3,15 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<title></title>
+
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+		<!-- <link rel="stylesheet" type="text/css" href="offline-theme-chrome.css"> -->
+		<link rel="stylesheet" type="text/css" href="offline-theme-slide.css">
+		<!-- <link rel="stylesheet" type="text/css" href="offline-language-english-indicator.css"> -->
+		<link rel="stylesheet" type="text/css" href="offline-language-english.css">
+		<script src="offline.min.js"></script>
+		<!-- <link rel="stylesheet" type="text/css" href="offline-theme-chrome-indicator.css"> -->
 	</head>
 	<body>
 
@@ -76,6 +83,29 @@
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
   <script src="bower_components/oauth-signature/dist/oauth-signature.js"></script>
   <script async src="script.js"></script>
+
+  <!-- <script async src="bower_components/offline/offline.min.js"></script> -->
+  <!-- <script async src="bower_components/offlinejs-simulate-ui/offline-simulate-ui.min.js"></script> -->
+
+  <script>
+      // $(function(){
+      //     var
+      //         $online = $('.online'),
+      //         $offline = $('.offline');
+
+      //     Offline.on('confirmed-down', function () {
+      //         $online.fadeOut(function () {
+      //             $offline.fadeIn();
+      //         });
+      //     });
+
+      //     Offline.on('confirmed-up', function () {
+      //         $offline.fadeOut(function () {
+      //             $online.fadeIn();
+      //         });
+      //     });
+      // });
+  </script>
 
   <script async>
   // get all tabDiv elements and add id with index to each one
