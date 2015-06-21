@@ -170,10 +170,10 @@ var ViewModel = function() {
 		type: 'poly'
    };
 
-	var infowindow = new google.maps.InfoWindow({
-	 size: new google.maps.Size(150,50),
-	 // content: '<div id="content">'+ '<h3 id="placeName"></h3>'+ '</div>'
-	});
+	// var infowindow = new google.maps.InfoWindow({
+	//  size: new google.maps.Size(150,50),
+	//  // content: '<div id="content">'+ '<h3 id="placeName"></h3>'+ '</div>'
+	// });
 
    // START initializeMap function
   this.initializeMap = function() {
