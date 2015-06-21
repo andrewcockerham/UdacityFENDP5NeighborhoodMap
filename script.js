@@ -192,7 +192,8 @@ var ViewModel = function() {
     window.map.fitBounds(defaultBounds);
 
     infobox = new InfoBox({
-			content: document.getElementById("infobox").innerHTML,
+			content: '<div id="infobox">The contents of your info box. Its very easy to create and customize.</div>',
+			// content: document.getElementById("infobox").innerHTML,
 			disableAutoPan: false,
 			maxWidth: 150,
 			pixelOffset: new google.maps.Size(-140, 0),
