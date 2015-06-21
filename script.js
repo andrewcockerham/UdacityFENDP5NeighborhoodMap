@@ -182,6 +182,7 @@ var ViewModel = function() {
   	streetview.style.width = "200px";
   	streetview.style.height = "200px";
   	content.appendChild(streetview);
+  	var infobox;
 
   	searchMarkers = [];
     window.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
