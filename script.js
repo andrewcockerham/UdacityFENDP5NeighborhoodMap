@@ -192,7 +192,7 @@ var ViewModel = function() {
     window.map.fitBounds(defaultBounds);
 
     infobox = new InfoBox({
-			content: document.getElementById("infobox"),
+			content: document.getElementById("infobox").innerHTML,
 			disableAutoPan: false,
 			maxWidth: 150,
 			pixelOffset: new google.maps.Size(-140, 0),
