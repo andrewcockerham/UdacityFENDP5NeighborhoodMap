@@ -1,6 +1,7 @@
 var places = [
 	{
 		name: "Austin Pizza Garden",
+		address: "6266 Hwy 290 Austin, TX 78735",
 		mapSrc: "Austin+Pizza+Garden",
 		latitude: 30.235678,
 		longitude: -97.85908,
@@ -16,6 +17,7 @@ var places = [
 	},
 	{
 		name: "Reds",
+		address: "6200 Hwy 290 Austin, TX 78735",
 		mapSrc: "Red's+Indoor+Range",
 		latitude: 30.236278,
 		longitude: -97.856536,
@@ -31,6 +33,7 @@ var places = [
 	},
 	{
 		name: "Freescale",
+		address: "6501 W William Cannon Dr Austin, TX 78735",
 		mapSrc: "Freescale+Semiconductor+Inc",
 		latitude: 30.238327,
 		longitude: -97.866148,
@@ -46,6 +49,7 @@ var places = [
 	},
 	{
 		name: "Verona",
+		address: "7101 TX-71 Austin, TX 78735",
 		mapSrc: "Verona+Ristorante+Italino",
 		latitude: 30.235072,
 		longitude: -97.878345,
@@ -61,6 +65,7 @@ var places = [
 	},
 	{
 		name: "Natural Gardener",
+		address: "8648 Old Bee Caves Rd Austin, TX 78735",
 		mapSrc: "The+Natural+Gardener",
 		latitude: 30.2572,
 		longitude: -97.89055,
@@ -76,6 +81,7 @@ var places = [
 	},
 	{
 		name: "AMD",
+		address: "7171 Southwest Pkwy Austin, TX 78735",
 		mapSrc: "AMD",
 		latitude: 30.251333,
 		longitude: -97.863768,
@@ -91,6 +97,7 @@ var places = [
 	},
 	{
 		name: "Hecho en Mexico",
+		address: "6001 W William Cannon Dr # 301 Austin, TX 78749",
 		mapSrc: "Hecho+En+Mexico",
 		latitude: 30.228475,
 		longitude: -97.863356,
@@ -106,6 +113,7 @@ var places = [
 	},
 	{
 		name: "ACC Pinnacle",
+		address: "7748 Hwy 290 Austin, TX 78736",
 		mapSrc: "Austin+Community+College:+Pinnacle+Campus",
 		latitude: 30.23152,
 		longitude: -97.883524,
@@ -121,6 +129,7 @@ var places = [
 	},
 	{
 		name: "The Donut Hole",
+		address: "6863 W Hwy 290 Austin, TX 78735",
 		mapSrc: "Austin+Community+College:+Pinnacle+Campus",
 		latitude: 30.23152,
 		longitude: -97.883524,
@@ -139,6 +148,7 @@ var places = [
 ///// Knockout Model
 var Place = function(data) {
 	this.name = ko.observable(data.name);
+	this.address = ko.observable(data.address);
 	this.mapSrc = ko.observable(data.mapSrc);
 	this.latitude = ko.observable(data.latitude);
 	this.longitude = ko.observable(data.longitude);
@@ -238,7 +248,7 @@ var ViewModel = function() {
 
     	  infobox.open(map, marker);
     	  // infowindow.open(map, marker);
-    	  infobox.setContent('<div id="infobox">' + '<h2 id="placeName"><a href="' + place.website + '">' + place.name + '</a>' + '</h3></div>');
+    	  infobox.setContent('<div id="infobox">' + '<h2 id="placeName"><a href="' + place.website + '">' + place.name + '</a>' + '</h3></br><h4>' + place.address + '</h4></div>');
     	  console.log("website" + place.website)
     	  // infowindow.setContent('<div id="content">' + '<h3 id="placeName">' + place.name + '</h3>'+ '</div>');
     	  // clickedMarker = marker;
@@ -355,6 +365,7 @@ var ViewModel = function() {
   self.callYelpAPI();
 
   this.updateYelpContent = function(results) {
+  	// console.log(results.address)
   	self.currentPlace().yelpImageSrc(results.image_url);
   	self.currentPlace().yelpSnippet(results.snippet_text.toString());
   	self.currentPlace().yelpLink(results.url);
