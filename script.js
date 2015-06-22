@@ -390,6 +390,7 @@ var ViewModel = function() {
   this.callYelpAPI = function() {
   	console.log("self = " + self)
   	console.log("currentplace" + self.currentPlace().name)
+  	console.log("currentplace" + self.currentPlace().yelpID())
 
 		/////////////// YELP API STUFF
 		var YELP_CONSUMER_KEY = "N3DofJ4mIItoveG38brAHg";
