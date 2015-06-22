@@ -249,7 +249,7 @@ var ViewModel = function() {
     	  infobox.open(map, marker);
     	  // infowindow.open(map, marker);
     	  infobox.setContent('<div id="infobox">' + '<h2 id="placeName"><a href="' + place.website + '">' + place.name + '</a>' + '</h3></br><h4>' + place.address + '</h4></div>');
-    	  changePlace1(place);
+    	  self.changePlace1(place);
     	  // infowindow.setContent('<div id="content">' + '<h3 id="placeName">' + place.name + '</h3>'+ '</div>');
     	  // clickedMarker = marker;
 				// var pin = new google.maps.MVCObject();
@@ -396,6 +396,7 @@ var ViewModel = function() {
 
   // function called when you click on a place in the list
   this.changePlace1 = function(place, event) {
+  	console.log(" in changeplace")
  	  self.currentPlace(place);
  	  self.callYelpAPI();
  	  // infowindow.open(map);
