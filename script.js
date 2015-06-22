@@ -397,7 +397,7 @@ var ViewModel = function() {
 		var YELP_TOKEN = "tXgSSy2Kh_8J2gqA1dlKxosMs5vUAy_d";
 		var YELP_TOKEN_SECRET = "R1TICiVW89ybGSpEqy10JxiOTQ8";
 		var YELP_BASE_URL = "http://api.yelp.com/v2/";
-		var yelp_url = YELP_BASE_URL + 'business/' + self.currentPlace().yelpID;
+		var yelp_url = YELP_BASE_URL + 'business/' + self.currentPlace().yelpID();
 		// var yelp_url = YELP_BASE_URL + 'business/' + self.currentPlace().yelpID();
 
 		//// OAUTH related code
