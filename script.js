@@ -388,14 +388,15 @@ var ViewModel = function() {
 
   // YELP RELATED CODE
   this.callYelpAPI = function() {
-  	console.log("currentplace" + self.currentPlace())
+  	console.log("currentplace" + self.currentPlace().name())
 		/////////////// YELP API STUFF
 		var YELP_CONSUMER_KEY = "N3DofJ4mIItoveG38brAHg";
 		var YELP_CONSUMER_SECRET = "tEeEHCEXinsVqj8L0vhJRT3kEBw";
 		var YELP_TOKEN = "tXgSSy2Kh_8J2gqA1dlKxosMs5vUAy_d";
 		var YELP_TOKEN_SECRET = "R1TICiVW89ybGSpEqy10JxiOTQ8";
 		var YELP_BASE_URL = "http://api.yelp.com/v2/";
-		var yelp_url = YELP_BASE_URL + 'business/' + self.currentPlace().yelpID();
+		var yelp_url = YELP_BASE_URL + 'business/' + self.currentPlace().yelpID;
+		// var yelp_url = YELP_BASE_URL + 'business/' + self.currentPlace().yelpID();
 
 		//// OAUTH related code
 		// Generates a random number and returns it as a string for OAuthentication
