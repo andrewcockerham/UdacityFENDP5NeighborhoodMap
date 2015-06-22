@@ -201,7 +201,7 @@ var ViewModel = function() {
 	  	console.log("current place = " + self.currentPlace().name())
 	  	console.log("current place yelpID = " + self.currentPlace().yelpID())
 	 	  self.currentPlace(place);
-	 	  self.callYelpAPI();
+	 	  // self.callYelpAPI();
 	 	  // infowindow.open(map);
 	    // infowindow.setContent('<div id="content">' + '<h3 id="placeName">' + place.name + '</h3>'+ '</div>')
 			// all placeList not bold
@@ -389,8 +389,8 @@ var ViewModel = function() {
   // YELP RELATED CODE
   this.callYelpAPI = function() {
   	console.log("self = " + self)
-  	console.log("currentplace" + self.currentPlace().name)
-  	console.log("currentplace" + self.currentPlace().yelpID())
+  	console.log("currentplace" + self.currentPlace().name())
+  	console.log("yelpID" + self.currentPlace().yelpID())
 
 		/////////////// YELP API STUFF
 		var YELP_CONSUMER_KEY = "N3DofJ4mIItoveG38brAHg";
