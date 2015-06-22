@@ -320,7 +320,7 @@ var ViewModel = function() {
     	  infobox.open(map, marker);
     	  // infowindow.open(map, marker);
     	  infobox.setContent('<div id="infobox">' + '<h2 id="placeName"><a href="' + place.website + '">' + place.name + '</a>' + '</h3></br><h4>' + place.address + '</h4></div>');
-    	  self.changePlace1(place);
+    	  // self.changePlace1(place);
     	  // infowindow.setContent('<div id="content">' + '<h3 id="placeName">' + place.name + '</h3>'+ '</div>');
     	  // clickedMarker = marker;
 				// var pin = new google.maps.MVCObject();
