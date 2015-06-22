@@ -238,7 +238,7 @@ var ViewModel = function() {
 
     	  infobox.open(map, marker);
     	  // infowindow.open(map, marker);
-    	  infobox.setContent('<div id="infobox">' + '<h3 id="placeName">' + place.name + place.website + '</h3></div>');
+    	  infobox.setContent('<div id="infobox">' + '<h2 id="placeName"><a href="' + place.website +'>' + place.name '</a>' + '</h3></div>');
     	  console.log("website" + place.website)
     	  // infowindow.setContent('<div id="content">' + '<h3 id="placeName">' + place.name + '</h3>'+ '</div>');
     	  // clickedMarker = marker;
