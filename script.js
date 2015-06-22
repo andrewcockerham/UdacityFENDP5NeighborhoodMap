@@ -386,6 +386,7 @@ var ViewModel = function() {
 
   // YELP RELATED CODE
   this.callYelpAPI = function() {
+  	console.log("currentplace" + self.currentplace())
 		/////////////// YELP API STUFF
 		var YELP_CONSUMER_KEY = "N3DofJ4mIItoveG38brAHg";
 		var YELP_CONSUMER_SECRET = "tEeEHCEXinsVqj8L0vhJRT3kEBw";
