@@ -239,6 +239,7 @@ var ViewModel = function() {
     	  infobox.open(map, marker);
     	  // infowindow.open(map, marker);
     	  infobox.setContent('<div id="infobox">' + '<h3 id="placeName">' + place.name + place.website + '</h3></div>');
+    	  console.log("website" + place.website)
     	  // infowindow.setContent('<div id="content">' + '<h3 id="placeName">' + place.name + '</h3>'+ '</div>');
     	  // clickedMarker = marker;
 				// var pin = new google.maps.MVCObject();
