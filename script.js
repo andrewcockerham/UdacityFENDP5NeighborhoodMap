@@ -199,7 +199,7 @@ var ViewModel = function() {
 	  this.changePlace1 = function(place, event) {
 	  	console.log(" in changeplace")
 	  	console.log("current place = " + self.currentPlace().name())
-	  	console.log("current place = " + self.currentPlace().yelpID())
+	  	console.log("current place yelpID= " + self.currentPlace().yelpID())
 	 	  self.currentPlace(place);
 	 	  self.callYelpAPI();
 	 	  // infowindow.open(map);
