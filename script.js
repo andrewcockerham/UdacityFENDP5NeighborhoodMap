@@ -185,6 +185,75 @@ var ViewModel = function() {
 	//  // content: '<div id="content">'+ '<h3 id="placeName"></h3>'+ '</div>'
 	// });
 
+
+	  // GOOLE MAPS STUFF FOR CHANGEPLACE1
+	  myLatlng = new google.maps.LatLng(30.2433481,-97.8703633);
+	  mapOptions = {
+	    zoom: 13,
+	    center: myLatlng
+	  };
+	  // var sv = new google.maps.StreetViewService();
+	  markers = [];
+
+	  // function called when you click on a place in the list
+	  this.changePlace1 = function(place, event) {
+	  	console.log(" in changeplace")
+	 	  self.currentPlace(place);
+	 	  self.callYelpAPI();
+	 	  // infowindow.open(map);
+	    // infowindow.setContent('<div id="content">' + '<h3 id="placeName">' + place.name + '</h3>'+ '</div>')
+			// all placeList not bold
+			var placeItems = document.getElementsByClassName("placeListItem");
+			for (var i = 0; i < placeItems.length; i++) {
+				var placeItem = placeItems[i];
+				placeItem.style.fontWeight = "normal";
+			}
+
+			var context = ko.contextFor(event.target);
+			var tabsDivArray = document.getElementsByClassName("tabsDiv");
+			for (var i = 0; i < tabsDivArray.length; i++) {
+				var tabsDiv = tabsDivArray[i];
+				if ($(tabsDiv).is(':visible')) {
+					$(tabsDiv).slideToggle();
+				}
+			}
+
+			var tabs = document.getElementById("tabsDiv" + context.$index());
+			// also want to close all open tabDivs...
+			$(tabs).slideToggle();
+			$(".extra").remove();
+			tabs.style.display = "inline-block";
+			$(tabs).prev()[0].style.fontWeight = 'bold';
+			// insert blank div behind to lower other list items
+			$(event.target).next().append("<div class='extra' stye='position: relative;height: 200px;'></div>");
+
+			var nextID = $(event.target).next()[0].id;
+			var targetIndex = nextID.substring(nextID.length - 1, nextID.length);
+			document.getElementById("tabRadioWiki" + targetIndex).checked = true;
+
+			// GOOGLE MAPS STUFF called on ChangePlace
+	  	// panTo place
+	  	var position = new google.maps.LatLng(place.latitude(),place.longitude());
+
+	  	window.map.panTo(position);
+	  	window.map.setZoom(17);
+
+	  	markers.forEach(function(marker) {
+	  		if (marker.position.A.toFixed(6) == place.latitude && marker.position.F.toFixed(6) == place.longitude) {
+	  			marker.setAnimation(google.maps.Animation.BOUNCE);
+	  			window.setTimeout(function() {
+	  				marker.setAnimation(null);
+	  			}, 3500);
+	  		}
+	  	});
+	  }; // end function changePlace1
+
+
+
+
+
+
+
    // START initializeMap function
   this.initializeMap = function() {
   	var content = document.createElement("DIV");
@@ -385,67 +454,7 @@ var ViewModel = function() {
   }; // end updateYelpContent function
   ////// end yelp stuff
 
-  // GOOLE MAPS STUFF FOR CHANGEPLACE1
-  myLatlng = new google.maps.LatLng(30.2433481,-97.8703633);
-  mapOptions = {
-    zoom: 13,
-    center: myLatlng
-  };
-  // var sv = new google.maps.StreetViewService();
-  markers = [];
 
-  // function called when you click on a place in the list
-  this.changePlace1 = function(place, event) {
-  	console.log(" in changeplace")
- 	  self.currentPlace(place);
- 	  self.callYelpAPI();
- 	  // infowindow.open(map);
-    // infowindow.setContent('<div id="content">' + '<h3 id="placeName">' + place.name + '</h3>'+ '</div>')
-		// all placeList not bold
-		var placeItems = document.getElementsByClassName("placeListItem");
-		for (var i = 0; i < placeItems.length; i++) {
-			var placeItem = placeItems[i];
-			placeItem.style.fontWeight = "normal";
-		}
-
-		var context = ko.contextFor(event.target);
-		var tabsDivArray = document.getElementsByClassName("tabsDiv");
-		for (var i = 0; i < tabsDivArray.length; i++) {
-			var tabsDiv = tabsDivArray[i];
-			if ($(tabsDiv).is(':visible')) {
-				$(tabsDiv).slideToggle();
-			}
-		}
-
-		var tabs = document.getElementById("tabsDiv" + context.$index());
-		// also want to close all open tabDivs...
-		$(tabs).slideToggle();
-		$(".extra").remove();
-		tabs.style.display = "inline-block";
-		$(tabs).prev()[0].style.fontWeight = 'bold';
-		// insert blank div behind to lower other list items
-		$(event.target).next().append("<div class='extra' stye='position: relative;height: 200px;'></div>");
-
-		var nextID = $(event.target).next()[0].id;
-		var targetIndex = nextID.substring(nextID.length - 1, nextID.length);
-		document.getElementById("tabRadioWiki" + targetIndex).checked = true;
-
-		// GOOGLE MAPS STUFF called on ChangePlace
-  	// panTo place
-  	var position = new google.maps.LatLng(place.latitude(),place.longitude());
-
-  	window.map.panTo(position);
-  	window.map.setZoom(17);
-
-  	markers.forEach(function(marker) {
-  		if (marker.position.A.toFixed(6) == place.latitude && marker.position.F.toFixed(6) == place.longitude) {
-  			marker.setAnimation(google.maps.Animation.BOUNCE);
-  			window.setTimeout(function() {
-  				marker.setAnimation(null);
-  			}, 3500);
-  		}
-  	});
-  }; // end function changePlace1
 
 
 
