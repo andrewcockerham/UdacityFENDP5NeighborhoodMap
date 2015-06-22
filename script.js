@@ -192,6 +192,7 @@ var ViewModel = function() {
     window.map.fitBounds(defaultBounds);
 
     infobox = new InfoBox({
+			// content: '<div id="infobox">' + '<h3 id="placeName">' + place.name  +'</h3>'+ '</div>',
 			content: '<div id="infobox">The contents of your info box. Its very easy to create and customize.</div>',
 			// content: document.getElementById("infobox").innerHTML,
 			disableAutoPan: false,
@@ -237,6 +238,7 @@ var ViewModel = function() {
 
     	  infobox.open(map, marker);
     	  // infowindow.open(map, marker);
+    	  infobox.setContent('<div id="infobox">' + '<h3 id="placeName">' + place.name + '</h3></div>');
     	  // infowindow.setContent('<div id="content">' + '<h3 id="placeName">' + place.name + '</h3>'+ '</div>');
     	  // clickedMarker = marker;
 				// var pin = new google.maps.MVCObject();
