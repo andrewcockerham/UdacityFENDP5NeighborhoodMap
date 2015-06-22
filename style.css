@@ -237,6 +237,6 @@ span.stars span {
     -webkit-box-shadow: 0 0  8px #000;
     box-shadow: 0 0 8px #000;
 }
-.placeName {
+#placeName {
   text-decoration: underline;
 }
