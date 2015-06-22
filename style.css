@@ -199,6 +199,7 @@ p.link a:hover {
 }
 a {
 	color: blue;
+  text-decoration: underline;
 	/*color: #612e76;*/
 }
 .extra {
