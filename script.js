@@ -210,7 +210,7 @@ var ViewModel = function() {
 				var placeItem = placeItems[i];
 				placeItem.style.fontWeight = "normal";
 			}
-			console.log("target" + event.target);
+			console.log("target" + event);
 			var context = ko.contextFor(event.target);
 			var tabsDivArray = document.getElementsByClassName("tabsDiv");
 			for (var i = 0; i < tabsDivArray.length; i++) {
