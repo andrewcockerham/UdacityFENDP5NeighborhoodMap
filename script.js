@@ -198,7 +198,7 @@ var ViewModel = function() {
 	  // function called when you click on a place in the list
 	  this.changePlace1 = function(place, event) {
 	  	console.log("in changeplace")
-	  	console.log("place " + place);
+	  	console.log("place " + place.name);
 	 	  self.currentPlace(place);
 	 	  // self.callYelpAPI();
 	 	  // infowindow.open(map);
