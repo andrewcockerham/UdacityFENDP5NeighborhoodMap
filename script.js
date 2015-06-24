@@ -211,7 +211,9 @@ var ViewModel = function() {
 			}
 			console.log("target " + event);
 			var context = ko.contextFor(event.target);
+			console.log("contenxt" + context);
 			var tabsDivArray = document.getElementsByClassName("tabsDiv");
+			console.log("tabsDivArray" + tabsDivArray);
 			for (var i = 0; i < tabsDivArray.length; i++) {
 				var tabsDiv = tabsDivArray[i];
 				if ($(tabsDiv).is(':visible')) {
