@@ -204,7 +204,8 @@ var ViewModel = function() {
 	  	console.log(place.name);
 	  	// console.
 	  	// console.log(place().name);
-	 	  self.currentPlace(place);
+	  	console.log(self.currentPlace());
+	  	self.currentPlace(place);
 	 	  console.log(self.currentPlace());
 	 	  // self.callYelpAPI();
 	 	  // infowindow.open(map);
