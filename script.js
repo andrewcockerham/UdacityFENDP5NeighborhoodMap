@@ -200,9 +200,9 @@ var ViewModel = function() {
 	  	console.log("in changeplace")
 	  	console.log("place ");
 	  	console.log(place);
-	  	console.log(place());
-	  	console.log(place().name);
-	  	console.log(place().name);
+	  	// console.log(place());
+	  	console.log(place.name);
+	  	// console.log(place().name);
 	 	  self.currentPlace(place);
 	 	  // self.callYelpAPI();
 	 	  // infowindow.open(map);
