@@ -206,7 +206,7 @@ var ViewModel = function() {
 	  	// console.log(place().name);
 	  	console.log(self.currentPlace().name());
 	  	self.currentPlace(place);
-	 	  console.log(self.currentPlace());
+	 	  console.log(self.currentPlace().name());
 	 	  // self.callYelpAPI();
 	 	  // infowindow.open(map);
 	    // infowindow.setContent('<div id="content">' + '<h3 id="placeName">' + place.name + '</h3>'+ '</div>')
