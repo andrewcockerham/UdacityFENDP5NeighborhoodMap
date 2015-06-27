@@ -240,3 +240,7 @@ span.stars span {
 #placeName {
   text-decoration: underline;
 }
+.noPadding {
+  padding-left: 0px;
+  padding-right: 0px;
+}
