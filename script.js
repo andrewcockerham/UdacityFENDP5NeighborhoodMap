@@ -201,7 +201,7 @@ var ViewModel = function() {
 	  	console.log("place ");
 	  	console.log(place);
 	  	// console.log(place());
-	  	console.log(place.name);
+	  	console.log(place.name());
 	  	// console.
 	  	// console.log(place().name);
 	  	console.log(self.currentPlace());
