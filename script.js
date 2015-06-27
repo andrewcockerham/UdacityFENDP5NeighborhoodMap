@@ -199,14 +199,11 @@ var ViewModel = function() {
 	  this.changePlace1 = function(place, event) {
 	  	console.log("in changeplace")
 	  	console.log("place ");
-	  	console.log(place);
-	  	// console.log(place());
-	  	console.log(place.name());
-	  	// console.
-	  	// console.log(place().name);
+	  	// console.log(place);
+	  	// console.log(place.name());
 	  	console.log(self.currentPlace().name());
 	  	self.currentPlace(place);
-	 	  console.log(self.currentPlace());
+	 	  console.log(self.currentPlace().name());
 	 	  // self.callYelpAPI();
 	 	  // infowindow.open(map);
 	    // infowindow.setContent('<div id="content">' + '<h3 id="placeName">' + place.name + '</h3>'+ '</div>')
@@ -216,12 +213,12 @@ var ViewModel = function() {
 				var placeItem = placeItems[i];
 				placeItem.style.fontWeight = "normal";
 			}
-			console.log("target " + event);
+			// console.log("target " + event);
 			var context = ko.contextFor(event.target);
-			console.log("contenxt" + context);
+			// console.log("contenxt" + context);
 			var tabsDivArray = document.getElementsByClassName("tabsDiv");
-			console.log("tabsDivArray" + tabsDivArray);
-			console.log(tabsDivArray);
+			// console.log("tabsDivArray" + tabsDivArray);
+			// console.log(tabsDivArray);
 			for (var i = 0; i < tabsDivArray.length; i++) {
 				var tabsDiv = tabsDivArray[i];
 				if ($(tabsDiv).is(':visible')) {
