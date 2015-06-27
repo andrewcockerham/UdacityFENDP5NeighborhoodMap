@@ -148,7 +148,7 @@ h1 span {
   z-index: 2;
   display: none;
   overflow: hidden;
-  width: 90%;
+  /*width: 90%;*/
   /*width: 100%;*/
   font-size: 1em;
   /*font-size: 17px;*/
