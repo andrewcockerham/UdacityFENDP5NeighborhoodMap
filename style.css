@@ -3,6 +3,9 @@ html, body, #map-canvas {
   margin: 0px;
   padding: 0px
 }
+ul {
+  list-style-type: none;
+}
 #locationsList {
 	/*background-color: #fff;*/
 	font-family: Roboto;
