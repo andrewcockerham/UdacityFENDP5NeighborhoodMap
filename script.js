@@ -197,14 +197,8 @@ var ViewModel = function() {
 
 	  // function called when you click on a place in the list
 	  this.changePlace1 = function(place, event) {
-	  	console.log("in changeplace")
-	  	console.log("place ");
-	  	// console.log(place);
-	  	// console.log(place.name());
-	  	console.log(self.currentPlace().name());
 	  	self.currentPlace(place);
-	 	  console.log(self.currentPlace().name());
-	 	  // self.callYelpAPI();
+	 	  self.callYelpAPI();
 	 	  // infowindow.open(map);
 	    // infowindow.setContent('<div id="content">' + '<h3 id="placeName">' + place.name + '</h3>'+ '</div>')
 			// all placeList not bold
