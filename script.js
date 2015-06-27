@@ -225,7 +225,7 @@ var ViewModel = function() {
 					$(tabsDiv).slideToggle();
 				}
 			}
-
+			console.log(context.$index());
 			var tabs = document.getElementById("tabsDiv" + context.$index());
 			console.log("tabs");
 			console.log(tabs);
