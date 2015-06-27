@@ -22,9 +22,10 @@
 		<div id="locationsList" class="hoverOnMap">
 			<div class="container-fluid" style="pointer-events: none;">
 				<div class="row" style="pointer-events: none;">
-			<ul class="col-md-4 col-sm-5" data-bind="foreach: placeList" style="-webkit-padding-start: 10px;margin-top: 50px;background: white; pointer-events: initial;">
+			<ul class="col-md-4 col-sm-5" data-bind="foreach: placeList" style="-webkit-padding-start: 10px;margin-top: 50px;background: white; pointer-events: initial; border-style: solid;border-width:1px;">
 				<li data-bind="text: $data.name, click: $parent.changePlace1" class="placeListItem"></li>
-				<div class="tabsDiv col-md-12 col-sm-12" id="" style="display: none; color: #9b59b6; padding-left: 0px; padding-right: 0px" >
+				<div class="tabsDiv col-md-12 col-sm-12" id="" style="display: none; padding-left: 0px; padding-right: 0px border-style: solid;border-width:1px;" >
+				<!--  color: #9b59b6; -->
 					<ul class="tabs col-md-12 col-sm-12" style="padding-left: 0px; padding-right: 0px">
 					    <li style=" padding-left: 0px; padding-right: 0px">
 					        <input type="radio" name="tabs" id="tab1" checked class="inputRadio"/>
@@ -97,11 +98,9 @@
 
   // get all tabDiv elements and add id with index to each one
   	var tabsDivArray = document.getElementsByClassName("tabsDiv");
-  	console.log(tabsDivArray.length)
   	for (var i = 0; i < tabsDivArray.length; i++) {
   		var tabsDiv = tabsDivArray[i];
   		tabsDiv.id = 'tabsDiv' + i.toString();
-  		console.log(tabsDiv.id);
   	};
   	var tabsRadioArray = document.getElementsByClassName("inputRadio");
   	var j = 0
