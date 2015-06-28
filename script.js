@@ -313,8 +313,11 @@ var ViewModel = function() {
     	google.maps.event.addListener(marker, 'click', function() {
     		console.log(place.name)
     		console.log(places.indexOf(place)) //THIS LINE
-    		// console.log(self.placeList().indexOf(place)) //THIS LINE
-    		// console.log(self.placeList()[0].name()) //THIS LINE
+
+    		var tabs = document.getElementById("tabsDiv" + places.indexOf(place));
+    		console.log(tabs);
+    		// $(tabs).slideToggle();
+
     	  map.setZoom(15);
     	  map.panTo(marker.getPosition());
     	  marker.setAnimation(google.maps.Animation.BOUNCE);
