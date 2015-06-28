@@ -314,12 +314,23 @@ var ViewModel = function() {
     		console.log(place.name)
     		console.log(places.indexOf(place)) //THIS LINE
 
+    		var tabsDivArray = document.getElementsByClassName("tabsDiv");
+    		// console.log("tabsDivArray" + tabsDivArray);
+    		// console.log(tabsDivArray);
+    		for (var i = 0; i < tabsDivArray.length; i++) {
+    			var tabsDiv = tabsDivArray[i];
+    			if ($(tabsDiv).is(':visible')) {
+    				$(tabsDiv).slideToggle();
+    			}
+    		}
+
     		var tabs = document.getElementById("tabsDiv" + places.indexOf(place));
     		console.log(tabs);
     		$(tabs).slideToggle();
     		document.getElementById("tabRadioWiki" + places.indexOf(place)).checked = true;
     		$(tabs).append("<div class='extra col-md-5 col-sm-12' stye='position: relative;height: 200px;'></div>");
 
+    		// resize extra
     		  	var tabs1 = $(".extra").parent().find(".tab-content");
     				// loop through and find the one that is visible
     				for (var i = 0; i < tabs1.length; i++) {
@@ -329,6 +340,8 @@ var ViewModel = function() {
     						// $(".extra").height($(tab).height() + 55)
     					};
     				};
+    		// close any open tabs
+
 
     	  map.setZoom(15);
     	  map.panTo(marker.getPosition());
