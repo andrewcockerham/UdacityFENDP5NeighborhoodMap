@@ -401,6 +401,7 @@ var ViewModel = function() {
   this.showDropdown = function(place) {
   	var tabs = document.getElementById("tabsDiv" + places.indexOf(place));
   	$(tabs).slideToggle();
+  	console.log("tabRadioWiki" + places.indexOf(place));
   	console.log(document.getElementById("tabRadioWiki"));
   	document.getElementById("tabRadioWiki" + places.indexOf(place)).checked = true;
   	$(tabs).prev()[0].style.fontWeight = 'bold';
