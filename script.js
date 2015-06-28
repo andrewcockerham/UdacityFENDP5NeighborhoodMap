@@ -324,6 +324,7 @@ var ViewModel = function() {
     	markers.push(marker);
     	google.maps.event.addListener(marker, 'click', function() {
     		console.log(place.name)
+    		console.log(place)
     		console.log(places.indexOf(place)) //THIS LINE
 
     		// close any open tabs
