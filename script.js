@@ -16,7 +16,7 @@ var places = [
 		instagramWidget: 'no Instagram account'
 	},
 	{
-		name: "Reds",
+		name: "Reds Indoor Shooting Range",
 		address: "6200 Hwy 290 Austin, TX 78735",
 		mapSrc: "Red's+Indoor+Range",
 		latitude: 30.236278,
@@ -32,7 +32,7 @@ var places = [
 		instagramWidget: 'no Instagram account'
 	},
 	{
-		name: "Freescale",
+		name: "Freescale Semiconductor",
 		address: "6501 W William Cannon Dr Austin, TX 78735",
 		mapSrc: "Freescale+Semiconductor+Inc",
 		latitude: 30.238327,
@@ -48,7 +48,7 @@ var places = [
 		instagramWidget: '<iframe src="http://snapwidget.com/sc/?h=ZnJlZXNjYWxlfGlufDE1MHwzfDN8fG5vfDV8ZmFkZUlufG9uU3RhcnR8eWVzfG5v&ve=310515" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%; height:150px"></iframe>'
 	},
 	{
-		name: "Verona",
+		name: "Verona Italian Restaurant",
 		address: "7101 TX-71 Austin, TX 78735",
 		mapSrc: "Verona+Ristorante+Italino",
 		latitude: 30.235072,
@@ -80,7 +80,7 @@ var places = [
 		instagramWidget: '<!-- SnapWidget --><iframe src="http://snapwidget.com/sc/?u=dGhlbmF0dXJhbGdhcmRlbmVyfGlufDE1MHwzfDF8fHllc3wyfGZhZGVJbnxvblN0YXJ0fG5vfHllcw==&ve=310515" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%; height:150px"></iframe>'
 	},
 	{
-		name: "AMD",
+		name: "AMD Advanced Micro Devices",
 		address: "7171 Southwest Pkwy Austin, TX 78735",
 		mapSrc: "AMD",
 		latitude: 30.251333,
@@ -96,7 +96,7 @@ var places = [
 		instagramWidget: '<!-- SnapWidget --><iframe src="http://snapwidget.com/sc/?u=YW1kfGlufDE1MHwzfDF8fHllc3wyfGZhZGVJbnxvblN0YXJ0fG5vfHllcw==&ve=310515" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%; height:150px"></iframe>'
 	},
 	{
-		name: "Hecho en Mexico",
+		name: "Hecho en Mexico Restaurant",
 		address: "6001 W William Cannon Dr # 301 Austin, TX 78749",
 		mapSrc: "Hecho+En+Mexico",
 		latitude: 30.228475,
@@ -219,10 +219,8 @@ var ViewModel = function() {
 					$(tabsDiv).slideToggle();
 				}
 			}
-			console.log(context.$index());
+			// console.log(context.$index());
 			var tabs = document.getElementById("tabsDiv" + context.$index());
-			console.log("tabs");
-			console.log(tabs);
 			// also want to close all open tabDivs...
 			$(tabs).slideToggle();
 			$(".extra").remove();
