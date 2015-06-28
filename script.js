@@ -311,7 +311,7 @@ var ViewModel = function() {
 
     	markers.push(marker);
     	google.maps.event.addListener(marker, 'click', function() {
-    		console.log(place.name())
+    		console.log(place)
     	  map.setZoom(15);
     	  map.panTo(marker.getPosition());
     	  marker.setAnimation(google.maps.Animation.BOUNCE);
