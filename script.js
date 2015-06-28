@@ -209,8 +209,8 @@ var ViewModel = function() {
 	    console.log(self.placeList(self.placeList().indexOf(place)));
 	    self.closeDropdown();
 	    // self.showDropdown(self.currentPlace());
-	    // self.showDropdown(place);
-	    self.showDropdown(self.placeList(self.placeList().indexOf(place)));
+	    self.showDropdown(place);
+	    // self.showDropdown(self.placeList(self.placeList().indexOf(place)));
 
 
 			// all placeList not bold
@@ -408,6 +408,8 @@ var ViewModel = function() {
 
 
   this.showDropdown = function(place) {
+  	console.log(places.indexOf(place))
+  	console.log(self.placeList().indexOf(place));
   	var tabs = document.getElementById("tabsDiv" + places.indexOf(place));
   	$(tabs).slideToggle();
   	console.log("tabRadioWiki" + places.indexOf(place));
