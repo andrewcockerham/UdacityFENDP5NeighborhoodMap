@@ -316,32 +316,24 @@ var ViewModel = function() {
 
     		// close any open tabs
     		self.closeDropdown();
-    		// var tabsDivArray = document.getElementsByClassName("tabsDiv");
-    		// // console.log("tabsDivArray" + tabsDivArray);
-    		// // console.log(tabsDivArray);
-    		// for (var i = 0; i < tabsDivArray.length; i++) {
-    		// 	var tabsDiv = tabsDivArray[i];
-    		// 	if ($(tabsDiv).is(':visible')) {
-    		// 		$(tabsDiv).slideToggle();
-    		// 	}
-    		// }
 
-    		var tabs = document.getElementById("tabsDiv" + places.indexOf(place));
-    		console.log(tabs);
-    		$(tabs).slideToggle();
-    		document.getElementById("tabRadioWiki" + places.indexOf(place)).checked = true;
-    		$(tabs).append("<div class='extra col-md-5 col-sm-12' stye='position: relative;height: 200px;'></div>");
+    		// open dropdown
+    		self.showDropdown();
+    		// var tabs = document.getElementById("tabsDiv" + places.indexOf(place));
+    		// $(tabs).slideToggle();
+    		// document.getElementById("tabRadioWiki" + places.indexOf(place)).checked = true;
+    		// $(tabs).append("<div class='extra col-md-5 col-sm-12' stye='position: relative;height: 200px;'></div>");
 
     		// resize extra
-    		  	var tabs1 = $(".extra").parent().find(".tab-content");
-    				// loop through and find the one that is visible
-    				for (var i = 0; i < tabs1.length; i++) {
-    					var tab = tabs1[i]
-    					if ($(tab).is(':visible')) {
-    						$(".extra").height($(tab).height());
-    						// $(".extra").height($(tab).height() + 55)
-    					};
-    				};
+    		  // 	var tabs1 = $(".extra").parent().find(".tab-content");
+    				// // loop through and find the one that is visible
+    				// for (var i = 0; i < tabs1.length; i++) {
+    				// 	var tab = tabs1[i]
+    				// 	if ($(tab).is(':visible')) {
+    				// 		$(".extra").height($(tab).height());
+    				// 		// $(".extra").height($(tab).height() + 55)
+    				// 	};
+    				// };
 
 
 
@@ -419,7 +411,19 @@ var ViewModel = function() {
 
 
   this.showDropdown = function() {
-
+  	var tabs = document.getElementById("tabsDiv" + places.indexOf(place));
+  	$(tabs).slideToggle();
+  	document.getElementById("tabRadioWiki" + places.indexOf(place)).checked = true;
+  	$(tabs).append("<div class='extra col-md-5 col-sm-12' stye='position: relative;height: 200px;'></div>");
+  	  	var tabs1 = $(".extra").parent().find(".tab-content");
+  			// loop through and find the one that is visible
+  			for (var i = 0; i < tabs1.length; i++) {
+  				var tab = tabs1[i]
+  				if ($(tab).is(':visible')) {
+  					$(".extra").height($(tab).height());
+  					// $(".extra").height($(tab).height() + 55)
+  				};
+  			};
   }
 
   this.closeDropdown = function() {
