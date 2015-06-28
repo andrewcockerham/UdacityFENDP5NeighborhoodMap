@@ -318,7 +318,7 @@ var ViewModel = function() {
     		self.closeDropdown();
 
     		// open dropdown
-    		self.showDropdown();
+    		self.showDropdown(place);
     		// var tabs = document.getElementById("tabsDiv" + places.indexOf(place));
     		// $(tabs).slideToggle();
     		// document.getElementById("tabRadioWiki" + places.indexOf(place)).checked = true;
@@ -410,7 +410,7 @@ var ViewModel = function() {
   }; // END this.initializeMap
 
 
-  this.showDropdown = function() {
+  this.showDropdown = function(place) {
   	var tabs = document.getElementById("tabsDiv" + places.indexOf(place));
   	$(tabs).slideToggle();
   	document.getElementById("tabRadioWiki" + places.indexOf(place)).checked = true;
