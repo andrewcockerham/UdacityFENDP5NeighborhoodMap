@@ -222,15 +222,15 @@ var ViewModel = function() {
 			// console.log("target " + event);
 			var context = ko.contextFor(event.target);
 			// console.log("contenxt" + context);
-			var tabsDivArray = document.getElementsByClassName("tabsDiv");
-			// // console.log("tabsDivArray" + tabsDivArray);
-			// // console.log(tabsDivArray);
-			for (var i = 0; i < tabsDivArray.length; i++) {
-				var tabsDiv = tabsDivArray[i];
-				if ($(tabsDiv).is(':visible')) {
-					$(tabsDiv).slideToggle();
-				}
-			}
+			// var tabsDivArray = document.getElementsByClassName("tabsDiv");
+			// // // console.log("tabsDivArray" + tabsDivArray);
+			// // // console.log(tabsDivArray);
+			// for (var i = 0; i < tabsDivArray.length; i++) {
+			// 	var tabsDiv = tabsDivArray[i];
+			// 	if ($(tabsDiv).is(':visible')) {
+			// 		$(tabsDiv).slideToggle();
+			// 	}
+			// }
 			// console.log(context.$index());
 			var tabs = document.getElementById("tabsDiv" + context.$index());
 			// // also want to close all open tabDivs...
