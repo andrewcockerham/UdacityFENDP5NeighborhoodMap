@@ -201,11 +201,13 @@ var ViewModel = function() {
 	 	  self.callYelpAPI();
 	 	  // infowindow.open(map);
 	    // infowindow.setContent('<div id="content">' + '<h3 id="placeName">' + place.name + '</h3>'+ '</div>')
-
+	    console.log(place);
+	    // console.log()
+	    console.log(places.indexOf(self.currentPlace()));
 	    self.closeDropdown();
 	    // self.showDropdown(self.currentPlace());
 	    self.showDropdown(place);
-	    console.log(place);
+
 
 			// all placeList not bold
 			// var placeItems = document.getElementsByClassName("placeListItem");
