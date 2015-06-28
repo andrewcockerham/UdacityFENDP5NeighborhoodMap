@@ -413,6 +413,7 @@ var ViewModel = function() {
   	// console.log(self.placeList());
   	var tabs = document.getElementById("tabsDiv" + places.indexOf(place));
   	$(tabs).slideToggle();
+  	$(".extra").remove();
   	// console.log("tabRadioWiki" + places.indexOf(place));
   	// console.log(document.getElementById("tabRadioWiki"));
   	document.getElementById("tabRadioWiki" + places.indexOf(place)).checked = true;
@@ -425,6 +426,7 @@ var ViewModel = function() {
   				if ($(tab).is(':visible')) {
   					if ($(".extra").is(":visible")) {
   						console.log("visible")
+
   						return
   					} else {
 	  					$(".extra").height($(tab).height());
