@@ -320,6 +320,16 @@ var ViewModel = function() {
     		document.getElementById("tabRadioWiki" + places.indexOf(place)).checked = true;
     		$(tabs).append("<div class='extra col-md-5 col-sm-12' stye='position: relative;height: 200px;'></div>");
 
+    		  	var tabs1 = $(".extra").parent().find(".tab-content");
+    				// loop through and find the one that is visible
+    				for (var i = 0; i < tabs1.length; i++) {
+    					var tab = tabs1[i]
+    					if ($(tab).is(':visible')) {
+    						$(".extra").height($(tab).height());
+    						// $(".extra").height($(tab).height() + 55)
+    					};
+    				};
+
     	  map.setZoom(15);
     	  map.panTo(marker.getPosition());
     	  marker.setAnimation(google.maps.Animation.BOUNCE);
