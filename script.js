@@ -201,12 +201,12 @@ var ViewModel = function() {
 	 	  self.callYelpAPI();
 	 	  // infowindow.open(map);
 	    // infowindow.setContent('<div id="content">' + '<h3 id="placeName">' + place.name + '</h3>'+ '</div>')
-	    console.log(place);
-	    // console.log()
-	    console.log(places.indexOf(self.currentPlace()));
-	    console.log(places.indexOf(place));
-	    console.log(self.placeList().indexOf(place));
-	    console.log(self.placeList(self.placeList().indexOf(place)));
+	    // console.log(place);
+	    // // console.log()
+	    // console.log(places.indexOf(self.currentPlace()));
+	    // console.log(places.indexOf(place));
+	    // console.log(self.placeList().indexOf(place));
+	    // console.log(self.placeList(self.placeList().indexOf(place)));
 	    self.closeDropdown();
 	    // self.showDropdown(self.currentPlace());
 	    self.showDropdown(place);
@@ -410,11 +410,11 @@ var ViewModel = function() {
   this.showDropdown = function(place) {
   	console.log("showDropdown");
   	console.log(places.indexOf(place))
-  	console.log(self.placeList());
+  	// console.log(self.placeList());
   	var tabs = document.getElementById("tabsDiv" + places.indexOf(place));
   	$(tabs).slideToggle();
-  	console.log("tabRadioWiki" + places.indexOf(place));
-  	console.log(document.getElementById("tabRadioWiki"));
+  	// console.log("tabRadioWiki" + places.indexOf(place));
+  	// console.log(document.getElementById("tabRadioWiki"));
   	document.getElementById("tabRadioWiki" + places.indexOf(place)).checked = true;
   	$(tabs).prev()[0].style.fontWeight = 'bold';
   	$(tabs).append("<div class='extra col-md-5 col-sm-12' stye='position: relative;height: 200px;'></div>");
