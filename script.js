@@ -211,7 +211,8 @@ var ViewModel = function() {
 	    // self.showDropdown(self.currentPlace());
 	    // self.showDropdown(place);
 	    // self.showDropdown(self.placeList(self.placeList().indexOf(place)));
-
+	    console.log(markers);
+	    infobox.open(map, marker);
 
 			// all placeList not bold
 			var placeItems = document.getElementsByClassName("placeListItem");
