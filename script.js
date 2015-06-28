@@ -430,6 +430,7 @@ var ViewModel = function() {
   }
 
   this.closeDropdown = function() {
+  	console.log("closeDropdown");
   	var tabsDivArray = document.getElementsByClassName("tabsDiv");
   	for (var i = 0; i < tabsDivArray.length; i++) {
   		var tabsDiv = tabsDivArray[i];
