@@ -314,15 +314,17 @@ var ViewModel = function() {
     		console.log(place.name)
     		console.log(places.indexOf(place)) //THIS LINE
 
-    		var tabsDivArray = document.getElementsByClassName("tabsDiv");
-    		// console.log("tabsDivArray" + tabsDivArray);
-    		// console.log(tabsDivArray);
-    		for (var i = 0; i < tabsDivArray.length; i++) {
-    			var tabsDiv = tabsDivArray[i];
-    			if ($(tabsDiv).is(':visible')) {
-    				$(tabsDiv).slideToggle();
-    			}
-    		}
+    		// close any open tabs
+    		self.closeDropdown();
+    		// var tabsDivArray = document.getElementsByClassName("tabsDiv");
+    		// // console.log("tabsDivArray" + tabsDivArray);
+    		// // console.log(tabsDivArray);
+    		// for (var i = 0; i < tabsDivArray.length; i++) {
+    		// 	var tabsDiv = tabsDivArray[i];
+    		// 	if ($(tabsDiv).is(':visible')) {
+    		// 		$(tabsDiv).slideToggle();
+    		// 	}
+    		// }
 
     		var tabs = document.getElementById("tabsDiv" + places.indexOf(place));
     		console.log(tabs);
@@ -340,7 +342,7 @@ var ViewModel = function() {
     						// $(".extra").height($(tab).height() + 55)
     					};
     				};
-    		// close any open tabs
+
 
 
     	  map.setZoom(15);
@@ -416,7 +418,19 @@ var ViewModel = function() {
   }; // END this.initializeMap
 
 
+  this.showDropdown = function() {
 
+  }
+
+  this.closeDropdown = function() {
+  	var tabsDivArray = document.getElementsByClassName("tabsDiv");
+  	for (var i = 0; i < tabsDivArray.length; i++) {
+  		var tabsDiv = tabsDivArray[i];
+  		if ($(tabsDiv).is(':visible')) {
+  			$(tabsDiv).slideToggle();
+  		}
+  	}
+  }
 
 
   // YELP RELATED CODE
