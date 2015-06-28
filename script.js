@@ -204,6 +204,8 @@ var ViewModel = function() {
 	    console.log(place);
 	    // console.log()
 	    console.log(places.indexOf(self.currentPlace()));
+	    console.log(places.indexOf(place));
+	    console.log(self.placeList().indexOf(place));
 	    self.closeDropdown();
 	    // self.showDropdown(self.currentPlace());
 	    self.showDropdown(place);
