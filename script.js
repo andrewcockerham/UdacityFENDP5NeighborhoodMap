@@ -203,7 +203,8 @@ var ViewModel = function() {
 	    // infowindow.setContent('<div id="content">' + '<h3 id="placeName">' + place.name + '</h3>'+ '</div>')
 
 	    self.closeDropdown();
-	    self.showDropdown(place);
+	    self.showDropdown(self.currentPlace());
+	    // self.showDropdown(place);
 
 			// all placeList not bold
 			// var placeItems = document.getElementsByClassName("placeListItem");
