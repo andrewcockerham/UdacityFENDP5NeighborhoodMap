@@ -316,7 +316,7 @@ var ViewModel = function() {
 
     		var tabs = document.getElementById("tabsDiv" + places.indexOf(place));
     		console.log(tabs);
-    		// $(tabs).slideToggle();
+    		$(tabs).slideToggle();
 
     	  map.setZoom(15);
     	  map.panTo(marker.getPosition());
