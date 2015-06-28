@@ -426,7 +426,7 @@ var ViewModel = function() {
   				if ($(tab).is(':visible')) {
   					if ($(".extra").is(":visible")) {
   						console.log("visible")
-
+  						$(".extra").remove();
   						return
   					} else {
 	  					$(".extra").height($(tab).height());
