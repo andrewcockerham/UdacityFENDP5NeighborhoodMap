@@ -45,7 +45,7 @@ var places = [
 		yelpImageSrc: "",
 		yelpLink: "",
 		twitterWidget: '<a class="twitter-timeline" href="https://twitter.com/Freescale" data-widget-id="605108887839113216">Tweets by @Freescale</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>',
-		instagramWidget: '<iframe src="http://snapwidget.com/sc/?h=ZnJlZXNjYWxlfGlufDE1MHwzfDN8fG5vfDV8ZmFkZUlufG9uU3RhcnR8eWVzfG5v&ve=310515" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:400px; height:150px"></iframe>'
+		instagramWidget: '<iframe src="http://snapwidget.com/sc/?h=ZnJlZXNjYWxlfGlufDE1MHwzfDN8fG5vfDV8ZmFkZUlufG9uU3RhcnR8eWVzfG5v&ve=310515" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%; height:150px"></iframe>'
 	},
 	{
 		name: "Verona",
@@ -77,7 +77,7 @@ var places = [
 		yelpImageSrc: "",
 		yelpLink: "",
 		twitterWidget: '<a class="twitter-timeline" href="https://twitter.com/TheNGAustin" data-widget-id="605114162574794753">Tweets by @TheNGAustin</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>',
-		instagramWidget: '<!-- SnapWidget --><iframe src="http://snapwidget.com/sc/?u=dGhlbmF0dXJhbGdhcmRlbmVyfGlufDE1MHwzfDF8fHllc3wyfGZhZGVJbnxvblN0YXJ0fG5vfHllcw==&ve=310515" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:400px; height:150px"></iframe>'
+		instagramWidget: '<!-- SnapWidget --><iframe src="http://snapwidget.com/sc/?u=dGhlbmF0dXJhbGdhcmRlbmVyfGlufDE1MHwzfDF8fHllc3wyfGZhZGVJbnxvblN0YXJ0fG5vfHllcw==&ve=310515" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%; height:150px"></iframe>'
 	},
 	{
 		name: "AMD",
@@ -93,7 +93,7 @@ var places = [
 		yelpImageSrc: "",
 		yelpLink: "",
 		twitterWidget: '<a class="twitter-timeline" href="https://twitter.com/AMD" data-widget-id="605115206897770496">Tweets by @AMD</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>',
-		instagramWidget: '<!-- SnapWidget --><iframe src="http://snapwidget.com/sc/?u=YW1kfGlufDE1MHwzfDF8fHllc3wyfGZhZGVJbnxvblN0YXJ0fG5vfHllcw==&ve=310515" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:400px; height:150px"></iframe>'
+		instagramWidget: '<!-- SnapWidget --><iframe src="http://snapwidget.com/sc/?u=YW1kfGlufDE1MHwzfDF8fHllc3wyfGZhZGVJbnxvblN0YXJ0fG5vfHllcw==&ve=310515" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%; height:150px"></iframe>'
 	},
 	{
 		name: "Hecho en Mexico",
