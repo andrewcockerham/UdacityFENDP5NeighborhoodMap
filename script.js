@@ -424,14 +424,14 @@ var ViewModel = function() {
   			for (var i = 0; i < tabs1.length; i++) {
   				var tab = tabs1[i]
   				if ($(tab).is(':visible')) {
-  					if ($(".extra").is(":visible")) {
-  						console.log("visible")
-  						$(".extra").remove();
-  						return
-  					} else {
+  					// if ($(".extra").is(":visible")) {
+  					// 	console.log("visible")
+  					// 	$(".extra").remove();
+  					// 	return
+  					// } else {
 	  					$(".extra").height($(tab).height());
 	  					// $(".extra").height($(tab).height() + 55)
-  					}
+  					// }
   				};
   			};
   }
