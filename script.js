@@ -312,7 +312,7 @@ var ViewModel = function() {
     	markers.push(marker);
     	google.maps.event.addListener(marker, 'click', function() {
     		console.log(place.name)
-    		console.log(self.placeList(0)) //THIS LINE
+    		console.log(self.placeList()[0]) //THIS LINE
     	  map.setZoom(15);
     	  map.panTo(marker.getPosition());
     	  marker.setAnimation(google.maps.Animation.BOUNCE);
