@@ -311,6 +311,7 @@ var ViewModel = function() {
 
     	markers.push(marker);
     	google.maps.event.addListener(marker, 'click', function() {
+    		console.log(place.name())
     	  map.setZoom(15);
     	  map.panTo(marker.getPosition());
     	  marker.setAnimation(google.maps.Animation.BOUNCE);
@@ -389,9 +390,9 @@ var ViewModel = function() {
 
   // YELP RELATED CODE
   this.callYelpAPI = function() {
-  	console.log("self = " + self)
-  	console.log("currentplace" + self.currentPlace().name())
-  	console.log("yelpID" + self.currentPlace().yelpID())
+  	// console.log("self = " + self)
+  	// console.log("currentplace" + self.currentPlace().name())
+  	// console.log("yelpID" + self.currentPlace().yelpID())
 
 		/////////////// YELP API STUFF
 		var YELP_CONSUMER_KEY = "N3DofJ4mIItoveG38brAHg";
