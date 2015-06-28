@@ -201,38 +201,42 @@ var ViewModel = function() {
 	 	  self.callYelpAPI();
 	 	  // infowindow.open(map);
 	    // infowindow.setContent('<div id="content">' + '<h3 id="placeName">' + place.name + '</h3>'+ '</div>')
-			// all placeList not bold
-			var placeItems = document.getElementsByClassName("placeListItem");
-			for (var i = 0; i < placeItems.length; i++) {
-				var placeItem = placeItems[i];
-				placeItem.style.fontWeight = "normal";
-			}
-			// console.log("target " + event);
-			var context = ko.contextFor(event.target);
-			// console.log("contenxt" + context);
-			var tabsDivArray = document.getElementsByClassName("tabsDiv");
-			// console.log("tabsDivArray" + tabsDivArray);
-			// console.log(tabsDivArray);
-			for (var i = 0; i < tabsDivArray.length; i++) {
-				var tabsDiv = tabsDivArray[i];
-				if ($(tabsDiv).is(':visible')) {
-					$(tabsDiv).slideToggle();
-				}
-			}
-			// console.log(context.$index());
-			var tabs = document.getElementById("tabsDiv" + context.$index());
-			// also want to close all open tabDivs...
-			$(tabs).slideToggle();
-			$(".extra").remove();
-			tabs.style.display = "block";
-			// tabs.style.display = "inline-block";
-			$(tabs).prev()[0].style.fontWeight = 'bold';
-			// insert blank div behind to lower other list items
-			$(event.target).next().append("<div class='extra col-md-5 col-sm-12' stye='position: relative;height: 200px;'></div>");
 
-			var nextID = $(event.target).next()[0].id;
-			var targetIndex = nextID.substring(nextID.length - 1, nextID.length);
-			document.getElementById("tabRadioWiki" + targetIndex).checked = true;
+	    self.closeDropdown();
+	    self.showDropdown(place);
+
+			// all placeList not bold
+			// var placeItems = document.getElementsByClassName("placeListItem");
+			// for (var i = 0; i < placeItems.length; i++) {
+			// 	var placeItem = placeItems[i];
+			// 	placeItem.style.fontWeight = "normal";
+			// }
+			// console.log("target " + event);
+			// var context = ko.contextFor(event.target);
+			// console.log("contenxt" + context);
+			// var tabsDivArray = document.getElementsByClassName("tabsDiv");
+			// // console.log("tabsDivArray" + tabsDivArray);
+			// // console.log(tabsDivArray);
+			// for (var i = 0; i < tabsDivArray.length; i++) {
+			// 	var tabsDiv = tabsDivArray[i];
+			// 	if ($(tabsDiv).is(':visible')) {
+			// 		$(tabsDiv).slideToggle();
+			// 	}
+			// }
+			// console.log(context.$index());
+			// var tabs = document.getElementById("tabsDiv" + context.$index());
+			// // also want to close all open tabDivs...
+			// $(tabs).slideToggle();
+			// $(".extra").remove();
+			// tabs.style.display = "block";
+			// tabs.style.display = "inline-block";
+			// $(tabs).prev()[0].style.fontWeight = 'bold';
+			// insert blank div behind to lower other list items
+			// $(event.target).next().append("<div class='extra col-md-5 col-sm-12' stye='position: relative;height: 200px;'></div>");
+
+			// var nextID = $(event.target).next()[0].id;
+			// var targetIndex = nextID.substring(nextID.length - 1, nextID.length);
+			// document.getElementById("tabRadioWiki" + targetIndex).checked = true;
 
 			// GOOGLE MAPS STUFF called on ChangePlace
 	  	// panTo place
