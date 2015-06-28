@@ -318,7 +318,7 @@ var ViewModel = function() {
     		console.log(tabs);
     		$(tabs).slideToggle();
     		document.getElementById("tabRadioWiki" + places.indexOf(place)).checked = true;
-    		$(tabs).next().append("<div class='extra col-md-5 col-sm-12' stye='position: relative;height: 200px;'></div>");
+    		$(tabs).append("<div class='extra col-md-5 col-sm-12' stye='position: relative;height: 200px;'></div>");
 
     	  map.setZoom(15);
     	  map.panTo(marker.getPosition());
