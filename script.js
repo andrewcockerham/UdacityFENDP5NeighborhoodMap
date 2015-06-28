@@ -112,7 +112,7 @@ var places = [
 		instagramWidget: 'no Instagram account'
 	},
 	{
-		name: "ACC Pinnacle",
+		name: "ACC Pinnacle Campus",
 		address: "7748 Hwy 290 Austin, TX 78736",
 		mapSrc: "Austin+Community+College:+Pinnacle+Campus",
 		latitude: 30.23152,
@@ -444,7 +444,7 @@ var ViewModel = function() {
   self.callYelpAPI();
 
   this.updateYelpContent = function(results) {
-  	// console.log(results.address)
+  	console.log(results.url)
   	self.currentPlace().yelpImageSrc(results.image_url);
   	self.currentPlace().yelpSnippet(results.snippet_text.toString());
   	self.currentPlace().yelpLink(results.url);
