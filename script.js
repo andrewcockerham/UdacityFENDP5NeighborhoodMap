@@ -423,8 +423,13 @@ var ViewModel = function() {
   			for (var i = 0; i < tabs1.length; i++) {
   				var tab = tabs1[i]
   				if ($(tab).is(':visible')) {
-  					$(".extra").height($(tab).height());
-  					// $(".extra").height($(tab).height() + 55)
+  					if ($(".extra").is(":visible")) {
+  						console.log("visible")
+  						return
+  					} else {
+	  					$(".extra").height($(tab).height());
+	  					// $(".extra").height($(tab).height() + 55)
+  					}
   				};
   			};
   }
