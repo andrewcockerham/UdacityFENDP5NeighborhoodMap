@@ -408,6 +408,7 @@ var ViewModel = function() {
 
 
   this.showDropdown = function(place) {
+  	console.log("showDropdown");
   	console.log(places.indexOf(place))
   	console.log(self.placeList().indexOf(place));
   	var tabs = document.getElementById("tabsDiv" + places.indexOf(place));
