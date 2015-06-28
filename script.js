@@ -208,7 +208,8 @@ var ViewModel = function() {
 	    console.log(self.placeList().indexOf(place));
 	    self.closeDropdown();
 	    // self.showDropdown(self.currentPlace());
-	    self.showDropdown(place);
+	    // self.showDropdown(place);
+	    self.showDropdown(self.placeList(self.placeList().indexOf(place)));
 
 
 			// all placeList not bold
