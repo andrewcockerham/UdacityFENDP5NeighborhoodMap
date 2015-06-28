@@ -214,7 +214,7 @@ var ViewModel = function() {
 	    console.log(markers);
 	    console.log(self.placeList().indexOf(place));
 	    console.log(markers[self.placeList().indexOf(place)]);
-	    infobox.open(map, marker);
+	    infobox.open(map, markers[self.placeList().indexOf(place)]);
 
 			// all placeList not bold
 			var placeItems = document.getElementsByClassName("placeListItem");
