@@ -419,6 +419,12 @@ var ViewModel = function() {
   			$(tabsDiv).slideToggle();
   		}
   	}
+  	// all placeList not bold
+  	var placeItems = document.getElementsByClassName("placeListItem");
+  	for (var i = 0; i < placeItems.length; i++) {
+  		var placeItem = placeItems[i];
+  		placeItem.style.fontWeight = "normal";
+  	}
   }
 
 
