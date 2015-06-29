@@ -377,7 +377,7 @@ var ViewModel = function() {
 	    }
 
 	    // For each place, get the icon, place name, and location.
-	    // searchMarkers = [];
+	    searchMarkers = [];
 	    var searchBounds = new google.maps.LatLngBounds();
 	    for (var i = 0, place; place = searchPlaces[i]; i++) {
 	      var image = {
@@ -406,6 +406,7 @@ var ViewModel = function() {
 	  // current map's viewport.
 	  google.maps.event.addListener(map, 'bounds_changed', function() {
 	    var bounds = map.getBounds();
+	    console.log(bounds);
 	    searchBox.setBounds(bounds);
 	  });
 ////////// copy past search
