@@ -161,6 +161,7 @@ var Place = function(data) {
 	this.yelpLink = ko.observable(data.yelpLink);
 	this.twitterWidget = ko.observable(data.twitterWidget);
 	this.instagramWidget = ko.observable(data.instagramWidget);
+	this.filter = ko.observable("");
 };
 
 ///// Knockout View Model
@@ -184,6 +185,32 @@ var ViewModel = function() {
 	//  size: new google.maps.Size(150,50),
 	//  // content: '<div id="content">'+ '<h3 id="placeName"></h3>'+ '</div>'
 	// });
+
+
+
+	//ko.utils.arrayFilter - filter the items using the filter text
+	// viewModel.filteredItems = ko.dependentObservable(function() {
+	//     var filter = this.filter().toLowerCase();
+	//     if (!filter) {
+	//         return this.items();
+	//     } else {
+	//         return ko.utils.arrayFilter(this.items(), function(item) {
+	//             return ko.utils.stringStartsWith(item.name().toLowerCase(), filter);
+	//         });
+	//     }
+	// }, viewModel);
+
+	this.filteredItems = ko.computed(function() {
+	    var filter = this.filter().toLowerCase();
+	    if (!filter) {
+	        return this.placeList();
+	    } else {
+	        return ko.utils.arrayFilter(this.placeList(), function(item) {
+	            return ko.utils.stringStartsWith(place.name().toLowerCase(), filter);
+	        });
+	    }
+	}, this);
+
 
 
 	  // GOOLE MAPS STUFF FOR CHANGEPLACE1
