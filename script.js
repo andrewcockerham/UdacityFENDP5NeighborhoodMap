@@ -200,16 +200,16 @@ var ViewModel = function() {
 	//     }
 	// }, viewModel);
 
-	this.filteredItems = ko.computed(function() {
-	    var filter = this.filter().toLowerCase();
-	    if (!filter) {
-	        return this.placeList();
-	    } else {
-	        return ko.utils.arrayFilter(this.placeList(), function(item) {
-	            return ko.utils.stringStartsWith(place.name().toLowerCase(), filter);
-	        });
-	    }
-	}, this);
+	// this.filteredItems = ko.computed(function() {
+	//     var filter = this.filter().toLowerCase();
+	//     if (!filter) {
+	//         return this.placeList();
+	//     } else {
+	//         return ko.utils.arrayFilter(this.placeList(), function(item) {
+	//             return ko.utils.stringStartsWith(place.name().toLowerCase(), filter);
+	//         });
+	//     }
+	// }, this);
 
 
 
