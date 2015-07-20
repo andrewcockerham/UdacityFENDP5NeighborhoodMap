@@ -161,7 +161,7 @@ var Place = function(data) {
 	this.yelpLink = ko.observable(data.yelpLink);
 	this.twitterWidget = ko.observable(data.twitterWidget);
 	this.instagramWidget = ko.observable(data.instagramWidget);
-	this.filter = ko.observable("");
+
 };
 
 ///// Knockout View Model
@@ -173,7 +173,7 @@ var ViewModel = function() {
     self.placeList.push( new Place(placeItem) );
   });
   this.currentPlace = ko.observable( this.placeList()[0] );
-
+  this.filter = ko.observable("");
   ///// START GOOGLE MAPS STUFF
   // var image = {url: 'customPin.svg'};
   var shape = {
