@@ -206,7 +206,7 @@ var ViewModel = function() {
 	        return this.placeList();
 	    } else {
 	        return ko.utils.arrayFilter(this.placeList(), function(item) {
-	            return ko.utils.stringStartsWith(place.name().toLowerCase(), filter);
+	            return ko.utils.stringStartsWith(item.name().toLowerCase(), filter);
 	        });
 	    }
 	}, this);
