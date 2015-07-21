@@ -263,6 +263,8 @@ var ViewModel = function() {
 			// }
 			// console.log(context.$index());
 			var tabs = document.getElementById("tabsDiv" + context.$index());
+			console.log(tabs)
+			console.log(context.$index);
 			// // also want to close all open tabDivs...
 			$(tabs).slideToggle();
 			$(".extra").remove();
