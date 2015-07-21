@@ -206,8 +206,7 @@ var ViewModel = function() {
 	        return this.placeList();
 	    } else {
 	        return ko.utils.arrayFilter(this.placeList(), function(item) {
-	            // return ko.utils.stringStartsWith(item.name().toLowerCase(), filter);
-	            return item.name().toLowerCase().indexOf(filter) !== -1;
+	        	return item.name().toLowerCase().indexOf(filter) !== -1;
 	        });
 	    }
 	}, this);
@@ -636,12 +635,12 @@ var ViewModel = function() {
   }; // end updateYelpContent function
   ////// end yelp stuff
 
-  ko.utils.stringStartsWith = function (string, startsWith) {
-      string = string || "";
-      if (startsWith.length > string.length)
-          return false;
-      return string.substring(0, startsWith.length) === startsWith;
-  },
+  // ko.utils.stringStartsWith = function (string, startsWith) {
+  //     string = string || "";
+  //     if (startsWith.length > string.length)
+  //         return false;
+  //     return string.substring(0, startsWith.length) === startsWith;
+  // },
 
 
 
