@@ -18,11 +18,11 @@
 
 	<!-- MAKE TABS OPEN UNDER EACH PLACE WHEN CLICKED, ONE FOR WIKIPEDIA, ONE FOR FLICKR IMAGE, ONE FOR YELP, ONE FOR WEBSITE, one FOR FOURSQUARE, instagram, twitter, etc -->
 	<!-- planes API? -->
-
+<!-- placeList -->
 		<div id="locationsList" class="hoverOnMap">
 			<div class="container-fluid" style="pointer-events: none;">
 				<div class="row" style="pointer-events: none;">
-			<ul class="col-md-4 col-sm-5" data-bind="foreach: placeList" style="-webkit-padding-start: 10px;margin-top: 50px;background: white; pointer-events: initial; border-style: solid;border-width:1px;">
+			<ul class="col-md-4 col-sm-5" data-bind="foreach: filteredItems" style="-webkit-padding-start: 10px;margin-top: 50px;background: white; pointer-events: initial; border-style: solid;border-width:1px;">
 				<li data-bind="text: $data.name, click: $parent.changePlace1" class="placeListItem"></li>
 				<div class="tabsDiv col-md-12 col-sm-12" id="" style="display: none; padding-left: 0px; padding-right: 0px; border-style: solid;border-width:1px;" >
 				<!--  color: #9b59b6; -->
