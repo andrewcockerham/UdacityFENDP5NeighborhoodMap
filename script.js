@@ -268,7 +268,9 @@ var ViewModel = function() {
 			console.log(context.$index);
 			console.log("target")
 			console.log(event.target)
-			console.log($(event.target).text()); //.indexOf asldfas;ldf
+			console.log($(event.target).text()); //.indexOf
+			console.log("place")
+			console.log(place);
 			// console.log(context);
 			// console.log(self.placeList().indexOf())
 			// // also want to close all open tabDivs...
