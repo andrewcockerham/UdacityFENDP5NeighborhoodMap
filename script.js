@@ -276,7 +276,7 @@ var ViewModel = function() {
 			// // also want to close all open tabDivs...
 			$(tabs).slideToggle();
 			$(".extra").remove();
-			$(tabs).style.display = "block";
+			event.target.style.display = "block";
 			// tabs.style.display = "block";
 			// tabs.style.display = "inline-block";
 			$(tabs).prev()[0].style.fontWeight = 'bold';
