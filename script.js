@@ -206,17 +206,17 @@ var ViewModel = function() {
   		 	  // get all tabDiv elements and add id with index to each one
   		 	  // var filter = self.filter().toLowerCase();
   		 	  // if (filter) {
-  		 	  	console.log("function")
-  		 	  	var tabsDivArray = document.getElementsByClassName("tabsDiv");
-  		 	  	for (var i = 0; i < tabsDivArray.length; i++) {
-  		 	  		var tabsDiv = tabsDivArray[i];
-  		 	  		tabsDiv.id = 'tabsDiv' + i.toString();
-  		 	  	};
-  	 	  	// };
+  		 	  // 	console.log("function")
+  		 	  // 	var tabsDivArray = document.getElementsByClassName("tabsDiv");
+  		 	  // 	for (var i = 0; i < tabsDivArray.length; i++) {
+  		 	  // 		var tabsDiv = tabsDivArray[i];
+  		 	  // 		tabsDiv.id = 'tabsDiv' + i.toString();
+  		 	  // 	};
+  	 	  	// // };
 
 	        return this.placeList();
 	    } else {
-	        return ko.utils.arrayFilter(this.placeList(), function(item) {
+	        return ko.utils.arrayFilter(self.placeList(), function(item) {
 	        	return item.name().toLowerCase().indexOf(filter) !== -1;
 	        });
 	    }
