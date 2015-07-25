@@ -228,6 +228,7 @@ var ViewModel = function() {
 	 	  self.callYelpAPI();
 
 	 	  // get all tabDiv elements and add id with index to each one
+	 	  var filter = self.filter().toLowerCase();
 	 	  if (filter) {
 	 	  	console.log("function")
 	 	  	var tabsDivArray = document.getElementsByClassName("tabsDiv");
