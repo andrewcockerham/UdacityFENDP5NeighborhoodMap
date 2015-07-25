@@ -285,6 +285,7 @@ var ViewModel = function() {
 
 			var nextID = $(event.target).next()[0].id;
 			var targetIndex = nextID.substring(nextID.length - 1, nextID.length);
+			console.log(targetIndex)
 			document.getElementById("tabRadioWiki" + targetIndex).checked = true;
 
 			// GOOGLE MAPS STUFF called on ChangePlace
