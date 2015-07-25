@@ -226,6 +226,18 @@ var ViewModel = function() {
 	  this.changePlace1 = function(place, event) {
 	  	self.currentPlace(place);
 	 	  self.callYelpAPI();
+
+	 	  // get all tabDiv elements and add id with index to each one
+	 	  if (filter) {
+	 	  	console.log("function")
+	 	  	var tabsDivArray = document.getElementsByClassName("tabsDiv");
+	 	  	for (var i = 0; i < tabsDivArray.length; i++) {
+	 	  		var tabsDiv = tabsDivArray[i];
+	 	  		tabsDiv.id = 'tabsDiv' + i.toString();
+	 	  	};
+ 	  	};
+
+
 	 	  // infowindow.open(map);
 	    // infowindow.setContent('<div id="content">' + '<h3 id="placeName">' + place.name + '</h3>'+ '</div>')
 	    // console.log(place);
