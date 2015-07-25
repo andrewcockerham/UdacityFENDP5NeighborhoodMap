@@ -268,6 +268,7 @@ var ViewModel = function() {
 			console.log("target")
 			console.log(event.target)
 			console.log($(event.target).text()); //.indexOf asldfas;ldf
+			console.log(placeList())
 			// // also want to close all open tabDivs...
 			$(tabs).slideToggle();
 			$(".extra").remove();
