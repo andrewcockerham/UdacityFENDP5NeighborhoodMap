@@ -239,7 +239,7 @@ var ViewModel = function() {
 	    // self.showDropdown(place);
 	    // self.showDropdown(self.placeList(self.placeList().indexOf(place)));
 	    console.log(markers);
-	    console.log(self.placeList().indexOf(place));
+	    // console.log(self.placeList().indexOf(place));
 	    console.log(markers[self.placeList().indexOf(place)]);
 	    // infobox.open(map, markers[self.placeList().indexOf(place)]);
 
@@ -262,13 +262,14 @@ var ViewModel = function() {
 			// 	}
 			// }
 			// console.log(context.$index());
-			var tabs = document.getElementById("tabsDiv" + context.$index());
+			var tabs = document.getElementById("tabsDiv" + self.placeList().indexOf(place));
+			// var tabs = document.getElementById("tabsDiv" + context.$index());
 			console.log(tabs)
 			console.log(context.$index);
 			console.log("target")
 			console.log(event.target)
 			console.log($(event.target).text()); //.indexOf asldfas;ldf
-			console.log(context);
+			// console.log(context);
 			// console.log(self.placeList().indexOf())
 			// // also want to close all open tabDivs...
 			$(tabs).slideToggle();
