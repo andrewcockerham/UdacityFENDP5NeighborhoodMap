@@ -276,7 +276,8 @@ var ViewModel = function() {
 			// // also want to close all open tabDivs...
 			$(tabs).slideToggle();
 			$(".extra").remove();
-			tabs.style.display = "block";
+			$(tabs).style.display = "block";
+			// tabs.style.display = "block";
 			// tabs.style.display = "inline-block";
 			$(tabs).prev()[0].style.fontWeight = 'bold';
 			// insert blank div behind to lower other list items
