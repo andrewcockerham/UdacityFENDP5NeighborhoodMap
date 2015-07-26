@@ -232,8 +232,9 @@ var ViewModel = function() {
      		self.callYelpAPI();
      	} else {
      		var rating = document.getElementsByClassName("rating")
-     		console.log(rating[self.placeList().indexOf(place)])
-     		rating[self.placeList().indexOf(place)].remove()
+     		// console.log(rating[self.placeList().indexOf(place)])
+     		// rating[self.placeList().indexOf(place)].remove()
+     		rating[self.placeList().indexOf(place)].textContent("No Yelp Reviews");
      	}
 	 	  // infowindow.open(map);
 	    // infowindow.setContent('<div id="content">' + '<h3 id="placeName">' + place.name + '</h3>'+ '</div>')
