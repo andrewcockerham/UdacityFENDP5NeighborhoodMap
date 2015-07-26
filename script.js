@@ -220,7 +220,8 @@ var ViewModel = function() {
      		var rating = document.getElementsByClassName("rating")
      		// console.log(rating[self.placeList().indexOf(place)])
      		// rating[self.placeList().indexOf(place)].remove()
-     		ratingTab = rating[self.placeList().indexOf(place)]
+     		ratingTab = rating[context.$index()]
+     		// ratingTab = rating[self.placeList().indexOf(place)]
      		ratingTab.textContent = "No Yelp Reviews"
      	}
 	 	  // infowindow.open(map);
