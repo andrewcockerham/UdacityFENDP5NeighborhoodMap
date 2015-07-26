@@ -50,8 +50,9 @@
 					        </div>
 					    </li>
 					    <li class="" style=" padding-left: 0px; padding-right: 0px; text-align: center;">
-					        <input type="radio" name="tabs" id="tab3" class="inputRadio"/>
-					        <label for="tab3">Website</label>
+					        <input type="radio" name="tabs" id="tab3" class="inputRadio"
+					        data-bind="attr: { id: 'tabRadioWeb' + $index() }"/>
+					        <label data-bind="attr: { for: 'tabRadioWeb' + $index() }">Website</label> <!-- for="tab3" -->
 					        <div id="tab-content3" class="tab-content">
 					          <a href="" data-bind="text: $data.website, attr: {href: $data.website}"></a>
 					        </div>
@@ -125,8 +126,8 @@
   			// tabLabel.htmlFor = 'tabRadioYelp' + j.toString();
   			// $(tabContent).attr("id",'tab-content' + i.toString() + j.toString());
   		} else if (i % 4 == 2) {
-  			tabsRadio.id = 'tabRadioWeb' + j.toString();
-  			tabLabel.htmlFor = 'tabRadioWeb' + j.toString();
+  			// tabsRadio.id = 'tabRadioWeb' + j.toString();
+  			// tabLabel.htmlFor = 'tabRadioWeb' + j.toString();
   		} else if (i % 4 == 3) {
   			tabsRadio.id = 'tabRadioInstagram' + j.toString();
   			tabLabel.htmlFor = 'tabRadioInstagram' + j.toString();
