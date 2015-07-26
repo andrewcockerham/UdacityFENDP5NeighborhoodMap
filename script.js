@@ -279,7 +279,7 @@ var ViewModel = function() {
 			$(".extra").remove();
 			event.target.style.display = "block";
 			// tabs.style.display = "block";
-			$(event.target).prev()[0].style.fontWeight = 'bold';
+			$(tabs).prev()[0].style.fontWeight = 'bold';
 			// $(tabs).prev()[0].style.fontWeight = 'bold';
 			// insert blank div behind to lower other list items
 			$(event.target).next().append("<div class='extra col-md-5 col-sm-12' stye='position: relative;height: 200px;'></div>");
