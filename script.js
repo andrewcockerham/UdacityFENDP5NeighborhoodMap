@@ -232,6 +232,7 @@ var ViewModel = function() {
      		self.callYelpAPI();
      	} else {
      		var rating = document.getElementsByClassName("rating")
+     		rating[self.placeList().indexOf(place)].remove
      	}
 	 	  // infowindow.open(map);
 	    // infowindow.setContent('<div id="content">' + '<h3 id="placeName">' + place.name + '</h3>'+ '</div>')
