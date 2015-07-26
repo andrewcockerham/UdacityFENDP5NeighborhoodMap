@@ -212,6 +212,7 @@ var ViewModel = function() {
 	  // function called when you click on a place in the list
 	  this.changePlace1 = function(place, event) {
 	  	self.currentPlace(place);
+	  	var context = ko.contextFor(event.target);
      	console.log(self.currentPlace().yelpID());
      	if (self.currentPlace().yelpID() !== "") {
      		console.log("no yelp")
@@ -248,7 +249,7 @@ var ViewModel = function() {
 				placeItem.style.fontWeight = "normal";
 			}
 			// console.log("target " + event);
-			var context = ko.contextFor(event.target);
+
 			// console.log("contenxt" + context);
 			// var tabsDivArray = document.getElementsByClassName("tabsDiv");
 			// // // console.log("tabsDivArray" + tabsDivArray);
