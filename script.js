@@ -618,7 +618,11 @@ var ViewModel = function() {
       cache: true,  // This is crucial to include as well to prevent jQuery from adding on a cache-buster parameter "_=23489489749837", invalidating our oauth-signature
       dataType: 'jsonp',
       success: function(results) {
-      	console.log(self.currentPlace().yelpID());
+      	// console.log(self.currentPlace().yelpID());
+      	console.log(results);
+      	if (!results) {
+      		console.log("no yelp")
+      	}
         self.updateYelpContent(results);
       },
       fail: function() {
