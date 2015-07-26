@@ -58,8 +58,9 @@
 					        </div>
 					    </li>
 					    <li class="" style=" padding-left: 0px; padding-right: 0px; text-align: center;">
-					        <input type="radio" name="tabs" id="tab4" class="inputRadio"/>
-					        <label for="tab3">Instagram</label>
+					        <input type="radio" name="tabs" id="tab4" class="inputRadio"
+					        data-bind="attr: { id: 'tabRadioInstagram' + $index() }"/>
+					        <label data-bind="attr: { for: 'tabRadioInstagram' + $index() }">Instagram</label> <!-- for="tab3"  -->
 					        <div id="tab-content4" class="tab-content">
 					        <div data-bind="html: $data.instagramWidget"></div>
 					        </div>
@@ -129,8 +130,8 @@
   			// tabsRadio.id = 'tabRadioWeb' + j.toString();
   			// tabLabel.htmlFor = 'tabRadioWeb' + j.toString();
   		} else if (i % 4 == 3) {
-  			tabsRadio.id = 'tabRadioInstagram' + j.toString();
-  			tabLabel.htmlFor = 'tabRadioInstagram' + j.toString();
+  			// tabsRadio.id = 'tabRadioInstagram' + j.toString();
+  			// tabLabel.htmlFor = 'tabRadioInstagram' + j.toString();
   		};
   	};
 
