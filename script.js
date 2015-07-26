@@ -651,7 +651,7 @@ var ViewModel = function() {
   	newParagraph.appendChild(snippet);
   	$(newParagraph).addClass("yelpSnippet");
   	$(br).insertAfter(yelpImage);
-  						        	// <div>Rating: <span class="stars"></span></div>
+  						        	// 	<div>Rating: <span class="stars"></span></div>
   	$(function() {
   	  $('span.stars').stars(results.rating);
   	});
