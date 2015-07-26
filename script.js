@@ -274,7 +274,8 @@ var ViewModel = function() {
 			// console.log(context);
 			// console.log(self.placeList().indexOf())
 			// // also want to close all open tabDivs...
-			$(tabs).slideToggle();
+			$(event.target).slideToggle();
+			// $(tabs).slideToggle();
 			$(".extra").remove();
 			event.target.style.display = "block";
 			// tabs.style.display = "block";
