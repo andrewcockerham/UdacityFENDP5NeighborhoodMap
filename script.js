@@ -309,7 +309,7 @@ var ViewModel = function() {
 	  		}
 	  	});
 
-	  	self.showInfoBox(infobox, place, map, marker)
+	  	self.showInfoBox(window.infobox, place, map, marker)
 
 	  }; // end function changePlace1
 
