@@ -230,6 +230,8 @@ var ViewModel = function() {
      	if (self.currentPlace().yelpID() !== "") {
      		console.log("no yelp")
      		self.callYelpAPI();
+     	} else {
+     		var rating = document.getElementsByClassName("rating")
      	}
 	 	  // infowindow.open(map);
 	    // infowindow.setContent('<div id="content">' + '<h3 id="placeName">' + place.name + '</h3>'+ '</div>')
@@ -641,6 +643,10 @@ var ViewModel = function() {
   	self.currentPlace().yelpImageSrc(results.image_url);
   	self.currentPlace().yelpSnippet(results.snippet_text.toString());
   	self.currentPlace().yelpLink(results.url);
+
+  	// var mydiv = document.createElement("div");
+  	// mydiv.textContent = "Rating:"
+  	// $(mydiv).insertAfter(mytab)
   	var yelpImage = document.getElementsByClassName("yelpImage")[0];
   	if ($(".yelpSnippet").length > 0) {
   		$(".yelpSnippet").remove();

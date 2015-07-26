@@ -43,7 +43,7 @@
 					        data-bind="attr: { id: 'tabRadioYelp' + $index() }"/>
 					        <label  data-bind="attr: { for: 'tabRadioYelp' + $index() }">Yelp</label> <!-- for="tab2" -->
 					        <div class="tab-content" data-bind="attr: { id: 'tab-content' + $index() }">  <!-- id="tab-content2" -->
-<!-- 					        	<div>Rating: <span class="stars"></span></div> -->
+					        	<div class="rating">Rating: <span class="stars"></span></div>
 					          <div data-bind="text: $data.yelpSnippet"></div>
 					          <img src="" class="yelpImage" data-bind="attr: {src: yelpImageSrc}"></br>
 					          <a href="" data-bind="text: $data.yelpLink, attr: {href: $data.yelpLink}"></a>
