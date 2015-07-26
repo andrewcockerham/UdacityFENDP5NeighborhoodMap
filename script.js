@@ -308,6 +308,9 @@ var ViewModel = function() {
 	  			}, 3500);
 	  		}
 	  	});
+
+	  	self.showInfoBox(infobox, place, map, marker)
+
 	  }; // end function changePlace1
 
 
