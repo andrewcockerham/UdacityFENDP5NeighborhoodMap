@@ -389,9 +389,11 @@ var ViewModel = function() {
     	  	marker.setAnimation(null);
     	  }, 3300);
 
-    	  infobox.open(map, marker);
-    	  // infowindow.open(map, marker);
-    	  infobox.setContent('<div id="infobox">' + '<h2 id="placeName"><a href="' + place.website + '">' + place.name + '</a>' + '</h3><h4>' + place.address + '</h4></div>');
+
+    	  self.showInfoBox(place, map, marker);
+    	  // infobox.open(map, marker);
+    	  // // infowindow.open(map, marker);
+    	  // infobox.setContent('<div id="infobox">' + '<h2 id="placeName"><a href="' + place.website + '">' + place.name + '</a>' + '</h3><h4>' + place.address + '</h4></div>');
     	  // self.changePlace1(place);
     	  // infowindow.setContent('<div id="content">' + '<h3 id="placeName">' + place.name + '</h3>'+ '</div>');
     	  // clickedMarker = marker;
@@ -576,6 +578,10 @@ var ViewModel = function() {
   	}
   }
 
+  this.showInfoBox = function(place, map, marker) {
+  	infobox.open(map, marker);
+  	infobox.setContent('<div id="infobox">' + '<h2 id="placeName"><a href="' + place.website + '">' + place.name + '</a>' + '</h3><h4>' + place.address + '</h4></div>');
+  }
 
   // YELP RELATED CODE
   this.callYelpAPI = function() {
