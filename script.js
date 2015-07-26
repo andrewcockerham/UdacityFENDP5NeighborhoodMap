@@ -259,9 +259,9 @@ var ViewModel = function() {
 			// 	}
 			// }
 			// console.log(context.$index());
-			var tabs = document.getElementById("tabsDiv" + self.placeList().indexOf(place));
+			// var tabs = document.getElementById("tabsDiv" + self.placeList().indexOf(place));
 			// var prevTab = document.getElementById("tabsDiv" + (self.placeList().indexOf(place) - 1));
-			// var tabs = document.getElementById("tabsDiv" + context.$index());
+			var tabs = document.getElementById("tabsDiv" + context.$index());
 			console.log(tabs)
 			console.log("index")
 			console.log(context.$index());
