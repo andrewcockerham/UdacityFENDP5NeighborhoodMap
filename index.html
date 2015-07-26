@@ -30,7 +30,9 @@
 				<!--  color: #9b59b6; -->
 					<ul class="tabs col-md-12 col-sm-12" style="padding-left: 0px; padding-right: 0px;width:100%;">
 					    <li class="" style=" padding-left: 0px; padding-right: 0px; text-align: center;">
-					        <input type="radio" name="tabs" id="tab1" checked class="inputRadio"/>
+					        <input type="radio" name="tabs" id="tab1" checked class="inputRadio"
+					        data-bind="attr: { id: 'tabRadioTwitter' + $index() }"/>
+					        <!-- id="tab1"  -->
 					        <label for="tab1">Twitter</label>
 					        <div id="tab-content1" class="tab-content">
 					          <p data-bind="html: $data.twitterWidget"></p>
@@ -82,7 +84,6 @@
 		</div>
 
 
-
 	</body>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -116,8 +117,8 @@
   		var tabContent = $(tabsRadio).next().next();
   		var tabLabel = $(tabsRadio).next()[0];
   		if (i % 4 == 0) {
-  			tabsRadio.id = 'tabRadioWiki' + j.toString(); // wikipedia
-  			tabLabel.htmlFor = 'tabRadioWiki' + j.toString();
+  			tabsRadio.id = 'tabRadioTwitter' + j.toString(); // wikipedia
+  			tabLabel.htmlFor = 'tabRadioTwitter' + j.toString();
   		} else if (i % 4 == 1) {
   			tabsRadio.id = 'tabRadioYelp' + j.toString();
   			tabLabel.htmlFor = 'tabRadioYelp' + j.toString();
