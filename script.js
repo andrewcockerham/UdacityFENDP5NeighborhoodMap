@@ -188,19 +188,6 @@ var ViewModel = function() {
 	// });
 
 
-
-	//ko.utils.arrayFilter - filter the items using the filter text
-	// viewModel.filteredItems = ko.dependentObservable(function() {
-	//     var filter = this.filter().toLowerCase();
-	//     if (!filter) {
-	//         return this.items();
-	//     } else {
-	//         return ko.utils.arrayFilter(this.items(), function(item) {
-	//             return ko.utils.stringStartsWith(item.name().toLowerCase(), filter);
-	//         });
-	//     }
-	// }, viewModel);
-
 	this.filteredItems = ko.computed(function() {
 	    var filter = self.filter().toLowerCase();
 	    if (!filter) {
@@ -211,7 +198,6 @@ var ViewModel = function() {
 	        });
 	    }
 	}, this);
-
 
 
 	  // GOOLE MAPS STUFF FOR CHANGEPLACE1
@@ -276,7 +262,7 @@ var ViewModel = function() {
 			var tabs = document.getElementById("tabsDiv" + self.placeList().indexOf(place));
 			// var tabs = document.getElementById("tabsDiv" + context.$index());
 			console.log(tabs)
-			console.log(context.$index);
+			// console.log(context.$index);
 			console.log("target")
 			console.log(event.target)
 			console.log($(event.target).text()); //.indexOf
