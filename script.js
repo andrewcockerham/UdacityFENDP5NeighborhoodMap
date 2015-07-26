@@ -235,7 +235,7 @@ var ViewModel = function() {
      		// console.log(rating[self.placeList().indexOf(place)])
      		// rating[self.placeList().indexOf(place)].remove()
      		ratingTab = rating[self.placeList().indexOf(place)]
-     		ratingTab.textContent("No Yelp Reviews");
+     		ratingTab.textContent = "No Yelp Reviews"
      	}
 	 	  // infowindow.open(map);
 	    // infowindow.setContent('<div id="content">' + '<h3 id="placeName">' + place.name + '</h3>'+ '</div>')
