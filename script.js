@@ -226,6 +226,10 @@ var ViewModel = function() {
 	  // function called when you click on a place in the list
 	  this.changePlace1 = function(place, event) {
 	  	self.currentPlace(place);
+     	console.log(self.currentPlace().yelpID());
+     	if (self.currentPlace().yelpID() == "") {
+     		console.log("no yelp")
+     	}
 	 	  self.callYelpAPI();
 	 	  // infowindow.open(map);
 	    // infowindow.setContent('<div id="content">' + '<h3 id="placeName">' + place.name + '</h3>'+ '</div>')
@@ -588,7 +592,6 @@ var ViewModel = function() {
 		var YELP_TOKEN_SECRET = "R1TICiVW89ybGSpEqy10JxiOTQ8";
 		var YELP_BASE_URL = "http://api.yelp.com/v2/";
 		var yelp_url = YELP_BASE_URL + 'business/' + self.currentPlace().yelpID();
-		// var yelp_url = YELP_BASE_URL + 'business/' + self.currentPlace().yelpID();
 
 		//// OAUTH related code
 		// Generates a random number and returns it as a string for OAuthentication
@@ -607,7 +610,7 @@ var ViewModel = function() {
                       // AJAX or else the oauth-signature will be wrong.
   	};
 
-  	// USE BELOW FROM UDACITY FORUM EXAMPLE TO SIGN OAUTH TO USE YELP API and twitter api and google plus
+  	// USE BELOW FROM UDACITY FORUM EXAMPLE TO SIGN OAUTH TO USE YELP API
   	var encodedSignature = oauthSignature.generate('GET',yelp_url, parameters, YELP_CONSUMER_SECRET, YELP_TOKEN_SECRET);
   	parameters.oauth_signature = encodedSignature;
   	//// end OAuth related code
