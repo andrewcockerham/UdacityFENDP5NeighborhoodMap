@@ -263,10 +263,11 @@ var ViewModel = function() {
 			// var prevTab = document.getElementById("tabsDiv" + (self.placeList().indexOf(place) - 1));
 			// var tabs = document.getElementById("tabsDiv" + context.$index());
 			console.log(tabs)
-			// console.log(context.$index);
-			console.log("target")
-			console.log(event.target)
-			console.log($(event.target).text()); //.indexOf
+			console.log("index")
+			console.log(context.$index);
+			// console.log("target")
+			// console.log(event.target)
+			// console.log($(event.target).text()); //.indexOf
 			console.log("place")
 			console.log(place.name());
 			// console.log(context);
