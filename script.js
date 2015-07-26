@@ -287,8 +287,8 @@ var ViewModel = function() {
 			console.log(nextID)
 			var targetIndex = nextID.substring(nextID.length - 1, nextID.length);
 			console.log(targetIndex)
-			document.getElementById("tabRadioTwitter" + (self.placeList().indexOf(place) + 1)).checked = true;
-			// document.getElementById("tabRadioTwitter" + targetIndex).checked = true;
+			// document.getElementById("tabRadioTwitter" + (self.placeList().indexOf(place) + 1)).checked = true;
+			document.getElementById("tabRadioTwitter" + targetIndex).checked = true;
 
 			// GOOGLE MAPS STUFF called on ChangePlace
 	  	// panTo place
