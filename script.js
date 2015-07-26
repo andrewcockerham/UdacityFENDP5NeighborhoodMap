@@ -390,7 +390,7 @@ var ViewModel = function() {
     	  }, 3300);
 
 
-    	  self.showInfoBox(place, map, marker);
+    	  self.showInfoBox(infobox, place, map, marker);
     	  // infobox.open(map, marker);
     	  // // infowindow.open(map, marker);
     	  // infobox.setContent('<div id="infobox">' + '<h2 id="placeName"><a href="' + place.website + '">' + place.name + '</a>' + '</h3><h4>' + place.address + '</h4></div>');
@@ -578,7 +578,7 @@ var ViewModel = function() {
   	}
   }
 
-  this.showInfoBox = function(place, map, marker) {
+  this.showInfoBox = function(infobox, place, map, marker) {
   	infobox.open(map, marker);
   	infobox.setContent('<div id="infobox">' + '<h2 id="placeName"><a href="' + place.website + '">' + place.name + '</a>' + '</h3><h4>' + place.address + '</h4></div>');
   }
