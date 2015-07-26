@@ -121,7 +121,7 @@ var places = [
 		content: "hi5",
 		wikipediaContent: 'wikpediaContent',
 		website: "http://www.austincc.edu/locations/campuses/pinnacle-campus",
-		yelpID: "austin-community-college-pinnacle-campus-austin-2?osq=acc+pinnacle",
+		yelpID: "",
 		yelpSnippet: "",
 		yelpImageSrc: "",
 		yelpLink: "",
