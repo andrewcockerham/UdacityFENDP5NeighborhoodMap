@@ -227,10 +227,10 @@ var ViewModel = function() {
 	  this.changePlace1 = function(place, event) {
 	  	self.currentPlace(place);
      	console.log(self.currentPlace().yelpID());
-     	// if (self.currentPlace().yelpID() !== "") {
-     	// 	console.log("no yelp")
+     	if (self.currentPlace().yelpID() !== "") {
+     		console.log("no yelp")
      		self.callYelpAPI();
-     	// }
+     	}
 	 	  // infowindow.open(map);
 	    // infowindow.setContent('<div id="content">' + '<h3 id="placeName">' + place.name + '</h3>'+ '</div>')
 	    // console.log(place);
@@ -623,11 +623,8 @@ var ViewModel = function() {
       success: function(results) {
       	// console.log(self.currentPlace().yelpID());
       	// console.log(results);
-      	if (self.currentPlace().yelpID() !== "") {
-      		self.updateYelpContent(results);
-      	} else {
-      		console.log("no yelp")
-      	}
+     		self.updateYelpContent(results);
+
         // self.updateYelpContent(results);
       },
       fail: function() {
