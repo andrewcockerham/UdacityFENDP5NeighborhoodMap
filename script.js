@@ -260,6 +260,7 @@ var ViewModel = function() {
 			// }
 			// console.log(context.$index());
 			var tabs = document.getElementById("tabsDiv" + self.placeList().indexOf(place));
+			var prevTab = document.getElementById("tabsDiv" + (self.placeList().indexOf(place) - 1));
 			// var tabs = document.getElementById("tabsDiv" + context.$index());
 			console.log(tabs)
 			// console.log(context.$index);
@@ -276,7 +277,8 @@ var ViewModel = function() {
 			$(".extra").remove();
 			event.target.style.display = "block";
 			// tabs.style.display = "block";
-			$(tabs).prev()[0].style.fontWeight = 'bold';
+			$(prevTab).style.fontWeight = 'bold';
+			// $(tabs).prev()[0].style.fontWeight = 'bold';
 			// $(tabs).prev()[0].style.fontWeight = 'bold';
 			// insert blank div behind to lower other list items
 			$(event.target).next().append("<div class='extra col-md-5 col-sm-12' stye='position: relative;height: 200px;'></div>");
@@ -285,7 +287,8 @@ var ViewModel = function() {
 			console.log(nextID)
 			var targetIndex = nextID.substring(nextID.length - 1, nextID.length);
 			console.log(targetIndex)
-			document.getElementById("tabRadioTwitter" + targetIndex).checked = true;
+			document.getElementById("tabRadioTwitter" + (self.placeList().indexOf(place) - 1)).checked = true;
+			// document.getElementById("tabRadioTwitter" + targetIndex).checked = true;
 
 			// GOOGLE MAPS STUFF called on ChangePlace
 	  	// panTo place
