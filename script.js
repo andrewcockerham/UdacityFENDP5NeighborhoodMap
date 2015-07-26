@@ -264,7 +264,7 @@ var ViewModel = function() {
 			// var tabs = document.getElementById("tabsDiv" + context.$index());
 			console.log(tabs)
 			console.log("index")
-			console.log(context.$index);
+			console.log(context.$index());
 			// console.log("target")
 			// console.log(event.target)
 			// console.log($(event.target).text()); //.indexOf
