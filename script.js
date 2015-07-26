@@ -539,7 +539,7 @@ var ViewModel = function() {
   	$(".extra").remove();
   	// console.log("tabRadioWiki" + places.indexOf(place));
   	// console.log(document.getElementById("tabRadioWiki"));
-  	document.getElementById("tabRadioWiki" + places.indexOf(place)).checked = true;
+  	document.getElementById("tabRadioTwitter" + places.indexOf(place)).checked = true;
   	$(tabs).prev()[0].style.fontWeight = 'bold';
   	$(tabs).append("<div class='extra col-md-5 col-sm-12' stye='position: relative;height: 200px;'></div>");
   	  	var tabs1 = $(".extra").parent().find(".tab-content");
