@@ -39,8 +39,9 @@
 					        </div>
 					    </li>
 					    <li class="" style=" padding-left: 0px; padding-right: 0px; text-align: center;">
-					        <input type="radio" name="tabs" id="tab2" class="inputRadio"/>
-					        <label for="tab2">Yelp</label>
+					        <input type="radio" name="tabs" id="tab2" class="inputRadio"
+					        data-bind="attr: { id: 'tabRadioYelp' + $index() }"/>
+					        <label  data-bind="attr: { for: 'tabRadioYelp' + $index() }">Yelp</label> <!-- for="tab2" -->
 					        <div id="tab-content2" class="tab-content">
 					        	<div>Rating: <span class="stars"></span></div>
 					          <div data-bind="text: $data.yelpSnippet"></div>
@@ -120,9 +121,9 @@
   			// tabsRadio.id = 'tabRadioTwitter' + j.toString(); // wikipedia
   			// tabLabel.htmlFor = 'tabRadioTwitter' + j.toString();
   		} else if (i % 4 == 1) {
-  			tabsRadio.id = 'tabRadioYelp' + j.toString();
-  			tabLabel.htmlFor = 'tabRadioYelp' + j.toString();
-  			$(tabContent).attr("id",'tab-content' + i.toString() + j.toString());
+  			// tabsRadio.id = 'tabRadioYelp' + j.toString();
+  			// tabLabel.htmlFor = 'tabRadioYelp' + j.toString();
+  			// $(tabContent).attr("id",'tab-content' + i.toString() + j.toString());
   		} else if (i % 4 == 2) {
   			tabsRadio.id = 'tabRadioWeb' + j.toString();
   			tabLabel.htmlFor = 'tabRadioWeb' + j.toString();
