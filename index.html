@@ -33,7 +33,7 @@
 					        <input type="radio" name="tabs" checked class="inputRadio"
 					        data-bind="attr: { id: 'tabRadioTwitter' + $index() }"/>
 					        <!-- id="tab1"  -->
-					        <label for="tab1">Twitter</label>
+					        <label  data-bind="attr: { for: 'tabRadioTwitter' + $index() }">Twitter</label> <!-- for="tab1" -->
 					        <div id="tab-content1" class="tab-content">
 					          <p data-bind="html: $data.twitterWidget"></p>
 					        </div>
@@ -118,7 +118,7 @@
   		var tabLabel = $(tabsRadio).next()[0];
   		if (i % 4 == 0) {
   			// tabsRadio.id = 'tabRadioTwitter' + j.toString(); // wikipedia
-  			tabLabel.htmlFor = 'tabRadioTwitter' + j.toString();
+  			// tabLabel.htmlFor = 'tabRadioTwitter' + j.toString();
   		} else if (i % 4 == 1) {
   			tabsRadio.id = 'tabRadioYelp' + j.toString();
   			tabLabel.htmlFor = 'tabRadioYelp' + j.toString();
