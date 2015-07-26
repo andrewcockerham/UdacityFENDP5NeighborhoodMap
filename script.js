@@ -625,6 +625,8 @@ var ViewModel = function() {
       	// console.log(results);
       	if (self.currentPlace().yelpID() !== "") {
       		self.updateYelpContent(results);
+      	} else {
+      		console.log("no yelp")
       	}
         // self.updateYelpContent(results);
       },
