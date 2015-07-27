@@ -89,7 +89,6 @@ var places = [
 		wikipediaContent: 'wikpediaContent',
 		website: "http://www.amd.com/",
 		yelpID: "",
-		// yelpID: "advanced-micro-devices-austin-2",
 		yelpSnippet: "",
 		yelpImageSrc: "",
 		yelpLink: "",
@@ -176,17 +175,10 @@ var ViewModel = function() {
   this.currentPlace = ko.observable( this.placeList()[0] );
   this.filter = ko.observable("");
   ///// START GOOGLE MAPS STUFF
-  // var image = {url: 'customPin.svg'};
   var shape = {
 		coords: [1, 1, 1, 30, 46, 30, 46, 1],
 		type: 'poly'
    };
-
-	// var infowindow = new google.maps.InfoWindow({
-	//  size: new google.maps.Size(150,50),
-	//  // content: '<div id="content">'+ '<h3 id="placeName"></h3>'+ '</div>'
-	// });
-
 
 	this.filteredItems = ko.computed(function() {
 	    var filter = self.filter().toLowerCase();
@@ -200,14 +192,14 @@ var ViewModel = function() {
 	}, this);
 
 
-	  // GOOLE MAPS STUFF FOR CHANGEPLACE1
-	  myLatlng = new google.maps.LatLng(30.2433481,-97.8703633);
-	  mapOptions = {
-	    zoom: 13,
-	    center: myLatlng
-	  };
-	  // var sv = new google.maps.StreetViewService();
-	  markers = [];
+  // GOOLE MAPS STUFF FOR CHANGEPLACE1
+  myLatlng = new google.maps.LatLng(30.2433481,-97.8703633);
+  mapOptions = {
+    zoom: 13,
+    center: myLatlng
+  };
+  // var sv = new google.maps.StreetViewService();
+  markers = [];
 
 	  // function called when you click on a place in the list
 	  this.changePlace1 = function(place, event) {
@@ -219,28 +211,10 @@ var ViewModel = function() {
      		self.callYelpAPI();
      	} else {
      		var rating = document.getElementsByClassName("rating")
-     		// console.log(rating[self.placeList().indexOf(place)])
-     		// rating[self.placeList().indexOf(place)].remove()
      		ratingTab = rating[context.$index()]
-     		// ratingTab = rating[self.placeList().indexOf(place)]
      		ratingTab.textContent = "No Yelp Reviews"
      	}
-	 	  // infowindow.open(map);
-	    // infowindow.setContent('<div id="content">' + '<h3 id="placeName">' + place.name + '</h3>'+ '</div>')
-	    // console.log(place);
-	    // // console.log()
-	    // console.log(places.indexOf(self.currentPlace()));
-	    // console.log(places.indexOf(place));
-	    console.log(self.placeList().indexOf(place));
-	    // console.log(self.placeList(self.placeList().indexOf(place)));
 	    self.closeDropdown();
-	    // self.showDropdown(self.currentPlace());
-	    // self.showDropdown(place);
-	    // self.showDropdown(self.placeList(self.placeList().indexOf(place)));
-	    console.log(markers);
-	    // console.log(self.placeList().indexOf(place));
-	    console.log(markers[self.placeList().indexOf(place)]);
-	    // infobox.open(map, markers[self.placeList().indexOf(place)]);
 
 			// all placeList not bold
 			var placeItems = document.getElementsByClassName("placeListItem");
@@ -248,49 +222,20 @@ var ViewModel = function() {
 				var placeItem = placeItems[i];
 				placeItem.style.fontWeight = "normal";
 			}
-			// console.log("target " + event);
 
-			// console.log("contenxt" + context);
-			// var tabsDivArray = document.getElementsByClassName("tabsDiv");
-			// // // console.log("tabsDivArray" + tabsDivArray);
-			// // // console.log(tabsDivArray);
-			// for (var i = 0; i < tabsDivArray.length; i++) {
-			// 	var tabsDiv = tabsDivArray[i];
-			// 	if ($(tabsDiv).is(':visible')) {
-			// 		$(tabsDiv).slideToggle();
-			// 	}
-			// }
-			// console.log(context.$index());
 			// var tabs = document.getElementById("tabsDiv" + self.placeList().indexOf(place));
-			// var prevTab = document.getElementById("tabsDiv" + (self.placeList().indexOf(place) - 1));
 			var tabs = document.getElementById("tabsDiv" + context.$index());
-			console.log(tabs)
-			console.log("index")
-			console.log(context.$index());
-			// console.log("target")
-			// console.log(event.target)
-			// console.log($(event.target).text()); //.indexOf
-			console.log("place")
-			console.log(place.name());
-			// console.log(context);
-			// console.log(self.placeList().indexOf())
+
 			// // also want to close all open tabDivs...
 			$(tabs).slideToggle();
-			// $(tabs).slideToggle();
 			$(".extra").remove();
 			event.target.style.display = "block";
-			// tabs.style.display = "block";
-			// $(prevTab).style.fontWeight = 'bold';
 			$(tabs).prev()[0].style.fontWeight = 'bold';
-			// $(tabs).prev()[0].style.fontWeight = 'bold';
 			// insert blank div behind to lower other list items
 			$(event.target).next().append("<div class='extra col-md-5 col-sm-12' stye='position: relative;height: 200px;'></div>");
 
 			var nextID = $(event.target).next()[0].id;
-			console.log(nextID)
 			var targetIndex = nextID.substring(nextID.length - 1, nextID.length);
-			console.log(targetIndex)
-			// document.getElementById("tabRadioTwitter" + (self.placeList().indexOf(place) + 1)).checked = true;
 			document.getElementById("tabRadioTwitter" + targetIndex).checked = true;
 
 			// GOOGLE MAPS STUFF called on ChangePlace
@@ -310,8 +255,6 @@ var ViewModel = function() {
 	  		}
 	  	});
 
-	  	// self.showInfoBox(window.infobox, place, map, marker)
-
 	  }; // end function changePlace1
 
 
@@ -327,7 +270,6 @@ var ViewModel = function() {
   	streetview.style.width = "200px";
   	streetview.style.height = "200px";
   	content.appendChild(streetview);
-  	// var infobox;
 
   	searchMarkers = [];
     window.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -337,10 +279,7 @@ var ViewModel = function() {
     window.map.fitBounds(defaultBounds);
 
     window.infobox = new InfoBox({
-			// content: '<div id="infobox">' + '<h3 id="placeName">' + place.name  +'</h3>'+ '</div>',
 			content: '',
-			// content: '<div id="infobox">The contents of your info box. Its very easy to create and customize.</div>',
-			// content: document.getElementById("infobox").innerHTML,
 			disableAutoPan: false,
 			maxWidth: 150,
 			pixelOffset: new google.maps.Size(-140, 0),
@@ -354,11 +293,6 @@ var ViewModel = function() {
 	    closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif",
 	    infoBoxClearance: new google.maps.Size(1, 1)
     });
-
-    // var infowindow = new google.maps.InfoWindow({
-    //   size: new google.maps.Size(150,50),
-    //   // content: '<div id="content">'+ '<h3 id="placeName"></h3>'+ '</div>'
-    // });
 
     places.forEach(function(place) {
     	var title = document.createElement("DIV");
@@ -385,7 +319,6 @@ var ViewModel = function() {
     		// open dropdown
     		self.showDropdown(place);
 
-
     	  map.setZoom(15);
     	  map.panTo(marker.getPosition());
     	  marker.setAnimation(google.maps.Animation.BOUNCE);
@@ -393,19 +326,8 @@ var ViewModel = function() {
     	  	marker.setAnimation(null);
     	  }, 3300);
 
-
     	  self.showInfoBox(infobox, place, map, marker);
-    	  // infobox.open(map, marker);
-    	  // // infowindow.open(map, marker);
-    	  // infobox.setContent('<div id="infobox">' + '<h2 id="placeName"><a href="' + place.website + '">' + place.name + '</a>' + '</h3><h4>' + place.address + '</h4></div>');
-    	  // self.changePlace1(place);
-    	  // infowindow.setContent('<div id="content">' + '<h3 id="placeName">' + place.name + '</h3>'+ '</div>');
-    	  // clickedMarker = marker;
-				// var pin = new google.maps.MVCObject();
-				// function openInfoWindow(marker) {
-				//    pin.set("position", marker.getPosition());
-				//    infowindow.open(map, marker);
-				// }
+
     	});// end addListener marker
 
     }); // end places.forEach
@@ -459,79 +381,6 @@ var ViewModel = function() {
 	    console.log(bounds);
 	    searchBox.setBounds(bounds);
 	  });
-////////// copy past search
-// function initialize() {
-
-  // var markers = [];
-  // var map = new google.maps.Map(document.getElementById('map-canvas'), {
-  //   mapTypeId: google.maps.MapTypeId.ROADMAP
-  // });
-
-  // var defaultBounds = new google.maps.LatLngBounds(
-  //     new google.maps.LatLng(-33.8902, 151.1759),
-  //     new google.maps.LatLng(-33.8474, 151.2631));
-  // map.fitBounds(defaultBounds);
-
-  // Create the search box and link it to the UI element.
-  // var input = /** @type {HTMLInputElement} */(
-  //     document.getElementById('pac-input'));
-  // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-
-  // var searchBox = new google.maps.places.SearchBox(
-  //   * @type {HTMLInputElement} (input));
-
-//   // Listen for the event fired when the user selects an item from the
-//   // pick list. Retrieve the matching places for that item.
-//   google.maps.event.addListener(searchBox, 'places_changed', function() {
-//     var places = searchBox.getPlaces();
-
-//     if (places.length == 0) {
-//       return;
-//     }
-//     for (var i = 0, marker; marker = markers[i]; i++) {
-//       marker.setMap(null);
-//     }
-
-//     // For each place, get the icon, place name, and location.
-//     markers = [];
-//     var bounds = new google.maps.LatLngBounds();
-//     for (var i = 0, place; place = places[i]; i++) {
-//       var image = {
-//         url: place.icon,
-//         size: new google.maps.Size(71, 71),
-//         origin: new google.maps.Point(0, 0),
-//         anchor: new google.maps.Point(17, 34),
-//         scaledSize: new google.maps.Size(25, 25)
-//       };
-
-//       // Create a marker for each place.
-//       var marker = new google.maps.Marker({
-//         map: map,
-//         icon: image,
-//         title: place.name,
-//         position: place.geometry.location
-//       });
-
-//       markers.push(marker);
-
-//       bounds.extend(place.geometry.location);
-//     }
-
-//     map.fitBounds(bounds);
-//   });
-
-//   // Bias the SearchBox results towards places that are within the bounds of the
-//   // current map's viewport.
-//   google.maps.event.addListener(map, 'bounds_changed', function() {
-//     var bounds = map.getBounds();
-//     searchBox.setBounds(bounds);
-//   });
-// // }
-
-/////////// end copy paste search
-
-
-
 
   }; // END this.initializeMap
 
@@ -583,20 +432,12 @@ var ViewModel = function() {
   }
 
   this.showInfoBox = function(infobox, place, map, marker) {
-  	console.log("in showInfoBox")
-  	console.log(place)
-  	console.log(place.name())
-  	console.log(place.website())
-  	console.log(place.address())
   	infobox.open(map, marker);
   	infobox.setContent('<div id="infobox">' + '<h2 id="placeName"><a href="' + place.website().toString() + '">' + place.name() + '</a>' + '</h3><h4>' + place.address() + '</h4></div>');
   }
 
   // YELP RELATED CODE
   this.callYelpAPI = function() {
-  	// console.log("self = " + self)
-  	// console.log("currentplace" + self.currentPlace().name())
-  	// console.log("yelpID" + self.currentPlace().yelpID())
 
 		/////////////// YELP API STUFF
 		var YELP_CONSUMER_KEY = "N3DofJ4mIItoveG38brAHg";
@@ -634,11 +475,7 @@ var ViewModel = function() {
       cache: true,  // This is crucial to include as well to prevent jQuery from adding on a cache-buster parameter "_=23489489749837", invalidating our oauth-signature
       dataType: 'jsonp',
       success: function(results) {
-      	// console.log(self.currentPlace().yelpID());
-      	// console.log(results);
      		self.updateYelpContent(results);
-
-        // self.updateYelpContent(results);
       },
       fail: function() {
         console.log('fail');
@@ -650,14 +487,10 @@ var ViewModel = function() {
   self.callYelpAPI();
 
   this.updateYelpContent = function(results) {
-  	console.log(results.url)
   	self.currentPlace().yelpImageSrc(results.image_url);
   	self.currentPlace().yelpSnippet(results.snippet_text.toString());
   	self.currentPlace().yelpLink(results.url);
 
-  	// var mydiv = document.createElement("div");
-  	// mydiv.textContent = "Rating:"
-  	// $(mydiv).insertAfter(mytab)
   	var yelpImage = document.getElementsByClassName("yelpImage")[0];
   	if ($(".yelpSnippet").length > 0) {
   		$(".yelpSnippet").remove();
@@ -674,15 +507,6 @@ var ViewModel = function() {
   	});
   }; // end updateYelpContent function
   ////// end yelp stuff
-
-  // ko.utils.stringStartsWith = function (string, startsWith) {
-  //     string = string || "";
-  //     if (startsWith.length > string.length)
-  //         return false;
-  //     return string.substring(0, startsWith.length) === startsWith;
-  // },
-
-
 
   google.maps.event.addDomListener(window, 'load', this.initializeMap);
 }; ////**** END
