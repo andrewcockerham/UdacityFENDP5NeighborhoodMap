@@ -301,7 +301,8 @@ var ViewModel = function() {
 	  	window.map.setZoom(17);
 	  	console.log("before markers")
 	  	markers.forEach(function(marker) {
-	  		console.log(marker)
+	  		console.log(marker.position.A.toFixed)
+	  		console.log(place.latitude)
 	  		if (marker.position.A.toFixed(6) == place.latitude && marker.position.F.toFixed(6) == place.longitude) {
 	  			console.log("in markers")
 	  			self.showInfoBox(window.infobox, place, map, marker)
