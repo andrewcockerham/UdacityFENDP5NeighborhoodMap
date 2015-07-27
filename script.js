@@ -299,7 +299,7 @@ var ViewModel = function() {
 
 	  	window.map.panTo(position);
 	  	window.map.setZoom(17);
-
+	  	console.log("before markers")
 	  	markers.forEach(function(marker) {
 	  		if (marker.position.A.toFixed(6) == place.latitude && marker.position.F.toFixed(6) == place.longitude) {
 	  			console.log("in markers")
