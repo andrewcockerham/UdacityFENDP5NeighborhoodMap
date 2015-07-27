@@ -585,7 +585,7 @@ var ViewModel = function() {
   this.showInfoBox = function(infobox, place, map, marker) {
   	console.log("in showInfoBox")
   	infobox.open(map, marker);
-  	infobox.setContent('<div id="infobox">' + '<h2 id="placeName"><a href="' + place.website + '">' + place.name + '</a>' + '</h3><h4>' + place.address + '</h4></div>');
+  	infobox.setContent('<div id="infobox">' + '<h2 id="placeName"><a href="' + place.website + '">' + place.name() + '</a>' + '</h3><h4>' + place.address + '</h4></div>');
   }
 
   // YELP RELATED CODE
