@@ -299,12 +299,9 @@ var ViewModel = function() {
 
 	  	window.map.panTo(position);
 	  	window.map.setZoom(17);
-	  	console.log("before markers")
+
 	  	markers.forEach(function(marker) {
-	  		console.log(marker.position.A.toFixed(5))
-	  		console.log(place.latitude())
 	  		if (marker.position.A.toFixed(6) == place.latitude() && marker.position.F.toFixed(6) == place.longitude()) {
-	  			console.log("in markers")
 	  			self.showInfoBox(window.infobox, place, map, marker)
 	  			marker.setAnimation(google.maps.Animation.BOUNCE);
 	  			window.setTimeout(function() {
@@ -330,7 +327,7 @@ var ViewModel = function() {
   	streetview.style.width = "200px";
   	streetview.style.height = "200px";
   	content.appendChild(streetview);
-  	var infobox;
+  	// var infobox;
 
   	searchMarkers = [];
     window.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -339,7 +336,7 @@ var ViewModel = function() {
         new google.maps.LatLng(30.3, -97.85));
     window.map.fitBounds(defaultBounds);
 
-    infobox = new InfoBox({
+    window.infobox = new InfoBox({
 			// content: '<div id="infobox">' + '<h3 id="placeName">' + place.name  +'</h3>'+ '</div>',
 			content: '',
 			// content: '<div id="infobox">The contents of your info box. Its very easy to create and customize.</div>',
