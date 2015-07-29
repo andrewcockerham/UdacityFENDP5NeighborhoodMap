@@ -246,6 +246,7 @@ var ViewModel = function() {
 
 	  	markers.forEach(function(marker) {
 	  		console.log(marker);
+	  		console.log(marker.position);
 	  		if (marker.position.A.toFixed(6) == place.latitude() && marker.position.F.toFixed(6) == place.longitude()) {
 	  			self.showInfoBox(window.infobox, place, map, marker);
 	  			marker.setAnimation(google.maps.Animation.BOUNCE);
