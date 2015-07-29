@@ -250,7 +250,7 @@ var ViewModel = function() {
 	  		console.log(marker.getPosition());
 	  		console.log(marker.getPosition().lat());
 	  		// console.log(marker.getPosition().latitude);
-	  		if (marker.getPosition().lat() == place.latitude() && marker.getPosition().lng() == place.longitude()) {
+	  		if (marker.getPosition().lat().toFixed(6) == place.latitude() && marker.getPosition().lng().toFixed(6) == place.longitude()) {
 	  		// if (marker.position.A.toFixed(6) == place.latitude() && marker.position.F.toFixed(6) == place.longitude()) {
 	  			self.showInfoBox(window.infobox, place, map, marker);
 	  			marker.setAnimation(google.maps.Animation.BOUNCE);
