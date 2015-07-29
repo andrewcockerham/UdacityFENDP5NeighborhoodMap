@@ -245,7 +245,7 @@ var ViewModel = function() {
 	  	window.map.setZoom(17);
 
 	  	markers.forEach(function(marker) {
-	  		if (marker.position.A.toFixed(6) === place.latitude() && marker.position.F.toFixed(6) === place.longitude()) {
+	  		if (marker.position.A.toFixed(6) == place.latitude() && marker.position.F.toFixed(6) == place.longitude()) {
 	  			self.showInfoBox(window.infobox, place, map, marker);
 	  			marker.setAnimation(google.maps.Animation.BOUNCE);
 	  			window.setTimeout(function() {
