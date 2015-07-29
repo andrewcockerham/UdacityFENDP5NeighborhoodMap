@@ -207,12 +207,11 @@ var ViewModel = function() {
 	  	var context = ko.contextFor(event.target);
      	console.log(self.currentPlace().yelpID());
      	if (self.currentPlace().yelpID() !== "") {
-     		console.log("no yelp")
      		self.callYelpAPI();
      	} else {
-     		var rating = document.getElementsByClassName("rating")
-     		ratingTab = rating[context.$index()]
-     		ratingTab.textContent = "No Yelp Reviews"
+     		var rating = document.getElementsByClassName("rating");
+     		ratingTab = rating[context.$index()];
+     		ratingTab.textContent = "No Yelp Reviews";
      	}
 	    self.closeDropdown();
 
@@ -246,8 +245,8 @@ var ViewModel = function() {
 	  	window.map.setZoom(17);
 
 	  	markers.forEach(function(marker) {
-	  		if (marker.position.A.toFixed(6) == place.latitude() && marker.position.F.toFixed(6) == place.longitude()) {
-	  			self.showInfoBox(window.infobox, place, map, marker)
+	  		if (marker.position.A.toFixed(6) === place.latitude() && marker.position.F.toFixed(6) === place.longitude()) {
+	  			self.showInfoBox(window.infobox, place, map, marker);
 	  			marker.setAnimation(google.maps.Animation.BOUNCE);
 	  			window.setTimeout(function() {
 	  				marker.setAnimation(null);
@@ -309,13 +308,8 @@ var ViewModel = function() {
 
     	markers.push(marker);
     	google.maps.event.addListener(marker, 'click', function() {
-    		console.log(place.name)
-    		console.log(place)
-    		console.log(places.indexOf(place)) //THIS LINE
-
     		// close any open tabs
     		self.closeDropdown();
-
     		// open dropdown
     		self.showDropdown(place);
 
@@ -386,36 +380,23 @@ var ViewModel = function() {
 
 
   this.showDropdown = function(place) {
-  	console.log("showDropdown");
-  	console.log(places.indexOf(place))
-  	// console.log(self.placeList());
   	var tabs = document.getElementById("tabsDiv" + places.indexOf(place));
   	$(tabs).slideToggle();
   	$(".extra").remove();
-  	// console.log("tabRadioWiki" + places.indexOf(place));
-  	// console.log(document.getElementById("tabRadioWiki"));
   	document.getElementById("tabRadioTwitter" + places.indexOf(place)).checked = true;
   	$(tabs).prev()[0].style.fontWeight = 'bold';
   	$(tabs).append("<div class='extra col-md-5 col-sm-12' stye='position: relative;height: 200px;'></div>");
-  	  	var tabs1 = $(".extra").parent().find(".tab-content");
-  			// loop through and find the one that is visible
-  			for (var i = 0; i < tabs1.length; i++) {
-  				var tab = tabs1[i]
-  				if ($(tab).is(':visible')) {
-  					// if ($(".extra").is(":visible")) {
-  					// 	console.log("visible")
-  					// 	$(".extra").remove();
-  					// 	return
-  					// } else {
-	  					$(".extra").height($(tab).height());
-	  					// $(".extra").height($(tab).height() + 55)
-  					// }
-  				};
-  			};
-  }
+	  var tabs1 = $(".extra").parent().find(".tab-content");
+		// loop through and find the one that is visible
+		for (var i = 0; i < tabs1.length; i++) {
+			var tab = tabs1[i];
+			if ($(tab).is(':visible')) {
+				$(".extra").height($(tab).height());
+			}
+		}
+  };
 
   this.closeDropdown = function() {
-  	console.log("closeDropdown");
   	var tabsDivArray = document.getElementsByClassName("tabsDiv");
   	for (var i = 0; i < tabsDivArray.length; i++) {
   		var tabsDiv = tabsDivArray[i];
@@ -429,12 +410,12 @@ var ViewModel = function() {
   		var placeItem = placeItems[i];
   		placeItem.style.fontWeight = "normal";
   	}
-  }
+  };
 
   this.showInfoBox = function(infobox, place, map, marker) {
   	infobox.open(map, marker);
   	infobox.setContent('<div id="infobox">' + '<h2 id="placeName"><a href="' + place.website().toString() + '">' + place.name() + '</a>' + '</h3><h4>' + place.address() + '</h4></div>');
-  }
+  };
 
   // YELP RELATED CODE
   this.callYelpAPI = function() {
