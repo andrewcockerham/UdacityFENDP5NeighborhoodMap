@@ -270,7 +270,7 @@ var ViewModel = function() {
   	streetview.style.height = "200px";
   	content.appendChild(streetview);
 
-  	searchMarkers = [];
+  	var searchMarkers = [];
     window.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
     var defaultBounds = new google.maps.LatLngBounds(
         new google.maps.LatLng(30.2, -97.92),
