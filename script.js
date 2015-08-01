@@ -480,25 +480,31 @@ var ViewModel = function() {
   }; // end updateYelpContent function
   ////// end yelp stuff
 
-	// $(".tabs, .placeListItem").click(function() {
- //  	var tabs = $(".extra").parent().find(".tab-content");
-	// 	// loop through and find the one that is visible
-	// 	for (var i = 0; i < tabs.length; i++) {
-	// 		var tab = tabs[i]
-	// 		if ($(tab).is(':visible')) {
-	// 			$(".extra").height($(tab).height());
-	// 		};
-	// 	};
-	// });
+  /**
+    * @desc updates the height of the blank .extra div to the same as the content
+    *       so that the list doesn't get hidden behind the dropdown
+  */
+	$(".tabs, .placeListItem").click(function() {
+  	var tabs = $(".extra").parent().find(".tab-content");
+		// loop through and find the one that is visible
+		for (var i = 0; i < tabs.length; i++) {
+			var tab = tabs[i]
+			if ($(tab).is(':visible')) {
+				$(".extra").height($(tab).height());
+			};
+		};
+	});
+
+	//For showing the Yelp star rating
+	$.fn.stars = function(rating) {
+	  return $(this).each(function() {
+	    $(this).html($('<span />').width(Math.max(0, (Math.min(5, parseFloat(rating)))) * 16));
+	  });
+	};
 
   google.maps.event.addDomListener(window, 'load', this.initializeMap);
 }; ////**** END VIEW MODEL
 
-//For showing the Yelp star rating
-$.fn.stars = function(rating) {
-  return $(this).each(function() {
-    $(this).html($('<span />').width(Math.max(0, (Math.min(5, parseFloat(rating)))) * 16));
-  });
-};
+
 
 ko.applyBindings(new ViewModel());
