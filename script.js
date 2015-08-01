@@ -352,7 +352,9 @@ var ViewModel = function() {
 
   }; // END this.initializeMap
 
-
+  /**
+  	* @desc shows the content dropdown of the @param place
+  */
   this.showDropdown = function(place) {
   	var tabs = document.getElementById("tabsDiv" + places.indexOf(place));
   	$(tabs).slideToggle();
