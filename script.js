@@ -474,12 +474,22 @@ var ViewModel = function() {
   	newParagraph.appendChild(snippet);
   	$(newParagraph).addClass("yelpSnippet");
   	$(br).insertAfter(yelpImage);
-  						        	// 	<div>Rating: <span class="stars"></span></div>
   	$(function() {
   	  $('span.stars').stars(results.rating);
   	});
   }; // end updateYelpContent function
   ////// end yelp stuff
+
+  	$(".tabs, .placeListItem").click(function() {
+    	var tabs = $(".extra").parent().find(".tab-content");
+  		// loop through and find the one that is visible
+  		for (var i = 0; i < tabs.length; i++) {
+  			var tab = tabs[i]
+  			if ($(tab).is(':visible')) {
+  				$(".extra").height($(tab).height());
+  			};
+  		};
+  	});
 
   google.maps.event.addDomListener(window, 'load', this.initializeMap);
 }; ////**** END VIEW MODEL
