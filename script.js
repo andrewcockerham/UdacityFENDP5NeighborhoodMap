@@ -199,7 +199,7 @@ var ViewModel = function() {
     center: myLatlng
   };
   // var sv = new google.maps.StreetViewService();
-  markers = [];
+  var markers = [];
 
 	  // function called when you click on a place in the list
 	  this.changePlace1 = function(place, event) {
@@ -210,7 +210,7 @@ var ViewModel = function() {
      		self.callYelpAPI();
      	} else {
      		var rating = document.getElementsByClassName("rating");
-     		ratingTab = rating[context.$index()];
+     		var ratingTab = rating[context.$index()];
      		ratingTab.textContent = "No Yelp Reviews";
      	}
 	    self.closeDropdown();
@@ -265,7 +265,7 @@ var ViewModel = function() {
    // START initializeMap function
   this.initializeMap = function() {
   	var content = document.createElement("DIV");
-  	var streetview = document.createElement("DIV");
+  	var streetview = document.createElement("DIV"); // FIX THISS!! WHY CALLED STREETVIEW IF NOT STREETVIEW
   	streetview.style.width = "200px";
   	streetview.style.height = "200px";
   	content.appendChild(streetview);
