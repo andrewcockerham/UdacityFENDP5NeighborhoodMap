@@ -266,10 +266,10 @@ var ViewModel = function() {
    // START initializeMap function
   this.initializeMap = function() {
   	var content = document.createElement("DIV");
-  	var streetview = document.createElement("DIV"); // FIX THISS!! WHY CALLED STREETVIEW IF NOT STREETVIEW
-  	// streetview.style.width = "200px";
-  	// streetview.style.height = "200px";
-  	content.appendChild(streetview);
+  	// var streetview = document.createElement("DIV"); // FIX THISS!! WHY CALLED STREETVIEW IF NOT STREETVIEW
+  	// // streetview.style.width = "200px";
+  	// // streetview.style.height = "200px";
+  	// content.appendChild(streetview);
 
   	var searchMarkers = [];
     window.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
