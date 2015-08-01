@@ -4,4 +4,4 @@ Load a full demo via github pages [here](http://andrewcockerham.github.io/Udacit
 
 Clicking on items in the list on the left will open a dropdown with tabs for Twitter, Yelp, the place website, and Instagram.  The place marker will also show its name with a link to its website and its address.
 
-Run `gulp lint` to run JSHint.
+From the command line run `gulp lint` to run JSHint.

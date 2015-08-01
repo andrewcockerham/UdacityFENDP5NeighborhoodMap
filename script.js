@@ -297,7 +297,7 @@ var ViewModel = function() {
     places.forEach(function(place) {
     	var title = document.createElement("DIV");
     	title.innerText = places[places.indexOf(place)].name;
-    	content.appendChild(title);
+    	// content.appendChild(title);
     	var myLatlng = new google.maps.LatLng(place.latitude, place.longitude);
     	var marker = new google.maps.Marker({
     	    position: myLatlng,
