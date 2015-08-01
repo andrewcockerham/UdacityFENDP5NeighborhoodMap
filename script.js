@@ -165,87 +165,84 @@ var ViewModel = function() {
   this.currentPlace = ko.observable( this.placeList()[0] );
   this.filter = ko.observable("");
 
-  ///// START GOOGLE MAPS STUFF
-  var shape = {
-		coords: [1, 1, 1, 30, 46, 30, 46, 1],
-		type: 'poly'
-   };
-
+  /**
+  	* @desc This function handles the filtering box and filters the list.
+  	* credit: http://www.knockmeout.net/2011/04/utility-functions-in-knockoutjs.html
+  */
 	this.filteredItems = ko.computed(function() {
-	    var filter = self.filter().toLowerCase();
-	    if (!filter) {
-	        return this.placeList();
-	    } else {
-	        return ko.utils.arrayFilter(self.placeList(), function(item) {
-	        	return item.name().toLowerCase().indexOf(filter) !== -1;
-	        });
-	    }
+    var filter = self.filter().toLowerCase();
+    if (!filter) {
+      return this.placeList();
+    } else {
+      return ko.utils.arrayFilter(self.placeList(), function(item) {
+      	return item.name().toLowerCase().indexOf(filter) !== -1;
+      });
+    }
 	}, this);
 
-
-  // GOOLE MAPS STUFF FOR CHANGEPLACE1
+  // Initilize google map location to my neighborhood
   myLatlng = new google.maps.LatLng(30.2433481,-97.8703633);
   mapOptions = {
     zoom: 13,
     center: myLatlng
   };
-  // var sv = new google.maps.StreetViewService();
+
   var markers = [];
 
-	  // function called when you click on a place in the list
-	  this.changePlace1 = function(place, event) {
-	  	self.currentPlace(place);
-	  	var context = ko.contextFor(event.target);
-     	console.log(self.currentPlace().yelpID());
-     	if (self.currentPlace().yelpID() !== "") {
-     		self.callYelpAPI();
-     	} else {
-     		var rating = document.getElementsByClassName("rating");
-     		var ratingTab = rating[context.$index()];
-     		ratingTab.textContent = "No Yelp Reviews";
-     	}
-	    self.closeDropdown();
+  // function called when you click on a place in the list
+  this.changePlace = function(place, event) {
+  	self.currentPlace(place);
+  	var context = ko.contextFor(event.target);
+   	console.log(self.currentPlace().yelpID());
+   	if (self.currentPlace().yelpID() !== "") {
+   		self.callYelpAPI();
+   	} else {
+   		var rating = document.getElementsByClassName("rating");
+   		var ratingTab = rating[context.$index()];
+   		ratingTab.textContent = "No Yelp Reviews";
+   	}
+    self.closeDropdown();
 
-			// all placeList not bold
-			var placeItems = document.getElementsByClassName("placeListItem");
-			for (var i = 0; i < placeItems.length; i++) {
-				var placeItem = placeItems[i];
-				placeItem.style.fontWeight = "normal";
-			}
+		// all placeList not bold
+		var placeItems = document.getElementsByClassName("placeListItem");
+		for (var i = 0; i < placeItems.length; i++) {
+			var placeItem = placeItems[i];
+			placeItem.style.fontWeight = "normal";
+		}
 
-			// var tabs = document.getElementById("tabsDiv" + self.placeList().indexOf(place));
-			var tabs = document.getElementById("tabsDiv" + context.$index());
+		// var tabs = document.getElementById("tabsDiv" + self.placeList().indexOf(place));
+		var tabs = document.getElementById("tabsDiv" + context.$index());
 
-			// // also want to close all open tabDivs...
-			$(tabs).slideToggle();
-			$(".extra").remove();
-			event.target.style.display = "block";
-			$(tabs).prev()[0].style.fontWeight = 'bold';
-			// insert blank div behind to lower other list items
-			$(event.target).next().append("<div class='extra col-md-5 col-sm-12' stye='position: relative;height: 200px;'></div>");
+		// // also want to close all open tabDivs...
+		$(tabs).slideToggle();
+		$(".extra").remove();
+		event.target.style.display = "block";
+		$(tabs).prev()[0].style.fontWeight = 'bold';
+		// insert blank div behind to lower other list items
+		$(event.target).next().append("<div class='extra col-md-5 col-sm-12' stye='position: relative;height: 200px;'></div>");
 
-			var nextID = $(event.target).next()[0].id;
-			var targetIndex = nextID.substring(nextID.length - 1, nextID.length);
-			document.getElementById("tabRadioTwitter" + targetIndex).checked = true;
+		var nextID = $(event.target).next()[0].id;
+		var targetIndex = nextID.substring(nextID.length - 1, nextID.length);
+		document.getElementById("tabRadioTwitter" + targetIndex).checked = true;
 
-			// GOOGLE MAPS STUFF called on ChangePlace
-	  	// panTo place
-	  	var position = new google.maps.LatLng(place.latitude(),place.longitude());
+		// GOOGLE MAPS STUFF called on ChangePlace
+  	// panTo place
+  	var position = new google.maps.LatLng(place.latitude(),place.longitude());
 
-	  	window.map.panTo(position);
-	  	window.map.setZoom(17);
+  	window.map.panTo(position);
+  	window.map.setZoom(17);
 
-	  	markers.forEach(function(marker) {
-	  		if (marker.getPosition().lat().toFixed(6) == place.latitude() && marker.getPosition().lng().toFixed(6) == place.longitude()) {
-	  			self.showInfoBox(window.infobox, place, map, marker);
-	  			marker.setAnimation(google.maps.Animation.BOUNCE);
-	  			window.setTimeout(function() {
-	  				marker.setAnimation(null);
-	  			}, 3500);
-	  		}
-	  	});
+  	markers.forEach(function(marker) {
+  		if (marker.getPosition().lat().toFixed(6) == place.latitude() && marker.getPosition().lng().toFixed(6) == place.longitude()) {
+  			self.showInfoBox(window.infobox, place, map, marker);
+  			marker.setAnimation(google.maps.Animation.BOUNCE);
+  			window.setTimeout(function() {
+  				marker.setAnimation(null);
+  			}, 3500);
+  		}
+  	});
 
-	  }; // end function changePlace1
+  }; // end function changePlace
 
 
 
@@ -284,7 +281,6 @@ var ViewModel = function() {
     	    position: myLatlng,
     	    map: map,
     	    icon: 'customPinSmall.png',
-    	    // shape: shape,
     	    animation: google.maps.Animation.DROP
     	});
 
