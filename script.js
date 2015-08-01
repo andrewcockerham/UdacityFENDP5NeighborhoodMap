@@ -6,7 +6,6 @@ var places = [
 		mapSrc: "Austin+Pizza+Garden",
 		latitude: 30.235678,
 		longitude: -97.85908,
-		// content: '<div id="content" style="width:250px;height:300px;">hi</div>',
 		wikipediaContent: 'wikpediaContent',
 		website: 'http://www.austin-pizza-garden.com',
 		yelpID: "austin-pizza-garden-austin-2",
@@ -22,7 +21,6 @@ var places = [
 		mapSrc: "Red's+Indoor+Range",
 		latitude: 30.236278,
 		longitude: -97.856536,
-		// content: '<div id="content" style="width:250px;height:300px;">hi</div>',
 		wikipediaContent: 'wikpediaContent',
 		website: "http://www.redsguns.com/",
 		yelpID: "reds-indoor-range-austin",
@@ -38,7 +36,6 @@ var places = [
 		mapSrc: "Freescale+Semiconductor+Inc",
 		latitude: 30.238327,
 		longitude: -97.866148,
-		// content: '<div id="content" style="width:250px;height:300px;">hi</div>',
 		wikipediaContent: 'wikpediaContent',
 		website: "http://www.austin-pizza-garden.com",
 		yelpID: "freescale-austin-4",
@@ -54,7 +51,6 @@ var places = [
 		mapSrc: "Verona+Ristorante+Italino",
 		latitude: 30.235072,
 		longitude: -97.878345,
-		// content: "hi",
 		wikipediaContent: 'wikpediaContent',
 		website: "http://www.veronaustin.com/",
 		yelpID: "verona-ristorante-italiano-austin-3",
@@ -70,7 +66,6 @@ var places = [
 		mapSrc: "The+Natural+Gardener",
 		latitude: 30.2572,
 		longitude: -97.89055,
-		// content: "hi",
 		wikipediaContent: 'wikpediaContent',
 		website: "http://www.naturalgardeneraustin.com/",
 		yelpID: "the-natural-gardener-austin",
@@ -86,7 +81,6 @@ var places = [
 		mapSrc: "AMD",
 		latitude: 30.251333,
 		longitude: -97.863768,
-		// content: "hi",
 		wikipediaContent: 'wikpediaContent',
 		website: "http://www.amd.com/",
 		yelpID: "",
@@ -102,7 +96,6 @@ var places = [
 		mapSrc: "Hecho+En+Mexico",
 		latitude: 30.228475,
 		longitude: -97.863356,
-		// content: "hi",
 		wikipediaContent: 'wikpediaContent',
 		website: "http://hechoenmexico-restaurant.com/",
 		yelpID: "hecho-en-mexico-austin",
@@ -118,7 +111,6 @@ var places = [
 		mapSrc: "Austin+Community+College:+Pinnacle+Campus",
 		latitude: 30.23152,
 		longitude: -97.883524,
-		// content: "hi5",
 		wikipediaContent: 'wikpediaContent',
 		website: "http://www.austincc.edu/locations/campuses/pinnacle-campus",
 		yelpID: "",
@@ -134,7 +126,6 @@ var places = [
 		mapSrc: "Austin+Community+College:+Pinnacle+Campus",
 		latitude: 30.233436,
 		longitude: -97.872213,
-		// content: "hi5",
 		wikipediaContent: 'wikpediaContent',
 		website: "http://www.donutholeaustin.com/",
 		yelpID: "the-donut-hole-austin-2",
@@ -153,7 +144,6 @@ var Place = function(data) {
 	this.mapSrc = ko.observable(data.mapSrc);
 	this.latitude = ko.observable(data.latitude);
 	this.longitude = ko.observable(data.longitude);
-	this.content = ko.observable(data.content);
 	this.wikipediaContent = ko.observable(data.wikipediaContent);
 	this.website = ko.observable(data.website);
 	this.yelpID = ko.observable(data.yelpID);
@@ -162,7 +152,6 @@ var Place = function(data) {
 	this.yelpLink = ko.observable(data.yelpLink);
 	this.twitterWidget = ko.observable(data.twitterWidget);
 	this.instagramWidget = ko.observable(data.instagramWidget);
-
 };
 
 ///// Knockout View Model
@@ -175,9 +164,10 @@ var ViewModel = function() {
   });
   this.currentPlace = ko.observable( this.placeList()[0] );
   this.filter = ko.observable("");
+
   ///// START GOOGLE MAPS STUFF
   var shape = {
-		coords: [1, 1, 1, 30, 46, 30, 46, 1],
+		// coords: [1, 1, 1, 30, 46, 30, 46, 1],
 		type: 'poly'
    };
 
