@@ -480,16 +480,16 @@ var ViewModel = function() {
   }; // end updateYelpContent function
   ////// end yelp stuff
 
-  	$(".tabs, .placeListItem").click(function() {
-    	var tabs = $(".extra").parent().find(".tab-content");
-  		// loop through and find the one that is visible
-  		for (var i = 0; i < tabs.length; i++) {
-  			var tab = tabs[i]
-  			if ($(tab).is(':visible')) {
-  				$(".extra").height($(tab).height());
-  			};
-  		};
-  	});
+	// $(".tabs, .placeListItem").click(function() {
+ //  	var tabs = $(".extra").parent().find(".tab-content");
+	// 	// loop through and find the one that is visible
+	// 	for (var i = 0; i < tabs.length; i++) {
+	// 		var tab = tabs[i]
+	// 		if ($(tab).is(':visible')) {
+	// 			$(".extra").height($(tab).height());
+	// 		};
+	// 	};
+	// });
 
   google.maps.event.addDomListener(window, 'load', this.initializeMap);
 }; ////**** END VIEW MODEL
