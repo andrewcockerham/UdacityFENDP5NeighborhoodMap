@@ -191,9 +191,8 @@ var ViewModel = function() {
 
   // function called when you click on a place in the list
   this.changePlace = function(place, event) {
-  	self.currentPlace(place);
+  	self.currentPlace(place); // set current place to place that was clicked
   	var context = ko.contextFor(event.target);
-   	console.log(self.currentPlace().yelpID());
    	if (self.currentPlace().yelpID() !== "") {
    		self.callYelpAPI();
    	} else {
@@ -203,35 +202,40 @@ var ViewModel = function() {
    	}
     self.closeDropdown();
 
-		// all placeList not bold
+		// make all placeList items not bold
 		var placeItems = document.getElementsByClassName("placeListItem");
 		for (var i = 0; i < placeItems.length; i++) {
 			var placeItem = placeItems[i];
 			placeItem.style.fontWeight = "normal";
 		}
 
-		// var tabs = document.getElementById("tabsDiv" + self.placeList().indexOf(place));
+		/**
+			* gets all of the DOM elements with ID "tabsDiv" + it's index in the list
+		*/
 		var tabs = document.getElementById("tabsDiv" + context.$index());
 
-		// // also want to close all open tabDivs...
+		// close all open tabDivs
 		$(tabs).slideToggle();
 		$(".extra").remove();
 		event.target.style.display = "block";
 		$(tabs).prev()[0].style.fontWeight = 'bold';
+
 		// insert blank div behind to lower other list items
 		$(event.target).next().append("<div class='extra col-md-5 col-sm-12' stye='position: relative;height: 200px;'></div>");
 
 		var nextID = $(event.target).next()[0].id;
 		var targetIndex = nextID.substring(nextID.length - 1, nextID.length);
-		document.getElementById("tabRadioTwitter" + targetIndex).checked = true;
+		document.getElementById("tabRadioTwitter" + targetIndex).checked = true; // default tab shown is twitter
 
-		// GOOGLE MAPS STUFF called on ChangePlace
+		// GOOGLE MAPS STUFF
   	// panTo place
   	var position = new google.maps.LatLng(place.latitude(),place.longitude());
-
   	window.map.panTo(position);
   	window.map.setZoom(17);
 
+  	/**
+  		* @desc animate and show infobox for each marker
+  	*/
   	markers.forEach(function(marker) {
   		if (marker.getPosition().lat().toFixed(6) == place.latitude() && marker.getPosition().lng().toFixed(6) == place.longitude()) {
   			self.showInfoBox(window.infobox, place, map, marker);
@@ -244,20 +248,16 @@ var ViewModel = function() {
 
   }; // end function changePlace
 
-
-
-
-
-
-
-   // START initializeMap function
+  /**
+  	* @desc this function is called on page load and initializes everything
+  */
   this.initializeMap = function() {
   	var searchMarkers = [];
     window.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-    var defaultBounds = new google.maps.LatLngBounds(
-        new google.maps.LatLng(30.2, -97.92),
-        new google.maps.LatLng(30.3, -97.85));
-    window.map.fitBounds(defaultBounds);
+    // var defaultBounds = new google.maps.LatLngBounds(
+    //     new google.maps.LatLng(30.2, -97.92),
+    //     new google.maps.LatLng(30.3, -97.85));
+    // window.map.fitBounds(defaultBounds);
 
     window.infobox = new InfoBox({
 			content: '',
