@@ -372,6 +372,9 @@ var ViewModel = function() {
 		}
   };
 
+  /**
+  	* @desc closes open dropdown
+  */
   this.closeDropdown = function() {
   	var tabsDivArray = document.getElementsByClassName("tabsDiv");
   	for (var i = 0; i < tabsDivArray.length; i++) {
@@ -380,7 +383,7 @@ var ViewModel = function() {
   			$(tabsDiv).slideToggle();
   		}
   	}
-  	// all placeList not bold
+  	// makes all placeList not bold
   	var placeItems = document.getElementsByClassName("placeListItem");
   	for (var i = 0; i < placeItems.length; i++) {
   		var placeItem = placeItems[i];
@@ -388,6 +391,14 @@ var ViewModel = function() {
   	}
   };
 
+  /**
+  	* @desc showsn infobox when marker is clicked or when item is clicked in list
+  	* @params
+  	*		infobox - the infobox that was set before
+  	*		place   - the place that was clicked
+  	*		map 		- the window.map google map
+  	*		marker  - the marker that was clicked
+  */
   this.showInfoBox = function(infobox, place, map, marker) {
   	infobox.open(map, marker);
   	infobox.setContent('<div id="infobox">' + '<h2 id="placeName"><a href="' + place.website().toString() + '">' + place.name() + '</a>' + '</h3><h4>' + place.address() + '</h4></div>');
@@ -424,8 +435,8 @@ var ViewModel = function() {
   	// USE BELOW FROM UDACITY FORUM EXAMPLE TO SIGN OAUTH TO USE YELP API
   	var encodedSignature = oauthSignature.generate('GET',yelp_url, parameters, YELP_CONSUMER_SECRET, YELP_TOKEN_SECRET);
   	parameters.oauth_signature = encodedSignature;
-  	//// end OAuth related code
 
+  	// ajax variables
   	var settings = {
       url: yelp_url,
       data: parameters,
@@ -441,7 +452,7 @@ var ViewModel = function() {
     $.ajax(settings);
   }; /////// END callYelpAPI function
 
-  self.callYelpAPI();
+  // self.callYelpAPI();
 
   this.updateYelpContent = function(results) {
   	self.currentPlace().yelpImageSrc(results.image_url);
