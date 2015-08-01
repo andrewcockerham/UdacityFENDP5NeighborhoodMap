@@ -265,7 +265,7 @@ var ViewModel = function() {
 
    // START initializeMap function
   this.initializeMap = function() {
-  	var content = document.createElement("DIV");
+  	// var content = document.createElement("DIV");
   	// var streetview = document.createElement("DIV"); // FIX THISS!! WHY CALLED STREETVIEW IF NOT STREETVIEW
   	// // streetview.style.width = "200px";
   	// // streetview.style.height = "200px";
@@ -295,8 +295,8 @@ var ViewModel = function() {
     });
 
     places.forEach(function(place) {
-    	var title = document.createElement("DIV");
-    	title.innerText = places[places.indexOf(place)].name;
+    	// var title = document.createElement("DIV");
+    	// title.innerText = places[places.indexOf(place)].name;
     	// content.appendChild(title);
     	var myLatlng = new google.maps.LatLng(place.latitude, place.longitude);
     	var marker = new google.maps.Marker({
