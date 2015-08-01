@@ -167,7 +167,7 @@ var ViewModel = function() {
 
   ///// START GOOGLE MAPS STUFF
   var shape = {
-		// coords: [1, 1, 1, 30, 46, 30, 46, 1],
+		coords: [1, 1, 1, 30, 46, 30, 46, 1],
 		type: 'poly'
    };
 
@@ -284,7 +284,7 @@ var ViewModel = function() {
     	    position: myLatlng,
     	    map: map,
     	    icon: 'customPinSmall.png',
-    	    shape: shape,
+    	    // shape: shape,
     	    animation: google.maps.Animation.DROP
     	});
 
