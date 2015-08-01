@@ -6,7 +6,7 @@ var places = [
 		mapSrc: "Austin+Pizza+Garden",
 		latitude: 30.235678,
 		longitude: -97.85908,
-		content: '<div id="content" style="width:250px;height:300px;">hi</div>',
+		// content: '<div id="content" style="width:250px;height:300px;">hi</div>',
 		wikipediaContent: 'wikpediaContent',
 		website: 'http://www.austin-pizza-garden.com',
 		yelpID: "austin-pizza-garden-austin-2",
@@ -480,8 +480,6 @@ var ViewModel = function() {
   }; // end updateYelpContent function
   ////// end yelp stuff
 
-
-
 	//For showing the Yelp star rating
 	$.fn.stars = function(rating) {
 	  return $(this).each(function() {
@@ -491,7 +489,5 @@ var ViewModel = function() {
 
   google.maps.event.addDomListener(window, 'load', this.initializeMap);
 }; ////**** END VIEW MODEL
-
-
 
 ko.applyBindings(new ViewModel());
