@@ -254,11 +254,8 @@ var ViewModel = function() {
   this.initializeMap = function() {
   	var searchMarkers = [];
     window.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-    // var defaultBounds = new google.maps.LatLngBounds(
-    //     new google.maps.LatLng(30.2, -97.92),
-    //     new google.maps.LatLng(30.3, -97.85));
-    // window.map.fitBounds(defaultBounds);
 
+    // initialize infobox
     window.infobox = new InfoBox({
 			content: '',
 			disableAutoPan: false,
@@ -275,6 +272,7 @@ var ViewModel = function() {
 	    infoBoxClearance: new google.maps.Size(1, 1)
     });
 
+    // put markers at location of each place
     places.forEach(function(place) {
     	var myLatlng = new google.maps.LatLng(place.latitude, place.longitude);
     	var marker = new google.maps.Marker({
@@ -285,6 +283,7 @@ var ViewModel = function() {
     	});
 
     	markers.push(marker);
+    	// add on click function for each marker
     	google.maps.event.addListener(marker, 'click', function() {
     		// close any open tabs
     		self.closeDropdown();
@@ -304,55 +303,54 @@ var ViewModel = function() {
 
     }); // end places.forEach
 
-  	// Create the search box and link it to the UI element.
   	var input = (document.getElementById('mySearchBox'));
   	var searchBox = new google.maps.places.SearchBox((input));
 
 	  // Listen for the event fired when the user selects an item from the
 	  // search list. Retrieve the matching places for that item.
-	  google.maps.event.addListener(searchBox, 'places_changed', function() {
-	    var searchPlaces = searchBox.getPlaces();
+	  // google.maps.event.addListener(searchBox, 'places_changed', function() {
+	  //   var searchPlaces = searchBox.getPlaces();
 
-	    if (searchPlaces.length === 0) {
-	      return;
-	    }
-	    for (var i = 0, searchMarker; searchMarker = searchMarkers[i]; i++) {
-	      searchMarker.setMap(null);
-	    }
+	  //   if (searchPlaces.length === 0) {
+	  //     return;
+	  //   }
+	  //   for (var i = 0, searchMarker; searchMarker = searchMarkers[i]; i++) {
+	  //     searchMarker.setMap(null);
+	  //   }
 
-	    // For each place, get the icon, place name, and location.
-	    searchMarkers = [];
-	    var searchBounds = new google.maps.LatLngBounds();
-	    for (var i = 0, place; place = searchPlaces[i]; i++) {
-	      var image = {
-	        url: place.icon,
-	        size: new google.maps.Size(71, 71),
-	        origin: new google.maps.Point(0, 0),
-	        anchor: new google.maps.Point(17, 34),
-	        scaledSize: new google.maps.Size(25, 25)
-	      };
+	  //   // For each place, get the icon, place name, and location.
+	  //   searchMarkers = [];
+	  //   var searchBounds = new google.maps.LatLngBounds();
+	  //   for (var i = 0, place; place = searchPlaces[i]; i++) {
+	  //     var image = {
+	  //       url: place.icon,
+	  //       size: new google.maps.Size(71, 71),
+	  //       origin: new google.maps.Point(0, 0),
+	  //       anchor: new google.maps.Point(17, 34),
+	  //       scaledSize: new google.maps.Size(25, 25)
+	  //     };
 
-	      // Create a marker for each place.
-	      var searchMarker = new google.maps.Marker({
-	        map: map,
-	        icon: image,
-	        title: place.name,
-	        position: place.geometry.location
-	      });
+	  //     // Create a marker for each place.
+	  //     var searchMarker = new google.maps.Marker({
+	  //       map: map,
+	  //       icon: image,
+	  //       title: place.name,
+	  //       position: place.geometry.location
+	  //     });
 
-	      searchMarkers.push(searchMarker);
+	  //     searchMarkers.push(searchMarker);
 
-	      searchBounds.extend(place.geometry.location);
-	    }
-	    map.fitBounds(searchBounds);
-	  });
+	  //     searchBounds.extend(place.geometry.location);
+	  //   }
+	  //   map.fitBounds(searchBounds);
+	  // });
 	  // Bias the SearchBox results towards places that are within the bounds of the
 	  // current map's viewport.
-	  google.maps.event.addListener(map, 'bounds_changed', function() {
-	    var bounds = map.getBounds();
-	    console.log(bounds);
-	    searchBox.setBounds(bounds);
-	  });
+	  // google.maps.event.addListener(map, 'bounds_changed', function() {
+	  //   var bounds = map.getBounds();
+	  //   console.log(bounds);
+	  //   searchBox.setBounds(bounds);
+	  // });
 
   }; // END this.initializeMap
 
