@@ -265,6 +265,12 @@ var ViewModel = function() {
 
    // START initializeMap function
   this.initializeMap = function() {
+  	// var content = document.createElement("DIV");
+  	// var streetview = document.createElement("DIV"); // FIX THISS!! WHY CALLED STREETVIEW IF NOT STREETVIEW
+  	// // streetview.style.width = "200px";
+  	// // streetview.style.height = "200px";
+  	// content.appendChild(streetview);
+
   	var searchMarkers = [];
     window.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
     var defaultBounds = new google.maps.LatLngBounds(
@@ -289,6 +295,9 @@ var ViewModel = function() {
     });
 
     places.forEach(function(place) {
+    	// var title = document.createElement("DIV");
+    	// title.innerText = places[places.indexOf(place)].name;
+    	// content.appendChild(title);
     	var myLatlng = new google.maps.LatLng(place.latitude, place.longitude);
     	var marker = new google.maps.Marker({
     	    position: myLatlng,
@@ -412,7 +421,7 @@ var ViewModel = function() {
   // YELP RELATED CODE
   this.callYelpAPI = function() {
 
-		// YELP API STUFF
+		/////////////// YELP API STUFF
 		var YELP_CONSUMER_KEY = "N3DofJ4mIItoveG38brAHg";
 		var YELP_CONSUMER_SECRET = "tEeEHCEXinsVqj8L0vhJRT3kEBw";
 		var YELP_TOKEN = "tXgSSy2Kh_8J2gqA1dlKxosMs5vUAy_d";
@@ -420,7 +429,7 @@ var ViewModel = function() {
 		var YELP_BASE_URL = "http://api.yelp.com/v2/";
 		var yelp_url = YELP_BASE_URL + 'business/' + self.currentPlace().yelpID();
 
-		// OAUTH related code
+		//// OAUTH related code
 		// Generates a random number and returns it as a string for OAuthentication
 		function generate_nonce() {
 		  return (Math.floor(Math.random() * 1e12).toString());
@@ -482,7 +491,7 @@ var ViewModel = function() {
   ////// end yelp stuff
 
   google.maps.event.addDomListener(window, 'load', this.initializeMap);
-}; ////**** END VIEW MODEL
+}; ////**** END
 
 //For showing the Yelp star rating
 $.fn.stars = function(rating) {
