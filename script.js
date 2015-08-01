@@ -1,3 +1,4 @@
+// places is the initial data model
 var places = [
 	{
 		name: "Austin Pizza Garden",
@@ -266,8 +267,8 @@ var ViewModel = function() {
   this.initializeMap = function() {
   	var content = document.createElement("DIV");
   	var streetview = document.createElement("DIV"); // FIX THISS!! WHY CALLED STREETVIEW IF NOT STREETVIEW
-  	streetview.style.width = "200px";
-  	streetview.style.height = "200px";
+  	// streetview.style.width = "200px";
+  	// streetview.style.height = "200px";
   	content.appendChild(streetview);
 
   	var searchMarkers = [];
