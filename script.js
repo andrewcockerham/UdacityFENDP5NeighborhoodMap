@@ -317,7 +317,8 @@ var ViewModel = function() {
 
     	});// end addListener marker
 
-    }); // end places.forEach
+    }; // end places.forEach
+    // }); // end places.forEach
 
   	var input = (document.getElementById('mySearchBox'));
   	var searchBox = new google.maps.places.SearchBox((input));
