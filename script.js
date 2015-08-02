@@ -241,7 +241,8 @@ var ViewModel = function() {
   	*/
   	markers.forEach(function(marker) {
   		if (marker.getPosition().lat().toFixed(6) == place.latitude() && marker.getPosition().lng().toFixed(6) == place.longitude()) {
-  			self.showInfoBox(window.infobox, place, map, marker);
+  			self.showInfoBox(window.infobox, self.currentPlace(), map, marker);
+  			// self.showInfoBox(window.infobox, place, map, marker);
   			marker.setAnimation(google.maps.Animation.BOUNCE);
   			window.setTimeout(function() {
   				marker.setAnimation(null);
