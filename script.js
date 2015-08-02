@@ -164,7 +164,7 @@ var ViewModel = function() {
     self.placeList.push( new Place(placeItem) );
   });
   self.currentPlace = ko.observable( this.placeList()[0] );
-  self.filter = ko.observable("");
+  self.filter = ko.observable('');
 
   /**
   	* @desc This function handles the filtering box and filters the list.
@@ -198,14 +198,14 @@ var ViewModel = function() {
    	if (self.currentPlace().yelpID() !== "") {
    		self.callYelpAPI();
    	} else {
-   		var rating = document.getElementsByClassName("rating");
+   		var rating = document.getElementsByClassName('rating');
    		var ratingTab = rating[context.$index()];
    		ratingTab.textContent = "No Yelp Reviews";
    	}
     self.closeDropdown();
 
 		// make all placeList items not bold
-		var placeItems = document.getElementsByClassName("placeListItem");
+		var placeItems = document.getElementsByClassName('placeListItem');
 		for (var i = 0; i < placeItems.length; i++) {
 			var placeItem = placeItems[i];
 			placeItem.style.fontWeight = "normal";
@@ -214,20 +214,20 @@ var ViewModel = function() {
 		/**
 			* gets all of the DOM elements with ID "tabsDiv" + it's index in the list
 		*/
-		var tabs = document.getElementById("tabsDiv" + context.$index());
+		var tabs = document.getElementById('tabsDiv' + context.$index());
 
 		// close all open tabDivs
 		$(tabs).slideToggle();
-		$(".extra").remove();
-		event.target.style.display = "block";
+		$('.extra').remove();
+		event.target.style.display = 'block';
 		$(tabs).prev()[0].style.fontWeight = 'bold';
 
 		// insert blank div behind to lower other list items
-		$(event.target).next().append("<div class='extra col-md-5 col-sm-12' stye='position: relative;height: 200px;'></div>");
+		$(event.target).next().append('<div class="extra col-md-5 col-sm-12" stye="position: relative;height: 200px;"></div>');
 
 		var nextID = $(event.target).next()[0].id;
 		var targetIndex = nextID.substring(nextID.length - 1, nextID.length);
-		document.getElementById("tabRadioTwitter" + targetIndex).checked = true; // default tab shown is twitter
+		document.getElementById('tabRadioTwitter' + targetIndex).checked = true; // default tab shown is twitter
 
 		// GOOGLE MAPS STUFF
   	// panTo place
@@ -265,12 +265,12 @@ var ViewModel = function() {
 			pixelOffset: new google.maps.Size(-140, 0),
 			zIndex: null,
 			boxStyle: {
-			  background: "url('http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/examples/tipbox.gif') no-repeat",
+			  background: 'url("http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/examples/tipbox.gif") no-repeat',
 			  opacity: 0.75,
-			  width: "280px"
+			  width: '280px'
 	    },
-	    closeBoxMargin: "12px 4px 2px 2px",
-	    closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif",
+	    closeBoxMargin: '12px 4px 2px 2px',
+	    closeBoxURL: 'http://www.google.com/intl/en_us/mapfiles/close.gif',
 	    infoBoxClearance: new google.maps.Size(1, 1)
     });
 
@@ -358,18 +358,18 @@ var ViewModel = function() {
   	* @desc shows the content dropdown of the @param place
   */
   this.showDropdown = function(place) {
-  	var tabs = document.getElementById("tabsDiv" + places.indexOf(place));
+  	var tabs = document.getElementById('tabsDiv' + places.indexOf(place));
   	$(tabs).slideToggle();
-  	$(".extra").remove();
-  	document.getElementById("tabRadioTwitter" + places.indexOf(place)).checked = true;
+  	$('.extra').remove();
+  	document.getElementById('tabRadioTwitter' + places.indexOf(place)).checked = true;
   	$(tabs).prev()[0].style.fontWeight = 'bold';
-  	$(tabs).append("<div class='extra col-md-5 col-sm-12' stye='position: relative;height: 200px;'></div>");
-	  var tabs1 = $(".extra").parent().find(".tab-content");
+  	$(tabs).append('<div class="extra col-md-5 col-sm-12" stye="position: relative;height: 200px;"></div>');
+	  var tabs1 = $('.extra').parent().find('.tab-content');
 		// loop through and find the one that is visible
 		for (var i = 0; i < tabs1.length; i++) {
 			var tab = tabs1[i];
 			if ($(tab).is(':visible')) {
-				$(".extra").height($(tab).height());
+				$('.extra').height($(tab).height());
 			}
 		}
   };
@@ -378,7 +378,7 @@ var ViewModel = function() {
   	* @desc closes open dropdown
   */
   this.closeDropdown = function() {
-  	var tabsDivArray = document.getElementsByClassName("tabsDiv");
+  	var tabsDivArray = document.getElementsByClassName('tabsDiv');
   	for (var i = 0; i < tabsDivArray.length; i++) {
   		var tabsDiv = tabsDivArray[i];
   		if ($(tabsDiv).is(':visible')) {
@@ -386,10 +386,10 @@ var ViewModel = function() {
   		}
   	}
   	// makes all placeList not bold
-  	var placeItems = document.getElementsByClassName("placeListItem");
+  	var placeItems = document.getElementsByClassName('placeListItem');
   	for (var i = 0; i < placeItems.length; i++) {
   		var placeItem = placeItems[i];
-  		placeItem.style.fontWeight = "normal";
+  		placeItem.style.fontWeight = 'normal';
   	}
   };
 
@@ -410,11 +410,11 @@ var ViewModel = function() {
   this.callYelpAPI = function() {
 
 		// YELP API STUFF
-		var YELP_CONSUMER_KEY = "N3DofJ4mIItoveG38brAHg";
-		var YELP_CONSUMER_SECRET = "tEeEHCEXinsVqj8L0vhJRT3kEBw";
-		var YELP_TOKEN = "tXgSSy2Kh_8J2gqA1dlKxosMs5vUAy_d";
-		var YELP_TOKEN_SECRET = "R1TICiVW89ybGSpEqy10JxiOTQ8";
-		var YELP_BASE_URL = "http://api.yelp.com/v2/";
+		var YELP_CONSUMER_KEY = 'N3DofJ4mIItoveG38brAHg';
+		var YELP_CONSUMER_SECRET = 'tEeEHCEXinsVqj8L0vhJRT3kEBw';
+		var YELP_TOKEN = 'tXgSSy2Kh_8J2gqA1dlKxosMs5vUAy_d';
+		var YELP_TOKEN_SECRET = 'R1TICiVW89ybGSpEqy10JxiOTQ8';
+		var YELP_BASE_URL = 'http://api.yelp.com/v2/';
 		var yelp_url = YELP_BASE_URL + 'business/' + self.currentPlace().yelpID();
 
 		// OAUTH related code
@@ -462,15 +462,15 @@ var ViewModel = function() {
   	self.currentPlace().yelpSnippet(results.snippet_text.toString());
   	self.currentPlace().yelpLink(results.url);
 
-  	var yelpImage = document.getElementsByClassName("yelpImage")[0];
-  	if ($(".yelpSnippet").length > 0) {
-  		$(".yelpSnippet").remove();
+  	var yelpImage = document.getElementsByClassName('yelpImage')[0];
+  	if ($('.yelpSnippet').length > 0) {
+  		$('.yelpSnippet').remove();
   	}
-  	var br = document.createElement("br");
-  	var newParagraph = document.createElement("p");
+  	var br = document.createElement('br');
+  	var newParagraph = document.createElement('p');
   	var snippet = document.createTextNode(results.snippet_text.toString());
   	newParagraph.appendChild(snippet);
-  	$(newParagraph).addClass("yelpSnippet");
+  	$(newParagraph).addClass('yelpSnippet');
   	$(br).insertAfter(yelpImage);
   	$(function() {
   	  $('span.stars').stars(results.rating);
