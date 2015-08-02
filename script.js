@@ -1,3 +1,4 @@
+"use strict";
 // places is the initial data model
 var places = [
 	{
