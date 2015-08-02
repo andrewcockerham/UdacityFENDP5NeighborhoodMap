@@ -289,7 +289,7 @@ var ViewModel = function() {
     	// add on click function for each marker
     	google.maps.event.addListener(marker, 'click', function() {
     		self.currentPlace(place);
-    		console.log(self.currentPlace().name())
+    		console.log(self.currentPlace())
     		// close any open tabs
     		self.closeDropdown();
     		// open dropdown
@@ -407,7 +407,7 @@ var ViewModel = function() {
   	*		marker  - the marker that was clicked
   */
   this.showInfoBox = function(infobox, place, map, marker) {
-  	console.log(place.name)
+  	console.log(place.name())
   	infobox.open(map, marker);
   	infobox.setContent('<div id="infobox">' + '<h2 id="placeName"><a href="' + place.website.toString() + '">' + place.name() + '</a>' + '</h3><h4>' + place.address() + '</h4></div>');
   };
