@@ -379,6 +379,8 @@ var ViewModel = function() {
   	* @desc shows the content dropdown of the @param place
   */
   this.showDropdown = function(place) {
+  	console.log(place)
+  	console.log(self.placeList().indexOf(place))
   	var tabs = document.getElementById('tabsDiv' + places.indexOf(place));
   	$(tabs).slideToggle();
   	$('.extra').remove();
