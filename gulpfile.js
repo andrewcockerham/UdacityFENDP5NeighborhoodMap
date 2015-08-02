@@ -2,14 +2,24 @@ var gulp = require('gulp');
 var notify = require('gulp-notify');
 var jscs = require('gulp-jscs');
 var jshint = require('gulp-jshint');
+var uncss = require('gulp-uncss');
+var csso = require('gulp-csso');
 
 gulp.task('default', function() {
-	//code for default task
+  return gulp.src('*.css')
+    .pipe(uncss({
+      html: ['index.html']
+    }))
+    // .pipe(csso())
+    .pipe(gulp.dest('./'))
+    .pipe(notify({
+      title: 'default',
+        message: 'uncss and minified success!',
+    }))
 });
 
 gulp.task('jscs', function() {
   gulp.src('script.js')
-  // gulp.src('*.js')
   .pipe(jscs())
   .pipe(notify({
     title: 'JSCS',
