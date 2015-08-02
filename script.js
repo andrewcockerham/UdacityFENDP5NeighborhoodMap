@@ -277,9 +277,11 @@ var ViewModel = function() {
 
     // put markers at location of each place
     var placeLength = self.placeList().length;
-    // for (var i = 0, searchMarker; searchMarker = searchMarkers[i]; i++) {
-
-    self.placeList().forEach(function(place) {
+    for (var i = 0, i < placeLength, i++) {
+    	var place = self.placeList().indexOf(i);
+    	console.log(place);
+// places.indexOf(place)
+    // self.placeList().forEach(function(place) {
     // places.forEach(function(place) {
     	var myLatlng = new google.maps.LatLng(place.latitude, place.longitude);
     	var marker = new google.maps.Marker({
