@@ -184,7 +184,7 @@ var ViewModel = function() {
   myLatlng = new google.maps.LatLng(30.2433481,-97.8703633);
   mapOptions = {
     zoom: 13,
-    center: myLatlng
+    center: myLatlng,
     mapTypeControl: false,
   };
 
