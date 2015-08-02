@@ -277,19 +277,7 @@ var ViewModel = function() {
 
     // put markers at location of each place
     $.each(self.placeList(), function (index, value) {
-    	console.log("in each")
-    	console.log(value)
     	var place = value;
-    	console.log(place.name())
-    	console.log(place.latitude())
-    // var placeLength = self.placeList().length;
-    // for (var i = 0; i < tabs1.length; i++)
-    // for (var i = 0; i < placeLength; i++) {
-    	// var place = self.placeList().indexOf(i);
-    	// console.log(place);
-// places.indexOf(place)
-    // self.placeList().forEach(function(place) {
-    // places.forEach(function(place) {
     	var myLatlng = new google.maps.LatLng(place.latitude(), place.longitude());
     	var marker = new google.maps.Marker({
     	    position: myLatlng,
@@ -302,10 +290,6 @@ var ViewModel = function() {
     	// add on click function for each marker
     	google.maps.event.addListener(marker, 'click', function() {
     		self.currentPlace(place);
-    		console.log(self.currentPlace())
-    		console.log(place)
-    		console.log(place.name())
-    		console.log(place.name)
     		// close any open tabs
     		self.closeDropdown();
     		// open dropdown
@@ -379,15 +363,11 @@ var ViewModel = function() {
   	* @desc shows the content dropdown of the @param place
   */
   this.showDropdown = function(place) {
-  	console.log(place)
-  	console.log(self.placeList().indexOf(place))
   	var tabs = document.getElementById('tabsDiv' + self.placeList().indexOf(place));
-  	// var tabs = document.getElementById('tabsDiv' + places.indexOf(place));
   	$(tabs).slideToggle();
   	$('.extra').remove();
   	var indexString = self.placeList().indexOf(place).toString()
   	document.getElementById('tabRadioTwitter' + indexString).checked = true;
-  	// document.getElementById('tabRadioTwitter' + places.indexOf(place)).checked = true;
   	$(tabs).prev()[0].style.fontWeight = 'bold';
   	$(tabs).append('<div class="extra col-md-5 col-sm-12" stye="position: relative;height: 200px;"></div>');
 	  var tabs1 = $('.extra').parent().find('.tab-content');
@@ -429,8 +409,6 @@ var ViewModel = function() {
   	*		marker  - the marker that was clicked
   */
   this.showInfoBox = function(infobox, place, map, marker) {
-  	// console.log(place.name())
-  	console.log(self.currentPlace().name())
   	infobox.open(map, marker);
   	infobox.setContent('<div class="infobox">' + '<h2 id="placeName"><a href="' + place.website.toString() + '">' + self.currentPlace().name() + '</a>' + '</h3><h4>' + place.address() + '</h4></div>');
   };
