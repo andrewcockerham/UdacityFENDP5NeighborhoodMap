@@ -454,6 +454,7 @@ var ViewModel = function() {
 
   // self.callYelpAPI();
 
+  // put Yelp content onto page
   this.updateYelpContent = function(results) {
   	self.currentPlace().yelpImageSrc(results.image_url);
   	self.currentPlace().yelpSnippet(results.snippet_text.toString());
