@@ -276,7 +276,8 @@ var ViewModel = function() {
     });
 
     // put markers at location of each place
-    places.forEach(function(place) {
+    self.placeList.forEach(function(place) {
+    // places.forEach(function(place) {
     	var myLatlng = new google.maps.LatLng(place.latitude, place.longitude);
     	var marker = new google.maps.Marker({
     	    position: myLatlng,
@@ -292,6 +293,7 @@ var ViewModel = function() {
     		console.log(self.currentPlace())
     		console.log(place)
     		console.log(place.name())
+    		console.log(place.name)
     		// close any open tabs
     		self.closeDropdown();
     		// open dropdown
