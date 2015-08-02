@@ -289,7 +289,7 @@ var ViewModel = function() {
     	// add on click function for each marker
     	google.maps.event.addListener(marker, 'click', function() {
     		self.currentPlace(place);
-    		console.log(self.currentPlace())
+    		console.log(self.currentPlace().name())
     		// close any open tabs
     		self.closeDropdown();
     		// open dropdown
@@ -410,7 +410,7 @@ var ViewModel = function() {
   	console.log(place.name())
   	console.log(self.currentPlace().name())
   	infobox.open(map, marker);
-  	infobox.setContent('<div id="infobox">' + '<h2 id="placeName"><a href="' + place.website.toString() + '">' + place.name() + '</a>' + '</h3><h4>' + place.address() + '</h4></div>');
+  	infobox.setContent('<div id="infobox">' + '<h2 id="placeName"><a href="' + place.website.toString() + '">' + self.currentPlace().name() + '</a>' + '</h3><h4>' + place.address() + '</h4></div>');
   };
 
   // YELP RELATED CODE
