@@ -276,11 +276,12 @@ var ViewModel = function() {
     });
 
     // put markers at location of each place
-    var placeLength = self.placeList().length;
+    $.each(self.placeList(), function () {
+    // var placeLength = self.placeList().length;
     // for (var i = 0; i < tabs1.length; i++)
-    for (var i = 0; i < placeLength; i++) {
-    	var place = self.placeList().indexOf(i);
-    	console.log(place);
+    // for (var i = 0; i < placeLength; i++) {
+    	// var place = self.placeList().indexOf(i);
+    	// console.log(place);
 // places.indexOf(place)
     // self.placeList().forEach(function(place) {
     // places.forEach(function(place) {
@@ -317,8 +318,8 @@ var ViewModel = function() {
 
     	});// end addListener marker
 
-    }; // end places.forEach
-    // }); // end places.forEach
+    // }; // end places.forEach
+    }); // end places.forEach
 
   	var input = (document.getElementById('mySearchBox'));
   	var searchBox = new google.maps.places.SearchBox((input));
