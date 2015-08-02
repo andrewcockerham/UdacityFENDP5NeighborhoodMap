@@ -265,7 +265,7 @@ var ViewModel = function() {
 			pixelOffset: new google.maps.Size(-140, 0),
 			zIndex: null,
 			boxStyle: {
-			  background: 'url("http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/examples/tipbox.gif") no-repeat',
+			  background: "url('http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/examples/tipbox.gif') no-repeat",
 			  opacity: 0.75,
 			  width: '280px'
 	    },
