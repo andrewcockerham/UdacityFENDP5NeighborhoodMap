@@ -241,8 +241,7 @@ var ViewModel = function() {
   	*/
   	markers.forEach(function(marker) {
   		if (marker.getPosition().lat().toFixed(6) == place.latitude() && marker.getPosition().lng().toFixed(6) == place.longitude()) {
-  			self.showInfoBox(window.infobox, self.currentPlace(), map, marker);
-  			// self.showInfoBox(window.infobox, place, map, marker);
+  			self.showInfoBox(window.infobox, place, map, marker);
   			marker.setAnimation(google.maps.Animation.BOUNCE);
   			window.setTimeout(function() {
   				marker.setAnimation(null);
@@ -406,7 +405,7 @@ var ViewModel = function() {
   */
   this.showInfoBox = function(infobox, place, map, marker) {
   	infobox.open(map, marker);
-  	infobox.setContent('<div id="infobox">' + '<h2 id="placeName"><a href="' + place.website().toString() + '">' + place.name() + '</a>' + '</h3><h4>' + place.address() + '</h4></div>');
+  	infobox.setContent('<div id="infobox">' + '<h2 id="placeName"><a href="' + place.website.toString() + '">' + place.name() + '</a>' + '</h3><h4>' + place.address() + '</h4></div>');
   };
 
   // YELP RELATED CODE
