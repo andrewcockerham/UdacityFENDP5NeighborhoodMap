@@ -38,7 +38,7 @@ li {
 	-moz-box-sizing: border-box;
 	height: 32px;
 	outline: none;
-	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+	/*box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);*/
 	left: 3%;
 }
 
