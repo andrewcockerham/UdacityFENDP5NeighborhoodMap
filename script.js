@@ -185,6 +185,7 @@ var ViewModel = function() {
   mapOptions = {
     zoom: 13,
     center: myLatlng
+    mapTypeControl: false,
   };
 
   var markers = [];
