@@ -381,7 +381,8 @@ var ViewModel = function() {
   this.showDropdown = function(place) {
   	console.log(place)
   	console.log(self.placeList().indexOf(place))
-  	var tabs = document.getElementById('tabsDiv' + places.indexOf(place));
+  	var tabs = document.getElementById('tabsDiv' + self.placeList().indexOf(place));
+  	// var tabs = document.getElementById('tabsDiv' + places.indexOf(place));
   	$(tabs).slideToggle();
   	$('.extra').remove();
   	document.getElementById('tabRadioTwitter' + places.indexOf(place)).checked = true;
