@@ -281,6 +281,7 @@ var ViewModel = function() {
     	console.log(value)
     	var place = value;
     	console.log(place.name())
+    	console.log(place.latitude())
     // var placeLength = self.placeList().length;
     // for (var i = 0; i < tabs1.length; i++)
     // for (var i = 0; i < placeLength; i++) {
@@ -289,7 +290,7 @@ var ViewModel = function() {
 // places.indexOf(place)
     // self.placeList().forEach(function(place) {
     // places.forEach(function(place) {
-    	var myLatlng = new google.maps.LatLng(place.latitude, place.longitude);
+    	var myLatlng = new google.maps.LatLng(place.latitude(), place.longitude());
     	var marker = new google.maps.Marker({
     	    position: myLatlng,
     	    map: map,
