@@ -139,7 +139,6 @@ body {
 	display: block;
 }
 
-/* infobox uses ID */
 .infobox {
 	border:2px solid black;
 	margin-top: 8px;
