@@ -386,7 +386,7 @@ var ViewModel = function() {
   	$(tabs).slideToggle();
   	$('.extra').remove();
   	var indexString = self.placeList().indexOf(place).toString()
-  	document.getElementById('tabRadioTwitter' + indexString.checked = true;
+  	document.getElementById('tabRadioTwitter' + indexString).checked = true;
   	// document.getElementById('tabRadioTwitter' + places.indexOf(place)).checked = true;
   	$(tabs).prev()[0].style.fontWeight = 'bold';
   	$(tabs).append('<div class="extra col-md-5 col-sm-12" stye="position: relative;height: 200px;"></div>');
