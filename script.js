@@ -408,7 +408,7 @@ var ViewModel = function() {
   */
   this.showInfoBox = function(infobox, place, map, marker) {
   	console.log(place.name())
-  	console.log(console.log(self.currentPlace()).name)
+  	console.log(self.currentPlace().name)
   	infobox.open(map, marker);
   	infobox.setContent('<div id="infobox">' + '<h2 id="placeName"><a href="' + place.website.toString() + '">' + place.name() + '</a>' + '</h3><h4>' + place.address() + '</h4></div>');
   };
