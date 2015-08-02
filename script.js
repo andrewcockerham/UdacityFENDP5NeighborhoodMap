@@ -288,6 +288,7 @@ var ViewModel = function() {
     	markers.push(marker);
     	// add on click function for each marker
     	google.maps.event.addListener(marker, 'click', function() {
+    		self.currentPlace(place);
     		// close any open tabs
     		self.closeDropdown();
     		// open dropdown
