@@ -159,12 +159,12 @@ var Place = function(data) {
 var ViewModel = function() {
   var self = this;
 
-  this.placeList = ko.observableArray([]);
+  self.placeList = ko.observableArray([]);
   places.forEach(function(placeItem) {
     self.placeList.push( new Place(placeItem) );
   });
-  this.currentPlace = ko.observable( this.placeList()[0] );
-  this.filter = ko.observable("");
+  self.currentPlace = ko.observable( this.placeList()[0] );
+  self.filter = ko.observable("");
 
   /**
   	* @desc This function handles the filtering box and filters the list.
@@ -182,7 +182,7 @@ var ViewModel = function() {
 	}, this);
 
   // Initilize google map location to my neighborhood
-  myLatlng = new google.maps.LatLng(30.2433481,-97.8703633);
+  var myLatlng = new google.maps.LatLng(30.2433481,-97.8703633);
   mapOptions = {
     zoom: 13,
     center: myLatlng,
