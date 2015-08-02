@@ -277,7 +277,8 @@ var ViewModel = function() {
 
     // put markers at location of each place
     var placeLength = self.placeList().length;
-    for (var i = 0, i < placeLength, i++) {
+    // for (var i = 0; i < tabs1.length; i++)
+    for (var i = 0; i < placeLength; i++) {
     	var place = self.placeList().indexOf(i);
     	console.log(place);
 // places.indexOf(place)
