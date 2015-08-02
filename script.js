@@ -276,7 +276,9 @@ var ViewModel = function() {
     });
 
     // put markers at location of each place
-    $.each(self.placeList(), function (place) {
+    $.each(self.placeList(), function (index, value) {
+    	console.log("in each")
+    	console.log(value)
     // var placeLength = self.placeList().length;
     // for (var i = 0; i < tabs1.length; i++)
     // for (var i = 0; i < placeLength; i++) {
