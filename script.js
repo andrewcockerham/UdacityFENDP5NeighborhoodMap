@@ -479,27 +479,21 @@ var ViewModel = function() {
   	newParagraph.appendChild(snippet);
   	$(newParagraph).addClass('yelpSnippet');
   	$(br).insertAfter(yelpImage);
+  	console.log(results.rating);
   	$(function() {
   	  $('span.stars').stars(results.rating);
   	});
   }; // end updateYelpContent function
   ////// end yelp stuff
 
-	// //For showing the Yelp star rating
-	// $.fn.stars = function(rating) {
-	//   return $(this).each(function() {
-	//     $(this).html($('<span />').width(Math.max(0, (Math.min(5, parseFloat(rating)))) * 16));
-	//   });
-	// };
+	//For showing the Yelp star rating
+	$.fn.stars = function(rating) {
+	  return $(this).each(function() {
+	    $(this).html($('<span />').width(Math.max(0, (Math.min(5, parseFloat(rating)))) * 16));
+	  });
+	};
 
   google.maps.event.addDomListener(window, 'load', this.initializeMap);
 }; ////**** END VIEW MODEL
-
-//For showing the Yelp star rating
-$.fn.stars = function(rating) {
-  return $(this).each(function() {
-    $(this).html($('<span />').width(Math.max(0, (Math.min(5, parseFloat(rating)))) * 16));
-  });
-};
 
 ko.applyBindings(new ViewModel());
