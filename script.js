@@ -183,7 +183,7 @@ var ViewModel = function() {
 
   // Initilize google map location to my neighborhood
   var myLatlng = new google.maps.LatLng(30.2433481,-97.8703633);
-  mapOptions = {
+  var mapOptions = {
     zoom: 13,
     center: myLatlng,
     mapTypeControl: false,
