@@ -385,7 +385,8 @@ var ViewModel = function() {
   	// var tabs = document.getElementById('tabsDiv' + places.indexOf(place));
   	$(tabs).slideToggle();
   	$('.extra').remove();
-  	document.getElementById('tabRadioTwitter' + self.placeList().indexOf(place).checked = true;
+  	var indexString = self.placeList().indexOf(place).toString()
+  	document.getElementById('tabRadioTwitter' + indexString.checked = true;
   	// document.getElementById('tabRadioTwitter' + places.indexOf(place)).checked = true;
   	$(tabs).prev()[0].style.fontWeight = 'bold';
   	$(tabs).append('<div class="extra col-md-5 col-sm-12" stye="position: relative;height: 200px;"></div>');
