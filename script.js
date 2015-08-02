@@ -481,7 +481,8 @@ var ViewModel = function() {
   	$(br).insertAfter(yelpImage);
   	console.log(results.rating);
   	$(function() {
-  	  $('span.stars').stars(results.rating);
+  	  $("span.stars").stars(results.rating);
+  	  // $('span.stars').stars(results.rating);
   	});
   }; // end updateYelpContent function
   ////// end yelp stuff
