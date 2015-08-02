@@ -206,7 +206,8 @@ var ViewModel = function() {
 
 		// make all placeList items not bold
 		var placeItems = document.getElementsByClassName('placeListItem');
-		for (var i = 0; i < placeItems.length; i++) {
+		var l = placeItems.length;
+		for (var i = 0; i < l; i++) {
 			var placeItem = placeItems[i];
 			placeItem.style.fontWeight = "normal";
 		}
@@ -387,7 +388,8 @@ var ViewModel = function() {
   	}
   	// makes all placeList not bold
   	var placeItems = document.getElementsByClassName('placeListItem');
-  	for (var i = 0; i < placeItems.length; i++) {
+  	var l = placeItems.length;
+  	for (var i = 0; i < l; i++) {
   		var placeItem = placeItems[i];
   		placeItem.style.fontWeight = 'normal';
   	}
