@@ -16,13 +16,9 @@ li {
 }
 
 .locationsList {
-/*	font-family: Roboto;
-	font-size: 1em;
-	font-weight: 300;*/
 	font: 300 1em Roboto;
 	/*font: font-style font-variant font-weight font-size/line-height font-family;*/
 	margin: 0 0 0 auto;
-	/*margin-left: auto;*/
 	padding: 0 11px 0 13px;
 	text-overflow: ellipsis;
 	width: 95vw;
@@ -47,9 +43,10 @@ li {
 
 .mySearchBox {
 	background-color: #fff;
-	font-family: Roboto;
+	/*font: 300 1em Roboto;*/
+/*	font-family: Roboto;
 	font-size: 1em;
-	font-weight: 300;
+	font-weight: 300;*/
 	margin: 0 0 0 auto;
 	/*margin-left: auto;*/
 	padding: 0 11px 0 13px;
@@ -136,18 +133,19 @@ body {
 }
 
 .infobox {
-	border:2px solid black;
+	border: 2px solid black;
 	margin: 8px 0 0 0;
-	/*margin-top: 8px;*/
-	background:#333;
-	color:#fff;
-	font-family:Arial, Helvetica, sans-serif;
-	font-size:12px;
-	padding: .5em 1em;
+	background: #333;
+	color: #fff;
+	/*font-family: Arial, Helvetica, sans-serif;
+	font-size:12px;*/
+	font: 12px Arial, Helvetica, sans-serif;
+		/*font: font-style font-variant font-weight font-size/line-height font-family;*/
+	padding: 0.5em 1em;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
-	text-shadow:0 -1px #000000;
+	text-shadow: 0 -1px #000;
 	-webkit-box-shadow: 0 0  8px #000;
 	box-shadow: 0 0 8px #000;
 }
