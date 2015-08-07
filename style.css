@@ -108,7 +108,7 @@ body {
 }
 
 .tabs label:hover {
-	background: #0082F6;
+	background: #0082f6;
 }
 
 .tabs .tab-content {
@@ -126,7 +126,7 @@ body {
 .tabs [id^="tab"]:checked + label {
 	top: 0;
 	padding: 17px 0 0 0;
-	background: #0082F6;
+	background: #0082f6;
 }
 
 .tabs [id^="tab"]:checked ~ [id^="tab-content"] {
@@ -138,7 +138,7 @@ body {
 	margin: 8px 0 0 0;
 	/*margin-top: 8px;*/
 	background:#333;
-	color:#FFF;
+	color:#fff;
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:12px;
 	padding: .5em 1em;
