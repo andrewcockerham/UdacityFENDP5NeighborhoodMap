@@ -19,7 +19,8 @@ li {
 	font-family: Roboto;
 	font-size: 1em;
 	font-weight: 300;
-	margin-left: auto;
+	margin-left: 0 0 0 auto;
+	/*margin-left: auto;*/
 	padding: 0 11px 0 13px;
 	text-overflow: ellipsis;
 	width: 95vw;
@@ -31,14 +32,14 @@ li {
 }
 
 .hoverOnMap {
-	margin-top: 12px;
+	/*margin-top: 12px;*/
+	margin: 12px 0 0 0;
 	border: 1px solid transparent;
 	border-radius: 2px 0 0 2px;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	height: 32px;
 	outline: none;
-	/*box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);*/
 	left: 3%;
 }
 
@@ -47,7 +48,8 @@ li {
 	font-family: Roboto;
 	font-size: 1em;
 	font-weight: 300;
-	margin-left: auto;
+	margin: 0 0 0 auto;
+	/*margin-left: auto;*/
 	padding: 0 11px 0 13px;
 	text-overflow: ellipsis;
 	width: 95vw;
@@ -58,14 +60,6 @@ li {
 }
 
 /* FROM CODEPEN LINK FOR CSS TABS*/
-
-* {
-/*	margin: 0;
-	padding: 0;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;*/
-}
 
 body {
 	text-align: left;
@@ -80,7 +74,7 @@ body {
 	float: left;
 	list-style: none;
 	position: relative;
-	margin: 0 0 10 0;
+	margin: 0 0 10px 0;
 	text-align: left;
 }
 
@@ -131,7 +125,7 @@ body {
 
 .tabs [id^="tab"]:checked + label {
 	top: 0;
-	padding-top: 17px;
+	padding: 17px 0 0 0;
 	background: #0082F6;
 }
 
@@ -141,7 +135,8 @@ body {
 
 .infobox {
 	border:2px solid black;
-	margin-top: 8px;
+	margin: 8px 0 0 0;
+	/*margin-top: 8px;*/
 	background:#333;
 	color:#FFF;
 	font-family:Arial, Helvetica, sans-serif;
@@ -156,12 +151,6 @@ body {
 }
 
 /* for star rating system*/
-/*span.stars {
-	display: inline-block;
-	background: url(stars.png) 0 -16px repeat-x;
-	width: 10px;
-	height: 16px;
-}*/
 
 span.stars, span.stars span {
     display: inline-block;
