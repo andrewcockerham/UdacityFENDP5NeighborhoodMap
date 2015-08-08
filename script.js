@@ -218,6 +218,8 @@ var ViewModel = function() {
 		var tabs = document.getElementById('tabsDiv' + context.$index());
 		console.log(context.$index())
 		console.log(tabs)
+		console.log($(tabs))
+		console.log($(tabs).prev())
 		// close all open tabDivs
 		$(tabs).slideToggle();
 		$('.extra').remove();
