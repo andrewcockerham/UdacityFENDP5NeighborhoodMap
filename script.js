@@ -236,7 +236,8 @@ var ViewModel = function() {
 
 		// insert blank div behind to lower other list items
 		// $(event.target).next().append('<div class="extra col-md-5 col-sm-12" stye="position: relative;height: 200px;"></div>');
-		$(event.target).parent().next().append('<div class="extra col-md-5 col-sm-12" stye="position: relative;height: 200px;"></div>')
+		// $(event.target).parent().next().append('<div class="extra col-md-5 col-sm-12" stye="position: relative;height: 200px;"></div>')
+		$('<div class="extra col-md-5 col-sm-12" stye="position: relative;height: 200px;"></div>').insertAfter($(event.target).next())
 		console.log($(event.target))
 		console.log($(event.target).next())
 		console.log($(event.target).next().children())
