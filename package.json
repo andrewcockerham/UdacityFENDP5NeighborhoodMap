@@ -4,13 +4,15 @@
   "description": "This is Project 5 for the Udacity Front End Web Developer Nanodegree.",
   "main": "gulpfile.js",
   "dependencies": {
-    "gulp-jshint": "^1.11.2",
     "gulp": "^3.9.0",
+    "gulp-html-validator": "0.0.5",
+    "gulp-jshint": "^1.11.2",
     "oauth-signature": "^1.3.0"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-csso": "^1.0.0",
+    "gulp-htmlhint": "^0.3.0",
     "gulp-jscs": "^2.0.0",
     "gulp-jshint": "^1.11.2",
     "gulp-notify": "^2.2.0",

@@ -4,6 +4,8 @@ var jscs = require('gulp-jscs');
 var jshint = require('gulp-jshint');
 var uncss = require('gulp-uncss');
 var csso = require('gulp-csso');
+var htmlv = require('gulp-html-validator');
+var htmlhint = require("gulp-htmlhint");
 
 gulp.task('default', function() {
   return gulp.src('*.css')
@@ -36,4 +38,29 @@ gulp.task('lint', function() {
       title: 'JSHint',
       message: 'JSHint Passed. Let it fly!',
   }))
+});
+
+
+// Default
+gulp.task('valid', function () {
+  gulp.src('index.html')
+    .pipe(htmlv())
+    // .pipe(gulp.dest('./out'))
+    // .pipe(notify({
+    //     title: 'HTML Validator',
+    //     message: 'HTML Passed. Let it fly!',
+    // }))
+});
+
+// Option format set to html
+gulp.task('invalid', function () {
+  gulp.src('index.html')
+    .pipe(htmlv({format: 'html'}))
+    .pipe(gulp.dest('./out'));
+});
+
+gulp.task('html', function () {
+  gulp.src("index.html")
+    .pipe(htmlhint())
+    .pipe(htmlhint.reporter())
 });
