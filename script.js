@@ -216,7 +216,7 @@ var ViewModel = function() {
 			* gets all of the DOM elements with ID "tabsDiv" + it's index in the list
 		*/
 		var tabs = document.getElementById('tabsDiv' + context.$index());
-
+		console.log(context.$index())
 		// close all open tabDivs
 		$(tabs).slideToggle();
 		$('.extra').remove();
