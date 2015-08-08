@@ -238,11 +238,13 @@ var ViewModel = function() {
 		$(event.target).next().append('<div class="extra col-md-5 col-sm-12" stye="position: relative;height: 200px;"></div>');
 		console.log($(event.target))
 		console.log($(event.target).next())
+		console.log($(event.target).next().children())
 		var nextID = $(event.target).next()[0].id;
 		console.log(nextID)
 		var targetIndex = nextID.substring(nextID.length - 1, nextID.length);
 		console.log(targetIndex)
-		document.getElementById('tabRadioTwitter' + targetIndex).checked = true; // default tab shown is twitter
+		$(target).next().find(".inputRadio")[0].checked = true
+		// document.getElementById('tabRadioTwitter' + targetIndex).checked = true; // default tab shown is twitter
 
 		// GOOGLE MAPS STUFF
   	// panTo place
