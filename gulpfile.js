@@ -45,6 +45,7 @@ gulp.task('lint', function() {
 gulp.task('valid', function () {
   gulp.src('index.html')
     .pipe(htmlv())
+    .pipe(htmlv.reporter())
     // .pipe(gulp.dest('./out'))
     // .pipe(notify({
     //     title: 'HTML Validator',
