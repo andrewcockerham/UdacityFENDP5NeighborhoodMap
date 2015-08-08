@@ -237,6 +237,7 @@ var ViewModel = function() {
 		// insert blank div behind to lower other list items
 		$(event.target).next().append('<div class="extra col-md-5 col-sm-12" stye="position: relative;height: 200px;"></div>');
 		console.log($(event.target))
+		console.log($(event.target).next())
 		var nextID = $(event.target).next()[0].id;
 		console.log(nextID)
 		var targetIndex = nextID.substring(nextID.length - 1, nextID.length);
