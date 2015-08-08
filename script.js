@@ -243,7 +243,7 @@ var ViewModel = function() {
 		console.log(nextID)
 		var targetIndex = nextID.substring(nextID.length - 1, nextID.length);
 		console.log(targetIndex)
-		$(target).next().find(".inputRadio")[0].checked = true
+		$(event.target).next().find(".inputRadio")[0].checked = true
 		// document.getElementById('tabRadioTwitter' + targetIndex).checked = true; // default tab shown is twitter
 
 		// GOOGLE MAPS STUFF
