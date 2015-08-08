@@ -235,7 +235,8 @@ var ViewModel = function() {
 		$(tabs).parent().prev()[0].style.fontWeight = 'bold'
 
 		// insert blank div behind to lower other list items
-		$(event.target).next().append('<div class="extra col-md-5 col-sm-12" stye="position: relative;height: 200px;"></div>');
+		// $(event.target).next().append('<div class="extra col-md-5 col-sm-12" stye="position: relative;height: 200px;"></div>');
+		$(event.target).parent().next().append('<div class="extra col-md-5 col-sm-12" stye="position: relative;height: 200px;"></div>')
 		console.log($(event.target))
 		console.log($(event.target).next())
 		console.log($(event.target).next().children())
