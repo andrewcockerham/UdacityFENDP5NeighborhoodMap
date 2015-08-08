@@ -225,6 +225,8 @@ var ViewModel = function() {
 		console.log($(tabs).prev().prev().length)
 		console.log($(tabs).prev()[0])
 		console.log($(tabs).prev().prev()[0])
+		console.log('hi')
+		console.log($(tabs).closest('.placeListItem')
 		// close all open tabDivs
 		$(tabs).slideToggle();
 		$('.extra').remove();
