@@ -491,6 +491,10 @@ var ViewModel = function() {
   	self.listVisible(!self.listVisible());
   };
 
+  this.open = ko.pureComputed(function() {
+      return self.listVisible() ? "close" : "open";
+  }, self);
+
 	//For showing the Yelp star rating
 	$.fn.stars = function(rating) {
 	  return $(this).each(function() {
