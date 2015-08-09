@@ -158,6 +158,15 @@ body {
 	display: inline-block;
 	cursor: pointer;
 }
+
+.close {
+  background: #fbfbfb url('http://cdn1.iconfinder.com/data/icons/basicset/plus_16.png') no-repeat center right;
+}
+
+.open {
+  background: #C7C7C7 url('http://cdn1.iconfinder.com/data/icons/splashyIcons/remove_minus_sign.png') no-repeat center right;
+}
+
 /* for star rating system*/
 
 span.stars, span.stars span {
