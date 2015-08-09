@@ -386,7 +386,8 @@ var ViewModel = function() {
   	$('.extra').remove();
   	var indexString = self.placeList().indexOf(place).toString()
   	document.getElementById('tabRadioTwitter' + indexString).checked = true;
-  	$(tabs).prev()[0].style.fontWeight = 'bold';
+  	// $(tabs).prev()[0].style.fontWeight = 'bold';
+  	$(tabs).parent().prev()[0].style.fontWeight = 'bold'
   	// $(tabs).append('<div class="extra col-md-5 col-sm-12" stye="position: relative;height: 200px;"></div>');
   	$(tabs).nex().append('<div class="extra col-md-5 col-sm-12" stye="position: relative;height: 200px;"></div>');
 	  var tabs1 = $('.extra').parent().find('.tab-content');
