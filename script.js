@@ -488,6 +488,8 @@ var ViewModel = function() {
 
   this.collapseList = function(argument) {
   	console.log('collapse')
+  	console.log(self.listVisible())
+  	// self.listVisible()
   	self.listVisible(false);
   };
 
