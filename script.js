@@ -492,7 +492,7 @@ var ViewModel = function() {
   };
 
   this.openButton = ko.pureComputed(function() {
-      return self.listVisible() ? "close" : "openButton";
+      return self.listVisible() ? "closeButton" : "openButton";
   }, self);
 
 	//For showing the Yelp star rating
