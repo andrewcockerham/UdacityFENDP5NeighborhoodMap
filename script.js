@@ -194,7 +194,6 @@ var ViewModel = function() {
 
   // function called when you click on a place in the list
   this.changePlace = function(place, event) {
-  	self.listVisible(false); //TEMPORARY FOR TESTING
   	self.currentPlace(place); // set current place to place that was clicked
   	var context = ko.contextFor(event.target);
    	if (self.currentPlace().yelpID() !== "") {
@@ -487,8 +486,9 @@ var ViewModel = function() {
   }; // end updateYelpContent function
   ////// end yelp stuff
 
-  this.collapseList = function (argument) {
+  this.collapseList = function(argument) {
   	console.log('collapse')
+  	self.listVisible(false);
   };
 
 	//For showing the Yelp star rating
