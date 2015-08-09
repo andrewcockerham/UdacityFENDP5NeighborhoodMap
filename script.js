@@ -166,7 +166,7 @@ var ViewModel = function() {
   self.currentPlace = ko.observable( this.placeList()[0] );
   self.filter = ko.observable('');
   self.listVisible = ko.observable(true) // List initially visible
-
+  self.toggleText = ko.observable('Close List');
   /**
   	* @desc This function handles the filtering box and filters the list.
   	* credit: http://www.knockmeout.net/2011/04/utility-functions-in-knockoutjs.html
@@ -487,8 +487,6 @@ var ViewModel = function() {
   ////// end yelp stuff
 
   this.collapseList = function(argument) {
-  	console.log('collapse')
-  	console.log(self.listVisible())
   	self.listVisible() ? self.listVisible(false) : self.listVisible(true)
   	// self.listVisible(false);
   };
