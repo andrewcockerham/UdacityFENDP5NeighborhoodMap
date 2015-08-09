@@ -69,30 +69,31 @@
 				</div>
 			</div>
 		</div>
-	</body>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
-  <script src="bower_components/oauth-signature/dist/oauth-signature.js"></script>
-  <script src="script.js"></script>
-  <script src="infobox.js"></script>
 
-  <script>
-    /**
-      * @desc updates the height of the blank .extra div to the same as the content
-      *       so that the list doesn't get hidden behind the dropdown
-    */
-  	$(".tabs, .placeListItem").click(function() {
-    	var tabs = $(".extra").parent().find(".tab-content");
-  		// loop through and find the one that is visible
-  		for (var i = 0; i < tabs.length; i++) {
-  			var tab = tabs[i]
-  			if ($(tab).is(':visible')) {
-  				$(".extra").height($(tab).height());
-  			};
-  		};
-  	});
-  </script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
+	  <script src="bower_components/oauth-signature/dist/oauth-signature.js"></script>
+	  <script src="script.js"></script>
+	  <script src="infobox.js"></script>
+
+	  <script>
+	    /**
+	      * @desc updates the height of the blank .extra div to the same as the content
+	      *       so that the list doesn't get hidden behind the dropdown
+	    */
+	  	$(".tabs, .placeListItem").click(function() {
+	    	var tabs = $(".extra").parent().find(".tab-content");
+	  		// loop through and find the one that is visible
+	  		for (var i = 0; i < tabs.length; i++) {
+	  			var tab = tabs[i]
+	  			if ($(tab).is(':visible')) {
+	  				$(".extra").height($(tab).height());
+	  			};
+	  		};
+	  	});
+	  </script>
+  </body>
 	<div id="map-canvas"></div>
 
 <!-- These sites were helfpul to me -->
