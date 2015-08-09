@@ -140,6 +140,9 @@ body {
 	box-shadow: 0 0 8px #000;
 }
 
+.extra {
+	border: 2px solid black;
+}
 /* for star rating system*/
 
 span.stars, span.stars span {
