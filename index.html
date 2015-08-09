@@ -37,7 +37,7 @@
 							    <div class="tab-content" data-bind="attr: { id: 'tab-content' + $index() }">
 								    <div class="rating">Rating: <span class="stars"></span></div>
 								    <div data-bind="text: $data.yelpSnippet"></div>
-								    <img src="" class="yelpImage" data-bind="attr: {src: yelpImageSrc}" alt="yelp image"><br>
+								    <img class="yelpImage" data-bind="attr: {src: yelpImageSrc}" alt="yelp image"><br>  <!-- src="" -->
 								    <a href="" data-bind="text: $data.yelpLink, attr: {href: $data.yelpLink}"></a>
 							    </div>
 						  	</li>
