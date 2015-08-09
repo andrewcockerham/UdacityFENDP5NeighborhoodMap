@@ -165,6 +165,7 @@ var ViewModel = function() {
   });
   self.currentPlace = ko.observable( this.placeList()[0] );
   self.filter = ko.observable('');
+  listVisible = ko.observable(true) // List initially visible
 
   /**
   	* @desc This function handles the filtering box and filters the list.
@@ -193,6 +194,7 @@ var ViewModel = function() {
 
   // function called when you click on a place in the list
   this.changePlace = function(place, event) {
+  	self.listVisible(false); //TEMPORARY FOR TESTING
   	self.currentPlace(place); // set current place to place that was clicked
   	var context = ko.contextFor(event.target);
    	if (self.currentPlace().yelpID() !== "") {
