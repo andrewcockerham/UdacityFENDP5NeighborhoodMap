@@ -486,9 +486,9 @@ var ViewModel = function() {
   }; // end updateYelpContent function
   ////// end yelp stuff
 
-  this.collapseList = function(argument) {
-  	self.listVisible() ? (self.listVisible(false), self.toggleText('show')) : (self.listVisible(true), self.toggleText('hide'))
-
+  this.collapseList = function() {
+  	// self.listVisible() ? (self.listVisible(false), self.toggleText('show')) : (self.listVisible(true), self.toggleText('hide'))
+  	self.listVisible(!self.listVisible());
   };
 
 	//For showing the Yelp star rating
