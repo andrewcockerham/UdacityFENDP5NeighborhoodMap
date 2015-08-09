@@ -148,7 +148,8 @@ body {
 
 .toggle {
 	width: 3vw;
-	height: 3vh;
+	/*height: 3vh;*/
+	height: auto;
 	background-color: white;
 	border: 1px solid;
 	box-shadow: 0 0 4px;
