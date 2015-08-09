@@ -126,7 +126,7 @@ body {
 }
 
 .infobox {
-	border: 2px solid black;
+	border: 2px solid;
 	margin: 8px 0 0 0;
 	background: #333;
 	color: #fff;
@@ -144,6 +144,14 @@ body {
 	border-style: solid;
 	border-color: black;
 	border-width: 0 2px 2px 2px;
+}
+
+.toggle {
+	width: 3vw;
+	height: 3vh;
+	background-color: white;
+	border: 1px solid;
+	box-shadow: 0 0 4px;
 }
 /* for star rating system*/
 

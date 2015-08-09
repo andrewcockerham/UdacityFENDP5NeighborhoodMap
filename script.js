@@ -485,6 +485,10 @@ var ViewModel = function() {
   }; // end updateYelpContent function
   ////// end yelp stuff
 
+  this.collapseList = function (argument) {
+  	console.log('collapse')
+  };
+
 	//For showing the Yelp star rating
 	$.fn.stars = function(rating) {
 	  return $(this).each(function() {
