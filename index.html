@@ -22,24 +22,6 @@
 				</div>
 				<div class="toggle" style="pointer-events: initial;"data-bind="click: collapseList, css: openButton"></div>
 				<!-- , text: toggleText -->
-	<!-- 			<div data-bind="css: profitStatus">
-				   Profit Information
-				</div> -->
-
-				<script type="text/javascript">
-				    // var viewModel = {
-				    //     currentProfit: ko.observable(150000)
-				    // };
-
-				    // Evalutes to a positive value, so initially we apply the "profitPositive" class
-				    // viewModel.profitStatus = ko.pureComputed(function() {
-				    //     return this.currentProfit() < 0 ? "profitWarning" : "profitPositive";
-				    // }, viewModel);
-
-				    // // Causes the "profitPositive" class to be removed and "profitWarning" class to be added
-				    // viewModel.currentProfit(-50);
-				</script>
-
 
 				<div class="row" style="pointer-events: none;" data-bind="visible: listVisible">
 					<ul class="col-md-4 col-sm-5" data-bind="foreach: filteredItems" style="-webkit-padding-start: 10px;margin-top: 5px;background: white; pointer-events: initial; border-style: solid;border-width:1px;">
