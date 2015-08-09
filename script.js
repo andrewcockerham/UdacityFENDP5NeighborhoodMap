@@ -389,7 +389,7 @@ var ViewModel = function() {
   	// $(tabs).prev()[0].style.fontWeight = 'bold';
   	$(tabs).parent().prev()[0].style.fontWeight = 'bold'
   	// $(tabs).append('<div class="extra col-md-5 col-sm-12" stye="position: relative;height: 200px;"></div>');
-  	$(tabs).nex().append('<div class="extra col-md-5 col-sm-12" stye="position: relative;height: 200px;"></div>');
+  	$(tabs).next().append('<div class="extra col-md-5 col-sm-12" stye="position: relative;height: 200px;"></div>');
 	  var tabs1 = $('.extra').parent().find('.tab-content');
 		// loop through and find the one that is visible
 		for (var i = 0; i < tabs1.length; i++) {
