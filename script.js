@@ -165,7 +165,7 @@ var ViewModel = function() {
   });
   self.currentPlace = ko.observable( this.placeList()[0] );
   self.filter = ko.observable('');
-  listVisible = ko.observable(true) // List initially visible
+  self.listVisible = ko.observable(true) // List initially visible
 
   /**
   	* @desc This function handles the filtering box and filters the list.
