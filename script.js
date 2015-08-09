@@ -489,8 +489,8 @@ var ViewModel = function() {
   this.collapseList = function(argument) {
   	console.log('collapse')
   	console.log(self.listVisible())
-  	// self.listVisible()
-  	self.listVisible(false);
+  	self.listVisible() ? self.listVisible(false) : self.listVisible(true)
+  	// self.listVisible(false);
   };
 
 	//For showing the Yelp star rating
