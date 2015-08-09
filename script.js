@@ -487,8 +487,8 @@ var ViewModel = function() {
   ////// end yelp stuff
 
   this.collapseList = function(argument) {
-  	self.listVisible() ? self.listVisible(false) : self.listVisible(true)
-  	// self.listVisible(false);
+  	self.listVisible() ? (self.listVisible(false), self.toggleText('show')) : (self.listVisible(true), self.toggleText('hide'))
+
   };
 
 	//For showing the Yelp star rating

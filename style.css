@@ -156,6 +156,7 @@ body {
 	padding: .1em .1em;
 	font-style: italic;
 	display: inline-block;
+	cursor: pointer;
 }
 /* for star rating system*/
 
