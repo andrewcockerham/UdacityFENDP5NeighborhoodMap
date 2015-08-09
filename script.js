@@ -491,7 +491,7 @@ var ViewModel = function() {
   	self.listVisible(!self.listVisible());
   };
 
-  this.open = ko.pureComputed(function() {
+  this.openButton = ko.pureComputed(function() {
       return self.listVisible() ? "close" : "open";
   }, self);
 

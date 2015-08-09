@@ -20,14 +20,23 @@
 					<input placeholder="Search list of places" data-bind="value: filter, valueUpdate: 'afterkeydown'" />
 				</p>
 				</div>
-				<div class="toggle open" style="pointer-events: initial;"data-bind="click: collapseList, text: toggleText"></div>
+				<div class="toggle openButton" style="pointer-events: initial;"data-bind="click: collapseList, text: toggleText, css: open"></div>
+	<!-- 			<div data-bind="css: profitStatus">
+				   Profit Information
+				</div> -->
 
 				<script type="text/javascript">
 				    // var viewModel = {
-				    //     shouldShowMessage: ko.observable(true) // Message initially visible
+				    //     currentProfit: ko.observable(150000)
 				    // };
-				    // viewModel.shouldShowMessage(false); // ... now it's hidden
-				    // viewModel.shouldShowMessage(true); // ... now it's visible again
+
+				    // Evalutes to a positive value, so initially we apply the "profitPositive" class
+				    // viewModel.profitStatus = ko.pureComputed(function() {
+				    //     return this.currentProfit() < 0 ? "profitWarning" : "profitPositive";
+				    // }, viewModel);
+
+				    // // Causes the "profitPositive" class to be removed and "profitWarning" class to be added
+				    // viewModel.currentProfit(-50);
 				</script>
 
 
