@@ -19,6 +19,7 @@
 					<input placeholder="Search list of places" data-bind="value: filter, valueUpdate: 'afterkeydown'" />
 				</p>
 				</div>
+				<div class="toggle minus">-</div>
 				<div class="row" style="pointer-events: none;">
 					<ul class="col-md-4 col-sm-5" data-bind="foreach: filteredItems" style="-webkit-padding-start: 10px;margin-top: 5px;background: white; pointer-events: initial; border-style: solid;border-width:1px;">
 						<li data-bind="text: $data.name, click: $parent.changePlace" class="placeListItem"></li>

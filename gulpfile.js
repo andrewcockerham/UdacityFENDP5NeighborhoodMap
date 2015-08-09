@@ -17,7 +17,7 @@ gulp.task('default', function() {
     .pipe(notify({
       title: 'default',
         message: 'uncss and minified success!',
-    }))
+    }));
 });
 
 gulp.task('jscs', function() {
@@ -26,18 +26,19 @@ gulp.task('jscs', function() {
   .pipe(notify({
     title: 'JSCS',
       message: 'JSCS Passed. Let it fly!'
-  }))
+  }));
 });
 
 gulp.task('lint', function() {
-  gulp.src('script.js')
+  gulp.src('*.js')
+  // gulp.src('script.js')
   .pipe(jshint('.jshintrc'))
   .pipe(jshint.reporter('jshint-stylish'))
   .pipe(jshint.reporter('fail'))
   .pipe(notify({
       title: 'JSHint',
       message: 'JSHint Passed. Let it fly!',
-  }))
+  }));
 });
 
 
@@ -45,7 +46,7 @@ gulp.task('lint', function() {
 gulp.task('valid', function () {
   gulp.src('index.html')
     .pipe(htmlv())
-    .pipe(htmlv.reporter())
+    .pipe(htmlv.reporter());
     // .pipe(gulp.dest('./out'))
     // .pipe(notify({
     //     title: 'HTML Validator',
@@ -63,5 +64,5 @@ gulp.task('invalid', function () {
 gulp.task('html', function () {
   gulp.src("index.html")
     .pipe(htmlhint())
-    .pipe(htmlhint.reporter())
+    .pipe(htmlhint.reporter());
 });
