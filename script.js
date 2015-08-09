@@ -216,36 +216,17 @@ var ViewModel = function() {
 			* gets all of the DOM elements with ID "tabsDiv" + it's index in the list
 		*/
 		var tabs = document.getElementById('tabsDiv' + context.$index());
-		console.log(context.$index())
-		console.log(tabs)
-		console.log($(tabs))
-		console.log($(tabs).prev())
-		console.log($(tabs).prev().prev())
-		console.log($(tabs).prev().length)
-		console.log($(tabs).prev().prev().length)
-		console.log($(tabs).prev()[0])
-		console.log($(tabs).prev().prev()[0])
-		console.log('hi')
-		console.log($(tabs).closest('.placeListItem'))
 		// close all open tabDivs
 		$(tabs).slideToggle();
 		$('.extra').remove();
 		event.target.style.display = 'block';
-		// $(tabs).prev()[0].style.fontWeight = 'bold';
-		$(tabs).parent().prev()[0].style.fontWeight = 'bold'
+		$(tabs).parent().prev()[0].style.fontWeight = 'bold';
 
 		// insert blank div behind to lower other list items
 		$(event.target).next().append('<div class="extra col-md-5 col-sm-12" stye="position: relative;height: 200px;"></div>');
-		// $(event.target).parent().next().append('<div class="extra col-md-5 col-sm-12" stye="position: relative;height: 200px;"></div>')
-		// $('<div class="extra col-md-5 col-sm-12" stye="position: relative;height: 200px;"></div>').insertAfter($(event.target).next())
-		console.log($(event.target))
-		console.log($(event.target).next())
-		console.log($(event.target).next().children())
-		var nextID = $(event.target).next()[0].id;
-		console.log(nextID)
-		var targetIndex = nextID.substring(nextID.length - 1, nextID.length);
-		console.log(targetIndex)
-		$(event.target).next().find(".inputRadio")[0].checked = true
+		// var nextID = $(event.target).next()[0].id;
+		// var targetIndex = nextID.substring(nextID.length - 1, nextID.length);
+		$(event.target).next().find(".inputRadio")[0].checked = true;
 		// document.getElementById('tabRadioTwitter' + targetIndex).checked = true; // default tab shown is twitter
 
 		// GOOGLE MAPS STUFF
@@ -384,11 +365,9 @@ var ViewModel = function() {
   	var tabs = document.getElementById('tabsDiv' + self.placeList().indexOf(place));
   	$(tabs).slideToggle();
   	$('.extra').remove();
-  	var indexString = self.placeList().indexOf(place).toString()
+  	var indexString = self.placeList().indexOf(place).toString();
   	document.getElementById('tabRadioTwitter' + indexString).checked = true;
-  	// $(tabs).prev()[0].style.fontWeight = 'bold';
-  	$(tabs).parent().prev()[0].style.fontWeight = 'bold'
-  	// $(tabs).append('<div class="extra col-md-5 col-sm-12" stye="position: relative;height: 200px;"></div>');
+  	$(tabs).parent().prev()[0].style.fontWeight = 'bold';
   	$(tabs).parent().append('<div class="extra col-md-5 col-sm-12" stye="position: relative;height: 200px;"></div>');
 	  var tabs1 = $('.extra').parent().find('.tab-content');
 		// loop through and find the one that is visible
