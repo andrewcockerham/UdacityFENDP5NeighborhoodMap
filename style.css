@@ -161,13 +161,11 @@ body {
 }
 
 .openButton {
-  background: white url('http://cdn1.iconfinder.com/data/icons/basicset/plus_16.png') no-repeat center right;
-  /*#fbfbfb*/
+  background: white url('http://cdn1.iconfinder.com/data/icons/basicset/plus_16.png') no-repeat center;
 }
 
 .closeButton {
-  background:  url('http://cdn1.iconfinder.com/data/icons/splashyIcons/remove_minus_sign.png') no-repeat center right;
-  /*#fbfbfb*/
+  background: white url('http://cdn1.iconfinder.com/data/icons/splashyIcons/remove_minus_sign.png') no-repeat center;
 }
 
 /* for star rating system*/
