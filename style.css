@@ -147,25 +147,24 @@ body {
 }
 
 .toggle {
-	/*width: 3vw;*/
-	/*height: 3vh;*/
 	height: auto;
 	background-color: white;
 	border: 1px solid;
 	box-shadow: 0 0 4px;
 	padding: .1em .1em;
-	font-style: italic;
 	display: inline-block;
 	cursor: pointer;
 	font-size: 6em;
 }
 
 .openButton {
-  background: #fbfbfb url('http://cdn1.iconfinder.com/data/icons/basicset/plus_16.png') no-repeat center right;
+  background:  url('http://cdn1.iconfinder.com/data/icons/basicset/plus_16.png') no-repeat center right;
+  /*#fbfbfb*/
 }
 
 .closeButton {
-  background: #fbfbfb url('http://cdn1.iconfinder.com/data/icons/splashyIcons/remove_minus_sign.png') no-repeat center right;
+  background:  url('http://cdn1.iconfinder.com/data/icons/splashyIcons/remove_minus_sign.png') no-repeat center right;
+  /*#fbfbfb*/
 }
 
 /* for star rating system*/
