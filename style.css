@@ -143,6 +143,7 @@ body {
 	border-style: solid;
 	border-color: black;
 	border-width: 0 2px 2px 2px;
+	z-index: -10;
 	/*border: 2px solid black;*/
 /*	border: 2px;
 	border-top: 0;*/
