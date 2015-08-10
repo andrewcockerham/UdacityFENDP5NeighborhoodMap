@@ -227,7 +227,7 @@ var ViewModel = function() {
 		$(tabs).parent().prev()[0].style.fontWeight = 'bold';
 
 		// insert blank div behind to lower other list items
-		$(event.target).next().append('<div class="extra col-md-5 col-sm-12" stye="position: relative;height: 200px;"></div>');
+		$(event.target).next().append('<div class="extra col-md-12 col-sm-12" stye="position: relative;height: 200px;"></div>');
 		// var nextID = $(event.target).next()[0].id;
 		// var targetIndex = nextID.substring(nextID.length - 1, nextID.length);
 		$(event.target).next().find(".inputRadio")[0].checked = true;
