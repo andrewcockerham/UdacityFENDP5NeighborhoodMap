@@ -166,7 +166,10 @@ var ViewModel = function() {
   self.currentPlace = ko.observable( this.placeList()[0] );
   self.filter = ko.observable('');
   self.listVisible = ko.observable(true) // List initially visible
-  // self.toggleText = ko.observable('Close List');
+  this.openButton = ko.pureComputed(function() {
+      return self.listVisible() ? "closeButton" : "openButton";
+  }, self);
+
   /**
   	* @desc This function handles the filtering box and filters the list.
   	* credit: http://www.knockmeout.net/2011/04/utility-functions-in-knockoutjs.html
@@ -302,12 +305,10 @@ var ViewModel = function() {
     	  	marker.setAnimation(null);
     	  }, 3300);
 
-    	  // self.showInfoBox(infobox, self.currentPlace(), map, marker);
     	  self.showInfoBox(infobox, place, map, marker);
 
     	});// end addListener marker
 
-    // }; // end places.forEach
     }); // end places.forEach
 
   	var input = (document.getElementById('mySearchBox'));
@@ -491,10 +492,6 @@ var ViewModel = function() {
   	self.listVisible(!self.listVisible());
   };
 
-  this.openButton = ko.pureComputed(function() {
-      return self.listVisible() ? "closeButton" : "openButton";
-  }, self);
-
 	//For showing the Yelp star rating
 	$.fn.stars = function(rating) {
 	  return $(this).each(function() {
@@ -505,9 +502,4 @@ var ViewModel = function() {
   google.maps.event.addDomListener(window, 'load', this.initializeMap);
 }; ////**** END VIEW MODEL
 
-// $.fn.stars = function(rating) {
-//   return $(this).each(function() {
-//     $(this).html($('<span />').width(Math.max(0, (Math.min(5, parseFloat(rating)))) * 16));
-//   });
-// };
 ko.applyBindings(new ViewModel());
