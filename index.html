@@ -20,12 +20,10 @@
 					</p>
 				</div>
 				<div class="toggle row" style="pointer-events: initial;" data-bind="click: collapseList, css: openButton"></div>
-				<!-- , text: toggleText -->
-
 				<div class="row" style="pointer-events: none;" data-bind="visible: listVisible">
 					<ul class="col-md-4 col-sm-5" data-bind="foreach: filteredItems" style="-webkit-padding-start: 10px;margin-top: 5px;background: white; pointer-events: initial; border-style: solid;border-width:1px;">
 						<li data-bind="text: $data.name, click: $parent.changePlace" class="placeListItem"></li>
-						<li><div class="tabsDiv col-md-12 col-sm-12" style="display: none; padding-left: 0px; padding-right: 0px; border-style: solid;border-width:1px 1px 0 1px;" data-bind="attr: { id: 'tabsDiv' + $index() }"> <!-- id=""  -->
+						<li><div class="tabsDiv col-md-12 col-sm-12" style="display: none; padding-left: 0px; padding-right: 0px; border-style: solid;border-width:1px 1px 0 1px;" data-bind="attr: { id: 'tabsDiv' + $index() }">
 							<ul class="tabs col-md-12 col-sm-12" style="padding-left: 0px; padding-right: 0px;width:100%;">
 					    	<li class="" style=" padding-left: 0px; padding-right: 0px; text-align: center;">
 				        	<input type="radio" name="tabs" checked class="inputRadio" data-bind="attr: { id: 'tabRadioTwitter' + $index() }"/>
@@ -40,7 +38,7 @@
 							    <div class="tab-content" data-bind="attr: { id: 'tab-content' + $index() }">
 								    <div class="rating">Rating: <span class="stars"></span></div>
 								    <div data-bind="text: $data.yelpSnippet"></div>
-								    <img class="yelpImage" data-bind="attr: {src: yelpImageSrc}" alt="yelp image"><br>  <!-- src="" -->
+								    <img class="yelpImage" data-bind="attr: {src: yelpImageSrc}" alt="yelp image"><br>
 								    <a href="" data-bind="text: $data.yelpLink, attr: {href: $data.yelpLink}"></a>
 							    </div>
 						  	</li>
@@ -92,7 +90,7 @@
 	  		for (var i = 0; i < tabs.length; i++) {
 	  			var tab = tabs[i]
 	  			if ($(tab).is(':visible')) {
-	  				if (window.innerWidth) < 690) {
+	  				if (window.innerWidth < 690) {
 	  					console.log(690)
 	  					$(".extra").height($(tab).height() + 50);
 	  				} else {
