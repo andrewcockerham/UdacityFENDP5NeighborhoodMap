@@ -93,7 +93,7 @@
 	  		for (var i = 0; i < tabs.length; i++) {
 	  			var tab = tabs[i]
 	  			if ($(tab).is(':visible')) {
-	  				if ($(document).width < 690) {
+	  				if (indow.innerWidth) < 690) {
 	  					console.log(690)
 	  					$(".extra").height($(tab).height() + 50);
 	  				} else {
