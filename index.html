@@ -15,9 +15,9 @@
 		<div class="hoverOnMap locationsList">
 			<div class="container-fluid" style="pointer-events: none;">
 				<div class="row" style="pointer-events: none;">
-				<p class="col-md-4 col-sm-5" style="-webkit-padding-start: 10px;margin-top: 25px;background: white; pointer-events: initial; border-style: solid;border-width:1px;">Filter:
-					<input placeholder="Search list of places" data-bind="value: filter, valueUpdate: 'afterkeydown'" />
-				</p>
+					<p class="col-md-4 col-sm-5" style="-webkit-padding-start: 10px;margin-top: 25px;background: white; pointer-events: initial; border-style: solid;border-width:1px;">Filter:
+						<input placeholder="Search list of places" data-bind="value: filter, valueUpdate: 'afterkeydown'" />
+					</p>
 				</div>
 				<div class="toggle row" style="pointer-events: initial;" data-bind="click: collapseList, css: openButton"></div>
 				<!-- , text: toggleText -->
@@ -85,6 +85,7 @@
 	      *       so that the list doesn't get hidden behind the dropdown
 	    */
 	  	$(".tabs, .placeListItem").click(function() {
+	  		console.log('hi')
 	  		console.log($(document).width))
 	  	console.log(window.innerWidth);
 	    	var tabs = $(".extra").parent().find(".tab-content");
