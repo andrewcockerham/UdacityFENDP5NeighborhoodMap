@@ -83,9 +83,10 @@ body {
 
 .tabs label {
 	display: block;
-	padding: 5px 7px;
+	padding: 4px 6px;
 	border-radius: 2px 2px 0 0;
-	font-size: 1em;
+	font-size: 0.9em;
+	/*font-size: 1em;*/
 	text-transform: uppercase;
 	background: white;
 	color: black;
