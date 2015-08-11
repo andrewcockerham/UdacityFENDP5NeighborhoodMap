@@ -166,10 +166,10 @@ body {
 	font-size: 6em;
 }
 
-.placeListItem {
+/*.placeListItem {
 	border: 1px;
 }
-
+*/
 .openButton {
   background: white url('http://cdn1.iconfinder.com/data/icons/basicset/plus_16.png') no-repeat center;
 }
