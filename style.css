@@ -148,7 +148,7 @@ body {
 /*	border: 2px;
 	border-top: 0;*/
 }
-
+/*MAYBE DONT NEED THIS, MAKE TWITTER WIDGET RESPONSIVE!!!*/
 @media screen and (max-width: 690px) {
   .extra {
     height: 360px;
@@ -164,6 +164,10 @@ body {
 	display: inline-block;
 	cursor: pointer;
 	font-size: 6em;
+}
+
+.placeListItem {
+	border: 1px;
 }
 
 .openButton {
