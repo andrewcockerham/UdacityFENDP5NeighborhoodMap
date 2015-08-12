@@ -167,7 +167,7 @@ var ViewModel = function() {
   self.filter = ko.observable('');
   self.listVisible = ko.observable(true); // List initially visible
   this.openButton = ko.pureComputed(function() {
-      return self.listVisible() ? "closeButton" : "openButton";
+    return self.listVisible() ? "closeButton" : "openButton";
   }, self);
 
   /**
