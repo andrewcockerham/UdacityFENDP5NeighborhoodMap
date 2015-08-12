@@ -165,7 +165,7 @@ var ViewModel = function() {
   });
   self.currentPlace = ko.observable( this.placeList()[0] );
   self.filter = ko.observable('');
-  self.listVisible = ko.observable(true) // List initially visible
+  self.listVisible = ko.observable(true); // List initially visible
   this.openButton = ko.pureComputed(function() {
       return self.listVisible() ? "closeButton" : "openButton";
   }, self);

@@ -9,6 +9,13 @@
 		<link rel="stylesheet" href="offline-language-english.css">
 		<link rel="stylesheet" href="style.css">
 		<script src="offline.min.js"></script>
+		<script>
+			var run = function(){
+				if (Offline.state === 'up')
+					Offline.check();
+				}
+				setInterval(run, 5000);
+		</script>
 	</head>
 	<body>
 
