@@ -3,7 +3,7 @@ var notify = require('gulp-notify');
 var jscs = require('gulp-jscs');
 var jshint = require('gulp-jshint');
 var uncss = require('gulp-uncss');
-var csso = require('gulp-csso');
+// var csso = require('gulp-csso');
 var htmlv = require('gulp-html-validator');
 var htmlhint = require("gulp-htmlhint");
 
@@ -31,7 +31,6 @@ gulp.task('jscs', function() {
 
 gulp.task('lint', function() {
   gulp.src('*.js')
-  // gulp.src('script.js')
   .pipe(jshint('.jshintrc'))
   .pipe(jshint.reporter('jshint-stylish'))
   .pipe(jshint.reporter('fail'))
@@ -41,24 +40,10 @@ gulp.task('lint', function() {
   }));
 });
 
-
-// Default
 gulp.task('valid', function () {
   gulp.src('index.html')
     .pipe(htmlv())
     .pipe(htmlv.reporter());
-    // .pipe(gulp.dest('./out'))
-    // .pipe(notify({
-    //     title: 'HTML Validator',
-    //     message: 'HTML Passed. Let it fly!',
-    // }))
-});
-
-// Option format set to html
-gulp.task('invalid', function () {
-  gulp.src('index.html')
-    .pipe(htmlv({format: 'html'}))
-    .pipe(gulp.dest('./out'));
 });
 
 gulp.task('html', function () {

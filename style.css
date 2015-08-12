@@ -51,7 +51,7 @@ li {
 	position: absolute;
 }
 
-/* FROM CODEPEN LINK FOR CSS TABS*/
+/* FROM CODEPEN LINK FOR CSS TABS */
 
 body {
 	text-align: left;
@@ -86,7 +86,6 @@ body {
 	padding: 4px 6px;
 	border-radius: 2px 2px 0 0;
 	font-size: 0.9em;
-	/*font-size: 1em;*/
 	text-transform: uppercase;
 	background: white;
 	color: black;
@@ -145,16 +144,13 @@ body {
 	border-color: black;
 	border-width: 0 2px 2px 2px;
 	z-index: -10;
-	/*border: 2px solid black;*/
-/*	border: 2px;
-	border-top: 0;*/
 }
 /*MAYBE DONT NEED THIS, MAKE TWITTER WIDGET RESPONSIVE!!!*/
-@media screen and (max-width: 690px) {
+/*@media screen and (max-width: 690px) {
   .extra {
     height: 360px;
   }
-}
+}*/
 
 .toggle {
 	height: auto;
@@ -167,10 +163,6 @@ body {
 	font-size: 6em;
 }
 
-/*.placeListItem {
-	border: 1px;
-}
-*/
 .openButton {
   background: white url('http://cdn1.iconfinder.com/data/icons/basicset/plus_16.png') no-repeat center;
 }
@@ -181,12 +173,12 @@ body {
 
 /* for star rating system*/
 span.stars, span.stars span {
-    display: inline-block;
-    background: url(stars.png) 0 -16px repeat-x;
-    width: 10px;
-    height: 16px;
+  display: inline-block;
+  background: url(stars.png) 0 -16px repeat-x;
+  width: 10px;
+  height: 16px;
 }
 
 span.stars span {
-    background-position: 0 0;
+  background-position: 0 0;
 }
