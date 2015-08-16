@@ -20,7 +20,7 @@ li {
 	margin: 0 0 0 auto;
 	padding: 0 11px 0 13px;
 	text-overflow: ellipsis;
-	width: 95vw;
+	/*width: 95vw;*/
 	z-index: 100;
 	top: 2%;
 	display: inline-block;
@@ -131,7 +131,6 @@ body {
 	color: #fff;
 	font: 12px Roboto;
 	/*font: 12px Arial, Helvetica, sans-serif;*/
-	/*font: 300 1em Roboto;*/
 	padding: 0.5em 1em;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
@@ -147,7 +146,7 @@ body {
 	border-width: 0 2px 2px 2px;
 	z-index: -10;
 }
-/*MAYBE DONT NEED THIS, MAKE TWITTER WIDGET RESPONSIVE!!!*/
+
 @media screen and (max-width: 690px) {
   .extra {
     height: 360px;
@@ -179,7 +178,7 @@ body {
   background: white url('http://cdn1.iconfinder.com/data/icons/splashyIcons/remove_minus_sign.png') no-repeat center;
 }
 
-/* for star rating system*/
+/* for star rating system */
 span.stars, span.stars span {
   display: inline-block;
   background: url(stars.png) 0 -16px repeat-x;
