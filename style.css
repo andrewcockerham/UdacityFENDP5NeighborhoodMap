@@ -154,6 +154,12 @@ body {
   }
 }
 
+@media screen and (max-width: 1290px) {
+  .extra {
+    height: 315px;
+  }
+}
+
 .toggle {
 	height: auto;
 	background-color: white;
