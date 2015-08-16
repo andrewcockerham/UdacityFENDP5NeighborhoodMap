@@ -148,11 +148,11 @@ body {
 	z-index: -10;
 }
 /*MAYBE DONT NEED THIS, MAKE TWITTER WIDGET RESPONSIVE!!!*/
-/*@media screen and (max-width: 690px) {
+@media screen and (max-width: 690px) {
   .extra {
     height: 360px;
   }
-}*/
+}
 
 .toggle {
 	height: auto;
