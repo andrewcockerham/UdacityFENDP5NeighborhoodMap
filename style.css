@@ -198,5 +198,7 @@ span.stars span {
   .extra {
     /*height: 360px;*/
     height: 1360px;
+    background-color: blue;
+    width: 10%;
   }
 }
