@@ -111,6 +111,21 @@
 	  			};
 	  		};
 	  	});
+
+	  	$(window).resize(function() {
+	  		  	var tabs = $(".extra").parent().find(".tab-content");
+	  				// loop through and find the one that is visible
+	  				for (var i = 0; i < tabs.length; i++) {
+	  					var tab = tabs[i]
+	  					if ($(tab).is(':visible')) {
+	  						if (window.innerWidth < 768) {
+	  							console.log("resized")
+	  							// $(".extra").height($(tab).height() + 50);
+	  						} else {
+	  							// $(".extra").height($(tab).height());
+	  						};
+	  					};
+	  				};
 	  </script>
 	  <div id="map-canvas"></div>
   </body>
