@@ -227,7 +227,7 @@ var ViewModel = function() {
 		$(tabs).parent().prev()[0].style.fontWeight = 'bold';
 
 		// insert blank div behind to lower other list items
-		$(event.target).next().append('<div class="extra col-md-12 col-sm-12" stye="position: relative;height: 200px;"></div>');
+		$(event.target).next().append('<div class="extra col-md-12 col-sm-12" stye="position: relative;"></div>'); //height: 200px;
 		// var nextID = $(event.target).next()[0].id;
 		// var targetIndex = nextID.substring(nextID.length - 1, nextID.length);
 		$(event.target).next().find(".inputRadio")[0].checked = true;
@@ -370,7 +370,7 @@ var ViewModel = function() {
   	var indexString = self.placeList().indexOf(place).toString();
   	document.getElementById('tabRadioTwitter' + indexString).checked = true;
   	$(tabs).parent().prev()[0].style.fontWeight = 'bold';
-  	$(tabs).parent().append('<div class="extra col-md-5 col-sm-12" stye="position: relative;height: 200px;"></div>');
+  	$(tabs).parent().append('<div class="extra col-md-5 col-sm-12" stye="position: relative;"></div>');  //height: 200px;
 	  var tabs1 = $('.extra').parent().find('.tab-content');
 		// loop through and find the one that is visible
 		for (var i = 0; i < tabs1.length; i++) {
