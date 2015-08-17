@@ -148,13 +148,13 @@ body {
 	z-index: -10;
 }
 
-/*@media screen and (max-width: 690px) {
+@media screen and (max-width: 690px) {
   .extra {
     height: 360px;
   }
 }
 
-@media screen and (max-width: 1290px) {
+/*@media screen and (max-width: 1290px) {
   .extra {
     height: 315px;
   }
