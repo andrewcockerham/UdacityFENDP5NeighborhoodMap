@@ -150,7 +150,8 @@ body {
 
 @media screen and (max-width: 690px) {
   .extra {
-    height: 360px;
+    /*height: 360px;*/
+    height: 1360px;
   }
 }
 
