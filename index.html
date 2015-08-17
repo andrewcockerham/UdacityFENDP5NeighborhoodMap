@@ -17,6 +17,7 @@
 					Offline.check();
 				}
 				setInterval(run, 5000);
+				Offline.options = {checks: {xhr: {url: 'http://andrewcockerham.github.io'}}};
 				// Offline.options = {checks: {xhr: {url: 'http://andrewcockerham.github.io'}}};
 		</script>
 	</head>
@@ -95,38 +96,40 @@
 	      *       so that the list doesn't get hidden behind the dropdown
 	    */
 	  	$(".tabs, .placeListItem").click(function() {
-	  		console.log('hi');
-	  	console.log(window.innerWidth);
-	    	var tabs = $(".extra").parent().find(".tab-content");
-	  		// loop through and find the one that is visible
-	  		for (var i = 0; i < tabs.length; i++) {
-	  			var tab = tabs[i]
-	  			if ($(tab).is(':visible')) {
-	  				if (window.innerWidth < 768) {
-	  					console.log(690)
-	  					$(".extra").height($(tab).height() + 50);
-	  				} else {
-	  					$(".extra").height($(tab).height());
-	  				};
-	  			};
-	  		};
+	  		resizeExtra();
+	  	// 	console.log('hi');
+	  	// console.log(window.innerWidth);
+	   //  	var tabs = $(".extra").parent().find(".tab-content");
+	  	// 	// loop through and find the one that is visible
+	  	// 	for (var i = 0; i < tabs.length; i++) {
+	  	// 		var tab = tabs[i]
+	  	// 		if ($(tab).is(':visible')) {
+	  	// 			if (window.innerWidth < 768) {
+	  	// 				console.log(690)
+	  	// 				$(".extra").height($(tab).height() + 50);
+	  	// 			} else {
+	  	// 				$(".extra").height($(tab).height());
+	  	// 			};
+	  	// 		};
+	  	// 	};
 	  	});
 
 	  	$(window).resize(function() {
-	  		  	var tabs = $(".extra").parent().find(".tab-content");
-	  				// loop through and find the one that is visible
-	  				for (var i = 0; i < tabs.length; i++) {
-	  					var tab = tabs[i]
-	  					if ($(tab).is(':visible')) {
-	  						if (window.innerWidth < 768) {
-	  							console.log("resized")
-	  							$(".extra").height($(tab).height() + 50);
-	  						} else {
-	  							// $(".extra").height($(tab).height());
-	  						};
-	  					};
-	  				};
-	  			});
+		  	resizeExtra();
+			});
+
+			function resizeExtra() {
+				var tabs = $(".extra").parent().find(".tab-content");
+				// loop through and find the one that is visible
+				for (var i = 0; i < tabs.length; i++) {
+					var tab = tabs[i]
+					if ($(tab).is(':visible')) {
+						if (window.innerWidth < 768) {
+							$(".extra").height($(tab).height() + 50);
+						};
+					};
+				};
+			};
 	  </script>
 	  <div id="map-canvas"></div>
   </body>
