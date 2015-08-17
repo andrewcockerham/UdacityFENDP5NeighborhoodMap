@@ -29,6 +29,13 @@ li {
 	box-shadow: 0 0 0 0;
 }
 
+@media screen and (max-width: 690px) {
+  .locationsList {
+    /*height: 360px;*/
+    background-color: blue;
+  }
+}
+
 .hoverOnMap {
 	margin: 12px 0 0 0;
 	border: 1px solid transparent;
@@ -148,12 +155,7 @@ body {
 	z-index: -10;
 }
 
-@media screen and (max-width: 690px) {
-  .extra {
-    /*height: 360px;*/
-    height: 1360px;
-  }
-}
+
 
 /*@media screen and (max-width: 1290px) {
   .extra {
@@ -190,4 +192,11 @@ span.stars, span.stars span {
 
 span.stars span {
   background-position: 0 0;
+}
+
+@media screen and (max-width: 690px) {
+  .extra {
+    /*height: 360px;*/
+    height: 1360px;
+  }
 }
