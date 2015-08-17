@@ -200,5 +200,6 @@ span.stars span {
     height: 1360px;
     background-color: blue;
     width: 10%;
+    z-index: 100;
   }
 }
