@@ -93,6 +93,7 @@
 	  <script>
 
 	  function resizeExtra() {
+	  	console.log(' in resiezfunction')
 	  	var tabs = $(".extra").parent().find(".tab-content");
 	  	// loop through and find the one that is visible
 	  	for (var i = 0; i < tabs.length; i++) {
@@ -109,7 +110,7 @@
 	      *       so that the list doesn't get hidden behind the dropdown
 	    */
 	  	$(".tabs, .placeListItem").click(function() {
-	  		resizeExtra();
+	  		window.resizeExtra();
 	  	// 	console.log('hi');
 	  	// console.log(window.innerWidth);
 	   //  	var tabs = $(".extra").parent().find(".tab-content");
