@@ -84,13 +84,13 @@
 		<script type="text/html" id="info-window-template">
 		<div class="infobox">
 			<h2 id="placeName">
-				<a data-bind="text: name(), attr: { href: $data.website() }"></a>
+				<a data-bind="text: $data.name, attr: { href: website() }"></a>
 			</h2>
 			<h4 data-bind="data: address()"></h4>
 		</div>
 		</script>
 <!-- 						<a href="" data-bind="text: $data.yelpLink, attr: {href: $data.yelpLink}"></a>
-
+<a data-bind="text: name(), attr: { href: website() }"></a>
  -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
