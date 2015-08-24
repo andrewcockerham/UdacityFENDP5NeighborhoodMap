@@ -305,8 +305,7 @@ var ViewModel = function() {
     	  	marker.setAnimation(null);
     	  }, 3300);
 
-    	  // self.showInfoBox(infobox, place, map, marker);
-    	  self.showInfoBox(infobox, self.currentPlace(), map, marker);
+    	  self.showInfoBox(infobox, place, map, marker);
 
     	});// end addListener marker
 
