@@ -84,12 +84,13 @@
 		<script type="text/html" id="info-window-template">
 		<div class="infobox">
 			<h2 id="placeName">
-				<a data-bind="data: name(), attr: { href: website() }"></a>
+				<a data-bind="data: name(), attr: { href: $data.website() }"></a>
 			</h2>
 			<h4 data-bind="data: address()"></h4>
 		</div>
 		</script>
-
+<!-- 				<a data-bind="data: name(), attr: { href: website() }"></a>
+ -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
@@ -117,9 +118,6 @@
 	      *       so that the list doesn't get hidden behind the dropdown
 	    */
 	  	$(".tabs, .placeListItem").click(function() {
-	  		// window.resizeExtra();
-	  		console.log('hi');
-	  	console.log(window.innerWidth);
 	    	var tabs = $(".extra").parent().find(".tab-content");
 	  		// loop through and find the one that is visible
 	  		for (var i = 0; i < tabs.length; i++) {
