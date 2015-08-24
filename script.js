@@ -198,6 +198,7 @@ var ViewModel = function() {
   // function called when you click on a place in the list
   this.changePlace = function(place, event) {
   	self.currentPlace(place); // set current place to place that was clicked
+  	console.log(currentPlace.website())
   	var context = ko.contextFor(event.target);
    	if (self.currentPlace().yelpID() !== "") {
    		self.callYelpAPI();
@@ -251,7 +252,6 @@ var ViewModel = function() {
   			}, 3500);
   		}
   	});
-
   }; // end function changePlace
 
   /**
@@ -402,7 +402,7 @@ var ViewModel = function() {
   };
 
   /**
-  	* @desc showsn infobox when marker is clicked or when item is clicked in list
+  	* @desc shows infobox when marker is clicked or when item is clicked in list
   	* @params
   	*		infobox - the infobox that was set before
   	*		place   - the place that was clicked
@@ -481,7 +481,6 @@ var ViewModel = function() {
   	$(newParagraph).addClass('yelpSnippet');
   	$(br).insertAfter(yelpImage);
   	$(function() {
-  	  // $("span.stars").stars(results.rating);
   	  $('span.stars').stars(results.rating);
   	});
   }; // end updateYelpContent function
