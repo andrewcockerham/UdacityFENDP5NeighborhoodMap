@@ -1,4 +1,3 @@
-/*! offline-js 0.7.13 */
 
 (function() {
 	var a, b, c, d, e, f, g;
