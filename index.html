@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<!-- https://github.com/andrewcockerham/UdacityFENDP5NeighborhoodMap/blob/gh-pages/favicon.ico -->
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>Udacity Front End Nanodegree Project 5</title>
-		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+		<!-- <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/> -->
 		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 		<link rel="stylesheet" href="offline-theme-slide.css">
 		<link rel="stylesheet" href="offline-language-english.css">
@@ -17,17 +16,14 @@
 					Offline.check();
 				}
 				setInterval(run, 10000);
-				// Offline.options = {checks: {xhr: {url: 'http://andrewcockerham.github.io'}}};
-				// Offline.options = {checks: {xhr: {url: 'http://andrewcockerham.github.io'}}};
 		</script>
 	</head>
 	<body>
-
 		<div class="hoverOnMap locationsList">
 			<div class="container-fluid" style="pointer-events: none;">
 				<div class="row" style="pointer-events: none;">
 					<p class="col-md-4 col-sm-5" style="-webkit-padding-start: 10px;margin-top: 25px;background: white; pointer-events: initial; border-style: solid;border-width:1px;">Filter:
-						<input placeholder="Search list of places" data-bind="value: filter, valueUpdate: 'afterkeydown'" />
+						<input placeholder="Search list of places" data-bind="value: filter, valueUpdate: 'afterkeydown'"/>
 					</p>
 				</div>
 				<div class="toggle row" style="pointer-events: initial;" data-bind="click: collapseList, css: openButton"></div>
@@ -73,8 +69,8 @@
 						</li>
 					</ul>
 				</div>
-				</div>
 			</div>
+		</div>
 		<div class="container-fluid">
 			<div class="row">
 				<div id="searchContainer" class="col-sm-4 col-md-4">
@@ -82,6 +78,20 @@
 				</div>
 			</div>
 		</div>
+
+		<div data-bind="template: { name: 'info-window-template', data: currentPlace() }"></div>
+
+		<script type="text/html" id="info-window-template">
+		<div class="infobox">
+			<h2 id="placeName">
+				<a data-bind="data: name(), attr: { href: .website() }"></a>
+			</h2>
+			<h4 data-bind="data: address()"></h4>
+		</div>
+
+		    //<h3 data-bind="text: name"></h3>
+		    //<p>Credits: <span data-bind="text: credits"></span></p>
+		</script>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -140,8 +150,6 @@
 		  			};
 		  		};
 		  	});
-
-
 	  </script>
 	  <div id="map-canvas"></div>
   </body>
