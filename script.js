@@ -245,7 +245,8 @@ var ViewModel = function() {
   	*/
   	markers.forEach(function(marker) {
   		if (marker.getPosition().lat().toFixed(6) == place.latitude() && marker.getPosition().lng().toFixed(6) == place.longitude()) {
-  			self.showInfoBox(window.infobox, place, map, marker);
+  			self.showInfoBox(window.infobox, map, marker);
+  			// self.showInfoBox(window.infobox, place, map, marker);
   			marker.setAnimation(google.maps.Animation.BOUNCE);
   			window.setTimeout(function() {
   				marker.setAnimation(null);
@@ -305,7 +306,8 @@ var ViewModel = function() {
     	  	marker.setAnimation(null);
     	  }, 3300);
 
-    	  self.showInfoBox(infobox, place, map, marker);
+    	  self.showInfoBox(infobox, map, marker);
+    	  // self.showInfoBox(infobox, place, map, marker);
 
     	});// end addListener marker
 
@@ -409,9 +411,10 @@ var ViewModel = function() {
   	*		map 		- the window.map google map
   	*		marker  - the marker that was clicked
   */
-  this.showInfoBox = function(infobox, place, map, marker) {
+  this.showInfoBox = function(infobox, map, marker) {
+  // this.showInfoBox = function(infobox, place, map, marker) {
   	infobox.open(map, marker);
-  	infobox.setContent('<div class="infobox">' + '<h2 id="placeName"><a href="' + place.website.toString() + '">' + self.currentPlace().name() + '</a>' + '</h2><h4>' + place.address() + '</h4></div>');
+  	// infobox.setContent('<div class="infobox">' + '<h2 id="placeName"><a href="' + place.website.toString() + '">' + self.currentPlace().name() + '</a>' + '</h2><h4>' + place.address() + '</h4></div>');
   };
 
   // YELP RELATED CODE
