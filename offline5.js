@@ -93,7 +93,8 @@
 		var b;
 		return b = document.createElement("img"), b.onerror = a.markDown, b.onload = a.markUp, void(b.src = a.getOption("checks.image.url"))
 	}, a.checks.down = a.markDown, a.checks.up = a.markUp, a.check = function() {
-		return a.trigger("checking"), a.checks[a.getOption("checks.active")]()
+		return a.checks[a.getOption("checks.active")]()
+		// a.trigger("checking"),
 	}, a.confirmUp = a.confirmDown = a.check, a.onXHR = function(a) {
 		var b, c, e;
 		return e = function(b, c) {
