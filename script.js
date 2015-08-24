@@ -38,7 +38,7 @@ var places = [
 		latitude: 30.238327,
 		longitude: -97.866148,
 		wikipediaContent: 'wikpediaContent',
-		website: "http://www.austin-pizza-garden.com",
+		website: "http://www.freescale.com/",
 		yelpID: "freescale-austin-4",
 		yelpSnippet: "",
 		yelpImageSrc: "",
