@@ -79,7 +79,7 @@
 			</div>
 		</div>
 
-		<div style="display: none;" data-bind="template: { name: 'info-window-template', data: currentPlace }"></div>
+		<div data-bind="template: { name: 'info-window-template', data: currentPlace }"></div>
 
 		<script type="text/html" id="info-window-template">
 			<div class="infobox">
@@ -92,6 +92,7 @@
 <!-- 						<a href="" data-bind="text: $data.yelpLink, attr: {href: $data.yelpLink}"></a>
 <a data-bind="text: name(), attr: { href: website() }"></a>
 <a data-bind="text: $data.name, attr: { href: $data.website }"></a>
+style="display: none;"
  -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
