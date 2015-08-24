@@ -82,7 +82,7 @@
 		var c, d;
 		d = new XMLHttpRequest, d.offline = !1, d.open("HEAD", a.getOption("checks.xhr.url"), !0), null != d.timeout && (d.timeout = a.getOption("checks.xhr.timeout")), b(d, a.markUp, a.markDown);
 		try {
-			// d.send()
+			d.send()
 		}
 		catch (e) {
 			c = e, a.markDown()
@@ -151,7 +151,7 @@
 		var a, b, c, d, e, f;
 		if (!window.Offline) throw new Error("Requests module brought in without offline.js");
 		c = [], f = !1, d = function(a) {
-			return Offline.trigger("requests:capture"), "down" !== Offline.state && (f = !0)//, c.push(a)
+			return Offline.trigger("requests:capture"), "down" !== Offline.state && (f = !0), c.push(a)
 		}, e = function(a) {
 			var b, c, d, e, f, g, h, i, j;
 			j = a.xhr, g = a.url, f = a.type, h = a.user, d = a.password, b = a.body, j.abort(), j.open(f, g, !0, h, d), e = j.headers;
@@ -188,7 +188,7 @@
 	}.call(this),
 	function() {
 		var a, b, c, d, e;
-		// if (!Offline) throw new Error("Offline simulate brought in without offline.js");
+		if (!Offline) throw new Error("Offline simulate brought in without offline.js");
 		for (d = ["up", "down"], b = 0, c = d.length; c > b; b++) e = d[b], (document.querySelector("script[data-simulate='" + e + "']") || localStorage.OFFLINE_SIMULATE === e) && (null == Offline.options && (Offline.options = {}), null == (a = Offline.options).checks && (a.checks = {}), Offline.options.checks.active = e)
 	}.call(this),
 	function() {
