@@ -462,8 +462,6 @@ var ViewModel = function() {
     $.ajax(settings);
   }; /////// END callYelpAPI function
 
-  // self.callYelpAPI();
-
   // put Yelp content onto page
   this.updateYelpContent = function(results) {
   	self.currentPlace().yelpImageSrc(results.image_url);
