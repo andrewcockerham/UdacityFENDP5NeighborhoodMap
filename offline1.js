@@ -128,7 +128,7 @@
 }).call(this),
 	function() {
 		var a, b, c, d, e, f, g, h, i;
-		// if (!window.Offline) throw new Error("Offline Reconnect brought in without offline.js");
+		if (!window.Offline) throw new Error("Offline Reconnect brought in without offline.js");
 		d = Offline.reconnect = {}, f = null, e = function() {
 			var a;
 			return null != d.state && "inactive" !== d.state && Offline.trigger("reconnect:stopped"), d.state = "inactive", d.remaining = d.delay = null != (a = Offline.getOption("reconnect.initialDelay")) ? a : 3
@@ -149,7 +149,7 @@
 	}.call(this),
 	function() {
 		var a, b, c, d, e, f;
-		// if (!window.Offline) throw new Error("Requests module brought in without offline.js");
+		if (!window.Offline) throw new Error("Requests module brought in without offline.js");
 		c = [], f = !1, d = function(a) {
 			return Offline.trigger("requests:capture"), "down" !== Offline.state && (f = !0)//, c.push(a)
 		}, e = function(a) {
@@ -193,7 +193,7 @@
 	}.call(this),
 	function() {
 		var a, b, c, d, e, f, g, h, i, j, k, l, m;
-		// if (!window.Offline) throw new Error("Offline UI brought in without offline.js");
+		if (!window.Offline) throw new Error("Offline UI brought in without offline.js");
 		b = '<div class="offline-ui"><div class="offline-ui-content"></div></div>', a = '<a href class="offline-ui-retry"></a>', f = function(a) {
 			var b;
 			return b = document.createElement("div"), b.innerHTML = a, b.children[0]
