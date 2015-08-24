@@ -83,9 +83,9 @@
 		try {
 			// d.send()
 		}
-		// catch (e) {
-		// 	c = e, a.markDown()
-		// }
+		catch (e) {
+			c = e, a.markDown()
+		}
 		return d
 	}, a.checks.image = function() {
 		var b;
