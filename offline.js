@@ -7,7 +7,7 @@
 		for (d in b.prototype) try {
 			f = b.prototype[d], null == a[d] && "function" != typeof f ? e.push(a[d] = f) : e.push(void 0)
 		} catch (g) {
-        c = g
+      c = g
     }
 		return e
 	}, a = {}, null == a.options && (a.options = {}), c = {
