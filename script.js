@@ -268,7 +268,6 @@ var ViewModel = function() {
 			disableAutoPan: false,
 			maxWidth: 150,
 			pixelOffset: new google.maps.Size(-140, 0),
-			pixelOffset: new google.maps.Size(-140, -300),
 			zIndex: null,
 			boxStyle: {
 			  background: "url('http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/examples/tipbox.gif') no-repeat",
