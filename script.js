@@ -198,7 +198,6 @@ var ViewModel = function() {
   // function called when you click on a place in the list
   this.changePlace = function(place, event) {
   	self.currentPlace(place); // set current place to place that was clicked
-  	console.log(self.currentPlace().website())
   	var context = ko.contextFor(event.target);
    	if (self.currentPlace().yelpID() !== "") {
    		self.callYelpAPI();
