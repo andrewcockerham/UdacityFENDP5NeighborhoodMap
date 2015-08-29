@@ -4,7 +4,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>Udacity Front End Nanodegree Project 5</title>
-		<!-- <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/> -->
 		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 		<link rel="stylesheet" href="offline-theme-slide.css">
 		<link rel="stylesheet" href="offline-language-english.css">
@@ -108,17 +107,17 @@
 	  	});
 
 	  	$(window).resize(function() {
-		  		var tabs = $(".extra").parent().find(".tab-content");
-		  		// loop through and find the one that is visible
-		  		for (var i = 0; i < tabs.length; i++) {
-		  			var tab = tabs[i]
-		  			if ($(tab).is(':visible')) {
-		  				if (window.innerWidth < 768) {
-		  					$(".extra").height($(tab).height() + 50);
-		  				};
-		  			};
-		  		};
-		  	});
+	  		var tabs = $(".extra").parent().find(".tab-content");
+	  		// loop through and find the one that is visible
+	  		for (var i = 0; i < tabs.length; i++) {
+	  			var tab = tabs[i]
+	  			if ($(tab).is(':visible')) {
+	  				if (window.innerWidth < 768) {
+	  					$(".extra").height($(tab).height() + 50);
+	  				};
+	  			};
+	  		};
+	  	});
 	  </script>
 	  <div id="map-canvas"></div>
   </body>

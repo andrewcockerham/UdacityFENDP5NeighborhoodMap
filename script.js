@@ -228,10 +228,7 @@ var ViewModel = function() {
 
 		// insert blank div behind to lower other list items
 		$(event.target).next().append('<div class="extra col-md-12 col-sm-12" stye="position: relative;"></div>'); //height: 200px;
-		// var nextID = $(event.target).next()[0].id;
-		// var targetIndex = nextID.substring(nextID.length - 1, nextID.length);
 		$(event.target).next().find(".inputRadio")[0].checked = true;
-		// document.getElementById('tabRadioTwitter' + targetIndex).checked = true; // default tab shown is twitter
 
 		// GOOGLE MAPS STUFF
   	// panTo place
@@ -244,7 +241,6 @@ var ViewModel = function() {
   	*/
   	markers.forEach(function(marker) {
   		if (marker.getPosition().lat().toFixed(6) == place.latitude() && marker.getPosition().lng().toFixed(6) == place.longitude()) {
-  			// self.showInfoBox(window.infobox, map, marker);
   			self.showInfoBox(window.infobox, place, map, marker);
   			marker.setAnimation(google.maps.Animation.BOUNCE);
   			window.setTimeout(function() {
@@ -305,7 +301,6 @@ var ViewModel = function() {
     	  	marker.setAnimation(null);
     	  }, 3300);
 
-    	  // self.showInfoBox(infobox, map, marker);
     	  self.showInfoBox(infobox, place, map, marker);
 
     	});// end addListener marker
@@ -458,6 +453,7 @@ var ViewModel = function() {
       },
       fail: function() {
         console.log('fail');
+        alert("unable to contact Yelp");
       }
     };
     $.ajax(settings);
@@ -486,7 +482,6 @@ var ViewModel = function() {
   ////// end yelp stuff
 
   this.collapseList = function() {
-  	// self.listVisible() ? (self.listVisible(false), self.toggleText('show')) : (self.listVisible(true), self.toggleText('hide'))
   	self.listVisible(!self.listVisible());
   };
 
