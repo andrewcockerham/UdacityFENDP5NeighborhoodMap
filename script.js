@@ -381,45 +381,38 @@ var ViewModel = function() {
 	this.filteredItems = ko.computed(function() {
 		var filter = self.filter().toLowerCase();
 		if (!filter) {
-			for (var i = 0; i < markers.length; i++) {
-				markers[i].setMap(map);
-			}
+			self.clearMarkers();
+			// for (var i = 0; i < markers.length; i++) {
+			// 	markers[i].setMap(map);
+			// }
 			return this.placeList();
 		} else {
-			console.log('filter markers');
-			var markersToRemove = [];
+			// var markersToRemove = [];
 			var filteredArray = ko.utils.arrayFilter(self.placeList(), function(item) {
 				return item.name().toLowerCase().indexOf(filter) !== -1;
 			})
-			console.log(filteredArray);
-			console.log(markers);
-			console.log(filteredArray[0].latitude())
-			for (var i = 0; i < markers.length; i++) {
-				markers[i].setMap(null);
-			}
+			self.clearMarkers();
+			// for (var i = 0; i < markers.length; i++) {
+			// 	markers[i].setMap(null);
+			// }
 			for (var i = 0; i < markers.length; i++) {
 				for (var j = 0; j < filteredArray.length; j++) {
-			  		if (markers[i].getPosition().lat().toFixed(6) == filteredArray[j].latitude()) {
-			  			console.log('match')
-			  			// console.log(markers[i])
-			  			// markersToRemove.push(markers[i]);
-			  			// console.log(markersToRemove.length)
-			  			markers[i].setMap(map);
-			  		}
+		  		if (markers[i].getPosition().lat().toFixed(6) == filteredArray[j].latitude()) {
+		  			markers[i].setMap(map);
+		  		}
 			  }
 		  }
-		  // console.log(markersToRemove)
-			// // Removes the markers from the map, but keeps them in the array.
-			// function clearMarkers() {
-			//   setMapOnAll(null);
-			// }
-
 			return ko.utils.arrayFilter(self.placeList(), function(item) {
 				return item.name().toLowerCase().indexOf(filter) !== -1;
 			});
 		}
 	}, this);
 
+	this.clearMarkers = function() {
+		for (var i = 0; i < markers.length; i++) {
+			markers[i].setMap(null);
+		}
+	}
 
 	this.getSelectedIndex = function() {
 		var tabsDivArray = document.getElementsByClassName('tabsDiv');
