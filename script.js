@@ -391,7 +391,6 @@ var ViewModel = function() {
 				markers[i].setMap(map);
 			}
 			return self.placeList();
-			// return this.placeList();
 		} else {
 			var filteredArray = ko.utils.arrayFilter(self.placeList(), function(item) {
 				return item.name().toLowerCase().indexOf(filter) !== -1;
