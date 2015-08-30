@@ -189,7 +189,7 @@ var ViewModel = function() {
 			console.log(markers);
 			console.log(filteredArray[0].latitude())
 		  for (var i = 0; i < markers.length; i++) {
-		  	console.log(markers[i].position)
+		  	console.log(markers[i].position[0])
 		  	// if (marker not in filter list) {
 		  	// 	markers[i].setMap(null);
 		  	// }
