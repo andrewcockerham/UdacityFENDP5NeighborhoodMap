@@ -374,6 +374,12 @@ var ViewModel = function() {
 
 	}; // END this.initializeMap
 
+	this.clearMarkers = function() {
+		for (var i = 0; i < markers.length; i++) {
+			markers[i].setMap(null);
+		}
+	}
+
 	/**
 		* @desc This function handles the filtering box and filters the list.
 		* credit: http://www.knockmeout.net/2011/04/utility-functions-in-knockoutjs.html
@@ -408,11 +414,7 @@ var ViewModel = function() {
 		}
 	}, this);
 
-	this.clearMarkers = function() {
-		for (var i = 0; i < markers.length; i++) {
-			markers[i].setMap(null);
-		}
-	}
+
 
 	this.getSelectedIndex = function() {
 		var tabsDivArray = document.getElementsByClassName('tabsDiv');
