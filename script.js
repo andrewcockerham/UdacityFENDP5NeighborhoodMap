@@ -235,6 +235,7 @@ var ViewModel = function() {
 		$(event.target).next().append('<div class="extra col-md-12 col-sm-12" stye="position: relative;"></div>'); //height: 200px;
 		$(event.target).next().find(".inputRadio")[0].checked = true;
 
+		console.log(context.$index())
 		console.log(self.getSelectedIndex())
 
 		// GOOGLE MAPS STUFF
