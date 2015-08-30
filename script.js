@@ -213,7 +213,9 @@ var ViewModel = function() {
 
 		var tabs = document.getElementById('tabsDiv' + context.$index());
 		if ($(tabs).is(':visible')) {
-			self.closeDropdown();
+			// self.closeDropdown();
+					$(tabs).slideToggle();
+		$('.extra').remove();
 			return
 		}
 
