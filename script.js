@@ -217,6 +217,13 @@ var ViewModel = function() {
 			// self.closeDropdown();
 			$(tabs).slideToggle();
 			$('.extra').remove();
+			// make all placeList items not bold
+			var placeItems = document.getElementsByClassName('placeListItem');
+			var l = placeItems.length;
+			for (var i = 0; i < l; i++) {
+				var placeItem = placeItems[i];
+				placeItem.style.fontWeight = "normal";
+			}
 			return
 		}
 
