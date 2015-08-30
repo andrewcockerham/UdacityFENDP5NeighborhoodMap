@@ -191,8 +191,9 @@ var ViewModel = function() {
 			for (var j = 0; j < filteredArray.length; j++) {
 			  for (var i = 0; i < markers.length; i++) {
 			  	// console.log(markers[i].getPosition().lat().toFixed(6))
-			  		if (markers[i].getPosition().lat().toFixed(6) == filteredArray[j].latitude()) {
-			  			console.log('match')
+			  		if (markers[i].getPosition().lat().toFixed(6) !== filteredArray[j].latitude()) {
+			  			console.log(' no match')
+			  			markers[i].setMap(null);
 			  		}
 			  	// console.log(markers[i].position[0])
 			  	// if (marker not in filter list) {
