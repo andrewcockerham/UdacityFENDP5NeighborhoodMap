@@ -177,51 +177,7 @@ var ViewModel = function() {
 	  }
 	}
 
-	/**
-		* @desc This function handles the filtering box and filters the list.
-		* credit: http://www.knockmeout.net/2011/04/utility-functions-in-knockoutjs.html
-	*/
-	this.filteredItems = ko.computed(function() {
-		var filter = self.filter().toLowerCase();
-		if (!filter) {
-			// self.setMapOnAll(markers, window.map);
-			for (var i = 0; i < markers.length; i++) {
-				markers[i].setMap(map);
-			}
-			return this.placeList();
-		} else {
-			console.log('filter markers');
 
-			var filteredArray = ko.utils.arrayFilter(self.placeList(), function(item) {
-				return item.name().toLowerCase().indexOf(filter) !== -1;
-			})
-			console.log(filteredArray);
-			console.log(markers);
-			console.log(filteredArray[0].latitude())
-			for (var j = 0; j < filteredArray.length; j++) {
-			  for (var i = 0; i < markers.length; i++) {
-			  	// console.log(markers[i].getPosition().lat().toFixed(6))
-			  		if (markers[i].getPosition().lat().toFixed(6) == filteredArray[j].latitude()) {
-			  			console.log('match')
-			  			console.log(markers[i])
-			  			markers[i].setMap(null);
-			  		} else {
-			  			// markers[0].setMap(null);
-			  			// console.log(markers[i]);
-			  		}
-			  }
-		  }
-
-			// // Removes the markers from the map, but keeps them in the array.
-			// function clearMarkers() {
-			//   setMapOnAll(null);
-			// }
-
-			return ko.utils.arrayFilter(self.placeList(), function(item) {
-				return item.name().toLowerCase().indexOf(filter) !== -1;
-			});
-		}
-	}, this);
 
 	// Initilize google map location to my neighborhood
 	var myLatlng = new google.maps.LatLng(30.2433481,-97.8703633);
@@ -417,6 +373,53 @@ var ViewModel = function() {
 		});
 
 	}; // END this.initializeMap
+
+	/**
+		* @desc This function handles the filtering box and filters the list.
+		* credit: http://www.knockmeout.net/2011/04/utility-functions-in-knockoutjs.html
+	*/
+	this.filteredItems = ko.computed(function() {
+		var filter = self.filter().toLowerCase();
+		if (!filter) {
+			// self.setMapOnAll(markers, window.map);
+			for (var i = 0; i < markers.length; i++) {
+				markers[i].setMap(map);
+			}
+			return this.placeList();
+		} else {
+			console.log('filter markers');
+
+			var filteredArray = ko.utils.arrayFilter(self.placeList(), function(item) {
+				return item.name().toLowerCase().indexOf(filter) !== -1;
+			})
+			console.log(filteredArray);
+			console.log(markers);
+			console.log(filteredArray[0].latitude())
+			for (var j = 0; j < filteredArray.length; j++) {
+			  for (var i = 0; i < markers.length; i++) {
+			  	// console.log(markers[i].getPosition().lat().toFixed(6))
+			  		if (markers[i].getPosition().lat().toFixed(6) == filteredArray[j].latitude()) {
+			  			console.log('match')
+			  			console.log(markers[i])
+			  			markers[i].setMap(null);
+			  		} else {
+			  			// markers[0].setMap(null);
+			  			// console.log(markers[i]);
+			  		}
+			  }
+		  }
+
+			// // Removes the markers from the map, but keeps them in the array.
+			// function clearMarkers() {
+			//   setMapOnAll(null);
+			// }
+
+			return ko.utils.arrayFilter(self.placeList(), function(item) {
+				return item.name().toLowerCase().indexOf(filter) !== -1;
+			});
+		}
+	}, this);
+
 
 	this.getSelectedIndex = function() {
 		var tabsDivArray = document.getElementsByClassName('tabsDiv');
