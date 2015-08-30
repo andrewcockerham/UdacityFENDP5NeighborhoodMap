@@ -213,12 +213,12 @@ var ViewModel = function() {
 
 		var tabs = document.getElementById('tabsDiv' + context.$index());
 		if ($(tabs).is(':visible')) {
-			self.closeDropdown();
+			console.log("visible")
+			// self.closeDropdown();
 			$(tabs).slideToggle();
 			$('.extra').remove();
 			return
 		}
-
 
 		// make all placeList items not bold
 		var placeItems = document.getElementsByClassName('placeListItem');
