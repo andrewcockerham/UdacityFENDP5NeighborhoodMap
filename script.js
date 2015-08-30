@@ -184,7 +184,7 @@ var ViewModel = function() {
 	this.filteredItems = ko.computed(function() {
 		var filter = self.filter().toLowerCase();
 		if (!filter) {
-			setMapOnAll(markers, map);
+			self.setMapOnAll(markers, map);
 			return this.placeList();
 		} else {
 			console.log('filter markers');
