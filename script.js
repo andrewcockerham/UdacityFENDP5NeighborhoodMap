@@ -406,6 +406,7 @@ var ViewModel = function() {
 			}
 			return self.placeList();
 		} else {
+			infobox.close();
 			var filteredArray = ko.utils.arrayFilter(self.placeList(), function(item) {
 				return item.name().toLowerCase().indexOf(filter) !== -1;
 			})
