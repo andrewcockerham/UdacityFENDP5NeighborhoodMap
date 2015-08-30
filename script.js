@@ -197,7 +197,6 @@ var ViewModel = function() {
 
 	// function called when you click on a place in the list
 	this.changePlace = function(place, event) {
-		console.log(self.getSelectedIndex())
 		self.currentPlace(place); // set current place to place that was clicked
 		if (self.getSelectedIndex > -1) {
 			self.closeDropdown();
@@ -235,6 +234,8 @@ var ViewModel = function() {
 		// insert blank div behind to lower other list items
 		$(event.target).next().append('<div class="extra col-md-12 col-sm-12" stye="position: relative;"></div>'); //height: 200px;
 		$(event.target).next().find(".inputRadio")[0].checked = true;
+
+		console.log(self.getSelectedIndex())
 
 		// GOOGLE MAPS STUFF
 		// panTo place
@@ -364,6 +365,7 @@ var ViewModel = function() {
 
 	this.getSelectedIndex = function() {
 		var tabsDivArray = document.getElementsByClassName('tabsDiv');
+		// var i = 0
 		for (var i = 0; i < tabsDivArray.length; i++) {
 			var tabsDiv = tabsDivArray[i];
 			if ($(tabsDiv).is(':visible')) {
