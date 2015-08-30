@@ -185,6 +185,9 @@ var ViewModel = function() {
 		var filter = self.filter().toLowerCase();
 		if (!filter) {
 			// self.setMapOnAll(markers, window.map);
+			for (var i = 0; i < markers.length; i++) {
+				markers[i].setMap(map);
+			}
 			return this.placeList();
 		} else {
 			console.log('filter markers');
