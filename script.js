@@ -388,7 +388,7 @@ var ViewModel = function() {
 			return this.placeList();
 		} else {
 			console.log('filter markers');
-
+			var markersToRemove = [];
 			var filteredArray = ko.utils.arrayFilter(self.placeList(), function(item) {
 				return item.name().toLowerCase().indexOf(filter) !== -1;
 			})
@@ -401,14 +401,16 @@ var ViewModel = function() {
 			  		if (markers[i].getPosition().lat().toFixed(6) !== filteredArray[j].latitude()) {
 			  			console.log('match')
 			  			console.log(markers[i])
-			  			markers[i].setMap(null);
+			  			markersToRemove.push(markers[i]);
+
+			  			// markers[i].setMap(null);
 			  		} else {
 			  			// markers[0].setMap(null);
 			  			// console.log(markers[i]);
 			  		}
 			  }
 		  }
-
+		  console.log(markersToRemove)
 			// // Removes the markers from the map, but keeps them in the array.
 			// function clearMarkers() {
 			//   setMapOnAll(null);
