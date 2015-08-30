@@ -239,11 +239,6 @@ var ViewModel = function() {
 		event.target.style.display = 'block';
 		$(tabs).parent().prev()[0].style.fontWeight = 'bold';
 
-		// console.log(context.$index())
-		// var tabsVisString = "#tabsDiv" + context.$index()
-		// var tabsDivVis = document.getElementById(tabsVisString)
-		// if ($(#tabsDiv.is(':visible'))
-
 		// insert blank div behind to lower other list items
 		$(event.target).next().append('<div class="extra col-md-12 col-sm-12" stye="position: relative;"></div>'); //height: 200px;
 		$(event.target).next().find(".inputRadio")[0].checked = true;
@@ -407,6 +402,11 @@ var ViewModel = function() {
 			return self.placeList();
 		} else {
 			infobox.close();
+			//reset
+			var position = new google.maps.LatLng(30.2433481,-97.8703633);
+			window.map.panTo(position);
+			window.map.setZoom(17);
+
 			var filteredArray = ko.utils.arrayFilter(self.placeList(), function(item) {
 				return item.name().toLowerCase().indexOf(filter) !== -1;
 			})
