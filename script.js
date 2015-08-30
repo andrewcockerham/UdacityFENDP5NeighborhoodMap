@@ -403,7 +403,7 @@ var ViewModel = function() {
 			  			console.log('match')
 			  			console.log(markers[i])
 			  			markersToRemove.push(markers[i]);
-
+			  			console.log(markersToRemove.length())
 			  			// markers[i].setMap(null);
 			  		} else {
 			  			// markers[0].setMap(null);
