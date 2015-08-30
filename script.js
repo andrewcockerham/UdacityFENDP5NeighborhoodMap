@@ -197,7 +197,12 @@ var ViewModel = function() {
 
 	// function called when you click on a place in the list
 	this.changePlace = function(place, event) {
+		console.log(this.getSelectedIndex)
 		self.currentPlace(place); // set current place to place that was clicked
+		if (this.getSelectedIndex > -1) {
+			self.closeDropdown();
+			return
+		}
 		var context = ko.contextFor(event.target);
 		if (self.currentPlace().yelpID() !== "") {
 			self.callYelpAPI();
@@ -206,7 +211,7 @@ var ViewModel = function() {
 			var ratingTab = rating[context.$index()];
 			ratingTab.textContent = "No Yelp Reviews";
 		}
-		// if
+
 		self.closeDropdown();
 
 		// make all placeList items not bold
@@ -356,6 +361,16 @@ var ViewModel = function() {
 		});
 
 	}; // END this.initializeMap
+
+	this.getSelectedIndex = function() {
+		var tabsDivArray = document.getElementsByClassName('tabsDiv');
+		for (var i = 0; i < tabsDivArray.length; i++) {
+			var tabsDiv = tabsDivArray[i];
+			if ($(tabsDiv).is(':visible')) {
+				return i;
+			}
+		}
+	}
 
 	/**
 		* @desc shows the content dropdown of the @param place
