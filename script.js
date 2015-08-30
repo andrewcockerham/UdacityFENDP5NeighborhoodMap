@@ -206,15 +206,15 @@ var ViewModel = function() {
 			var ratingTab = rating[context.$index()];
 			ratingTab.textContent = "No Yelp Reviews";
 		}
-		var tabsDivArray = document.getElementsByClassName('tabsDiv');
-		for (var i = 0; i < tabsDivArray.length; i++) {
-			var tabsDiv = tabsDivArray[i];
-			if ($(tabsDiv).is(':visible')) {
-				self.closeDropdown();
-			} else {
-				self.showDropdown();
-			}
-		}
+		// var tabsDivArray = document.getElementsByClassName('tabsDiv');
+		// for (var i = 0; i < tabsDivArray.length; i++) {
+		// 	var tabsDiv = tabsDivArray[i];
+		// 	if ($(tabsDiv).is(':visible')) {
+		// 		self.closeDropdown();
+		// 	} else {
+		// 		self.showDropdown();
+		// 	}
+		// }
 
 
 		// make all placeList items not bold
