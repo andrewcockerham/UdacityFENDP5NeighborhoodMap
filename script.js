@@ -179,6 +179,7 @@ var ViewModel = function() {
 		if (!filter) {
 			return this.placeList();
 		} else {
+			console.log('filter markers');
 			return ko.utils.arrayFilter(self.placeList(), function(item) {
 				return item.name().toLowerCase().indexOf(filter) !== -1;
 			});
