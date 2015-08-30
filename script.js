@@ -198,10 +198,10 @@ var ViewModel = function() {
 	// function called when you click on a place in the list
 	this.changePlace = function(place, event) {
 		self.currentPlace(place); // set current place to place that was clicked
-		if (self.getSelectedIndex > -1) {
-			self.closeDropdown();
-			return
-		}
+		// if (self.getSelectedIndex > -1) {
+		// 	self.closeDropdown();
+		// 	return
+		// }
 		var context = ko.contextFor(event.target);
 		if (self.currentPlace().yelpID() !== "") {
 			self.callYelpAPI();
@@ -211,7 +211,12 @@ var ViewModel = function() {
 			ratingTab.textContent = "No Yelp Reviews";
 		}
 
-		self.closeDropdown();
+		var tabs = document.getElementById('tabsDiv' + context.$index());
+		if ($(tabs).is(':visible')) {
+			self.closeDropdown();
+			return
+		}
+
 
 		// make all placeList items not bold
 		var placeItems = document.getElementsByClassName('placeListItem');
@@ -226,21 +231,25 @@ var ViewModel = function() {
 		*/
 		var tabs = document.getElementById('tabsDiv' + context.$index());
 		// close all open tabDivs
+		// close open tabDiv
 		$(tabs).slideToggle();
 		$('.extra').remove();
+
 		event.target.style.display = 'block';
 		$(tabs).parent().prev()[0].style.fontWeight = 'bold';
+
+		// console.log(context.$index())
+		// var tabsVisString = "#tabsDiv" + context.$index()
+		// var tabsDivVis = document.getElementById(tabsVisString)
+		// if ($(#tabsDiv.is(':visible'))
 
 		// insert blank div behind to lower other list items
 		$(event.target).next().append('<div class="extra col-md-12 col-sm-12" stye="position: relative;"></div>'); //height: 200px;
 		$(event.target).next().find(".inputRadio")[0].checked = true;
 
-		console.log(context.$index())
-		console.log(self.getSelectedIndex())
-
 		// GOOGLE MAPS STUFF
 		// panTo place
-		var position = new google.maps.LatLng(place.latitude(),place.longitude());
+		var position = new google.maps.LatLng(place.latitude(), place.longitude());
 		window.map.panTo(position);
 		window.map.setZoom(17);
 
