@@ -266,6 +266,20 @@ var ViewModel = function() {
 				}, 3500);
 			}
 		});
+
+		console.log('in function')
+		var tabs = $(".extra").parent().find(".tab-content");
+		// loop through and find the one that is visible
+		for (var i = 0; i < tabs.length; i++) {
+			var tab = tabs[i];
+			if ($(tab).is(':visible')) {
+				if (window.innerWidth < 768) {
+					$(".extra").height($(tab).height() + 50);
+				} else {
+					$(".extra").height($(tab).height());
+				}
+			}
+		}
 	}; // end function changePlace
 
 	/**
