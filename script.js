@@ -180,6 +180,9 @@ var ViewModel = function() {
 			return this.placeList();
 		} else {
 			console.log('filter markers');
+			console.log(ko.utils.arrayFilter(self.placeList(), function(item) {
+				return item.name().toLowerCase().indexOf(filter) !== -1;
+			}))
 			return ko.utils.arrayFilter(self.placeList(), function(item) {
 				return item.name().toLowerCase().indexOf(filter) !== -1;
 			});
