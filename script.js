@@ -395,8 +395,9 @@ var ViewModel = function() {
 			console.log(filteredArray);
 			console.log(markers);
 			console.log(filteredArray[0].latitude())
-			for (var j = 0; j < filteredArray.length; j++) {
-			  for (var i = 0; i < markers.length; i++) {
+
+			for (var i = 0; i < markers.length; i++) {
+				for (var j = 0; j < filteredArray.length; j++) {
 			  	// console.log(markers[i].getPosition().lat().toFixed(6))
 			  		if (markers[i].getPosition().lat().toFixed(6) !== filteredArray[j].latitude()) {
 			  			console.log('match')
