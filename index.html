@@ -13,8 +13,8 @@
 			var run = function(){
 				if (Offline.state === 'up')
 					Offline.check();
-				}
-				setInterval(run, 10000);
+				};
+			setInterval(run, 10000);
 		</script>
 	</head>
 	<body>
@@ -32,37 +32,37 @@
 						<li>
 							<div class="tabsDiv col-md-12 col-sm-12" style="display: none; padding-left: 0px; padding-right: 0px; border-style: solid;border-width:1px 1px 0 1px;" data-bind="attr: { id: 'tabsDiv' + $index() }">
 								<ul class="tabs col-md-12 col-sm-12" style="padding-left: 0px; padding-right: 0px;width:100%;">
-						    	<li class="" style=" padding-left: 0px; padding-right: 0px; text-align: center;">
-					        	<input type="radio" name="tabs" checked class="inputRadio" data-bind="attr: { id: 'tabRadioTwitter' + $index() }"/>
-					        	<label  data-bind="attr: { for: 'tabRadioTwitter' + $index() }">Twitter</label>
-						        <div id="tab-content1" class="tab-content">
-						          <p data-bind="html: $data.twitterWidget"></p>
-						        </div>
-							  	</li>
-							  	<li class="" style=" padding-left: 0px; padding-right: 0px; text-align: center;">
-								  	<input type="radio" name="tabs" id="tab2" class="inputRadio" data-bind="attr: { id: 'tabRadioYelp' + $index() }"/>
-								    <label  data-bind="attr: { for: 'tabRadioYelp' + $index() }">Yelp</label>
-								    <div class="tab-content" data-bind="attr: { id: 'tab-content' + $index() }">
-									    <div class="rating">Rating: <span class="stars"></span></div>
-									    <div data-bind="text: $data.yelpSnippet"></div>
-									    <img class="yelpImage" data-bind="attr: {src: yelpImageSrc}" alt="yelp image"><br>
-									    <a href="" data-bind="text: $data.yelpLink, attr: {href: $data.yelpLink}"></a>
-								    </div>
-							  	</li>
-								  <li class="" style=" padding-left: 0px; padding-right: 0px; text-align: center;">
-								    <input type="radio" name="tabs" id="tab3" class="inputRadio" data-bind="attr: { id: 'tabRadioWeb' + $index() }"/>
-								    <label data-bind="attr: { for: 'tabRadioWeb' + $index() }">Website</label>
-								    <div id="tab-content3" class="tab-content">
-								      <a href="" data-bind="text: $data.website, attr: {href: $data.website}"></a>
-								    </div>
-								  </li>
-								  <li class="" style=" padding-left: 0px; padding-right: 0px; text-align: center;">
-								    <input type="radio" name="tabs" id="tab4" class="inputRadio" data-bind="attr: { id: 'tabRadioInstagram' + $index() }"/>
-								    <label data-bind="attr: { for: 'tabRadioInstagram' + $index() }">Instagram</label>
-								    <div id="tab-content4" class="tab-content">
-								      <div data-bind="html: $data.instagramWidget"></div>
-								    </div>
-								  </li>
+									<li class="" style=" padding-left: 0px; padding-right: 0px; text-align: center;">
+										<input type="radio" name="tabs" checked class="inputRadio" data-bind="attr: { id: 'tabRadioTwitter' + $index() }"/>
+										<label  data-bind="attr: { for: 'tabRadioTwitter' + $index() }">Twitter</label>
+										<div id="tab-content1" class="tab-content">
+											<p data-bind="html: $data.twitterWidget"></p>
+										</div>
+									</li>
+									<li class="" style=" padding-left: 0px; padding-right: 0px; text-align: center;">
+										<input type="radio" name="tabs" id="tab2" class="inputRadio" data-bind="attr: { id: 'tabRadioYelp' + $index() }"/>
+										<label  data-bind="attr: { for: 'tabRadioYelp' + $index() }">Yelp</label>
+										<div class="tab-content" data-bind="attr: { id: 'tab-content' + $index() }">
+											<div class="rating">Rating: <span class="stars"></span></div>
+											<div data-bind="text: $data.yelpSnippet"></div>
+											<img class="yelpImage" data-bind="attr: {src: yelpImageSrc}" alt="yelp image"><br>
+											<a href="" data-bind="text: $data.yelpLink, attr: {href: $data.yelpLink}"></a>
+										</div>
+									</li>
+									<li class="" style=" padding-left: 0px; padding-right: 0px; text-align: center;">
+										<input type="radio" name="tabs" id="tab3" class="inputRadio" data-bind="attr: { id: 'tabRadioWeb' + $index() }"/>
+										<label data-bind="attr: { for: 'tabRadioWeb' + $index() }">Website</label>
+										<div id="tab-content3" class="tab-content">
+											<a href="" data-bind="text: $data.website, attr: {href: $data.website}"></a>
+										</div>
+									</li>
+									<li class="" style=" padding-left: 0px; padding-right: 0px; text-align: center;">
+										<input type="radio" name="tabs" id="tab4" class="inputRadio" data-bind="attr: { id: 'tabRadioInstagram' + $index() }"/>
+										<label data-bind="attr: { for: 'tabRadioInstagram' + $index() }">Instagram</label>
+										<div id="tab-content4" class="tab-content">
+											<div data-bind="html: $data.instagramWidget"></div>
+										</div>
+									</li>
 								</ul>
 							</div>
 						</li>
@@ -77,71 +77,49 @@
 				</div>
 			</div>
 		</div>
+		<div id="map-canvas"></div>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
-	  <script src="bower_components/oauth-signature/dist/oauth-signature.js"></script>
-	  <script src="script.js"></script>
-	  <script src="infobox.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
+		<script src="bower_components/oauth-signature/dist/oauth-signature.js"></script>
+		<script src="script.js"></script>
+		<script src="infobox.js"></script>
 
-	  <script>
-	    /**
-	      * @desc updates the height of the blank .extra div to the same as the content
-	      *       so that the list doesn't get hidden behind the dropdown
-	    */
-	  	$(".tabs, .placeListItem").click(function() {
-	    	var tabs = $(".extra").parent().find(".tab-content");
-	  		// loop through and find the one that is visible
-	  		for (var i = 0; i < tabs.length; i++) {
-	  			var tab = tabs[i]
-	  			if ($(tab).is(':visible')) {
-	  				if (window.innerWidth < 768) {
-	  					console.log(690)
-	  					$(".extra").height($(tab).height() + 50);
-	  				} else {
-	  					$(".extra").height($(tab).height());
-	  				};
-	  			};
-	  		};
-	  	});
+		<script>
+			/**
+				* @desc updates the height of the blank .extra div to the same as the content
+				*       so that the list doesn't get hidden behind the dropdown
+			*/
+			$(".tabs, .placeListItem").click(function() {
+				var tabs = $(".extra").parent().find(".tab-content");
+				// loop through and find the one that is visible
+				for (var i = 0; i < tabs.length; i++) {
+					var tab = tabs[i];
+					if ($(tab).is(':visible')) {
+						if (window.innerWidth < 768) {
+							$(".extra").height($(tab).height() + 50);
+						} else {
+							$(".extra").height($(tab).height());
+						}
+					}
+				}
+			});
 
-	  	$(window).resize(function() {
-	  		var tabs = $(".extra").parent().find(".tab-content");
-	  		// loop through and find the one that is visible
-	  		for (var i = 0; i < tabs.length; i++) {
-	  			var tab = tabs[i]
-	  			if ($(tab).is(':visible')) {
-	  				if (window.innerWidth < 768) {
-	  					$(".extra").height($(tab).height() + 50);
-	  				};
-	  			};
-	  		};
-	  	});
-	  </script>
-	  <div id="map-canvas"></div>
-  </body>
+			$(window).resize(function() {
+				var tabs = $(".extra").parent().find(".tab-content");
+				// loop through and find the one that is visible
+				for (var i = 0; i < tabs.length; i++) {
+					var tab = tabs[i];
+					if ($(tab).is(':visible')) {
+						if (window.innerWidth < 768) {
+							$(".extra").height($(tab).height() + 50);
+						}
+					}
+				}
+			});
+		</script>
 
-<!-- These sites were helfpul to me -->
-<!-- Inspiration from http://chicago.eater.com/maps/the-most-iconic-sandwiches-in-chicago-->
-<!-- http://stackoverflow.com/questions/13588293/streetview-into-infowindow -->
-<!-- tabs credit: http://codepen.io/wallaceerick/pen/ojtal -->
-<!-- http://discussions.udacity.com/t/error-making-ajax-request-to-yelp-invalid-signature-expected-signature-base-string/13759 -->
-<!-- http://discussions.udacity.com/t/how-to-make-ajax-request-to-yelp-api/13699/4 -->
-<!-- http://jvojens2.github.io/frontend-nanodegree-neighborhood-map/ -->
-<!-- http://www.geocodezip.com/v3_StreetViewInInfoWindowB.html -->
-<!-- https://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/docs/examples.html -->
-<!-- http://jsfiddle.net/jehj3/597/ -->
-<!-- http://www.knockmeout.net/2011/04/utility-functions-in-knockoutjs.html -->
-<!-- http://stackoverflow.com/questions/17557789/using-contains-instead-of-stringstartswith-knockout-js -->
-<!-- https://groups.google.com/forum/#!topic/knockoutjs/y-oow7ZzLjo -->
-<!-- http://isimmons.github.io/blog/2014/02/12/using-jscs-and-jshint-with-gulp/ -->
-<!-- http://addyosmani.com/blog/removing-unused-css/ -->
-<!-- http://api.jquery.com/jquery.each/ -->
-<!-- http://stackoverflow.com/questions/9351939/using-ko-utils-arrayforeach-to-iterate-over-a-observablearray -->
-<!-- http://stackoverflow.com/questions/1987524/turn-a-number-into-star-rating-display-using-jquery-and-css -->
-<!-- http://stackoverflow.com/questions/23385937/knockout-toggle-active-class-on-click -->
-<!-- http://codepen.io/gitchandu/pen/moBKj -->
-<!-- https://css-tricks.com/forums/topic/how-can-i-create-a-toggle-with-icons/ -->
-<!-- https://css-tricks.com/three-sided-border/ -->
+	</body>
+
 </html>

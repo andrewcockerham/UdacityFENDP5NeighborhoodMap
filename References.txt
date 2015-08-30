@@ -1,0 +1,22 @@
+These sites were helfpul to me
+Inspiration from http://chicago.eater.com/maps/the-most-iconic-sandwiches-in-chicag
+http://stackoverflow.com/questions/13588293/streetview-into-infowindow
+tabs credit: http://codepen.io/wallaceerick/pen/ojtal
+http://discussions.udacity.com/t/error-making-ajax-request-to-yelp-invalid-signature-expected-signature-base-string/13759
+http://discussions.udacity.com/t/how-to-make-ajax-request-to-yelp-api/13699/4
+http://jvojens2.github.io/frontend-nanodegree-neighborhood-map/
+http://www.geocodezip.com/v3_StreetViewInInfoWindowB.html
+https://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/docs/examples.html
+http://jsfiddle.net/jehj3/597/
+http://www.knockmeout.net/2011/04/utility-functions-in-knockoutjs.html
+http://stackoverflow.com/questions/17557789/using-contains-instead-of-stringstartswith-knockout-js
+https://groups.google.com/forum/#!topic/knockoutjs/y-oow7ZzLjo
+http://isimmons.github.io/blog/2014/02/12/using-jscs-and-jshint-with-gulp/
+http://addyosmani.com/blog/removing-unused-css/
+http://api.jquery.com/jquery.each/
+http://stackoverflow.com/questions/9351939/using-ko-utils-arrayforeach-to-iterate-over-a-observablearray
+http://stackoverflow.com/questions/1987524/turn-a-number-into-star-rating-display-using-jquery-and-css
+http://stackoverflow.com/questions/23385937/knockout-toggle-active-class-on-click
+http://codepen.io/gitchandu/pen/moBKj
+https://css-tricks.com/forums/topic/how-can-i-create-a-toggle-with-icons/
+https://css-tricks.com/three-sided-border/

@@ -158,21 +158,30 @@ body {
 }
 
 .openButton {
-  background: white url('http://cdn1.iconfinder.com/data/icons/basicset/plus_16.png') no-repeat center;
+	background: white url(http://cdn1.iconfinder.com/data/icons/basicset/plus_16.png) no-repeat center;
 }
 
 .closeButton {
-  background: white url('http://cdn1.iconfinder.com/data/icons/splashyIcons/remove_minus_sign.png') no-repeat center;
+	background: white url(http://cdn1.iconfinder.com/data/icons/splashyIcons/remove_minus_sign.png) no-repeat center;
 }
 
 /* for star rating system */
-span.stars, span.stars span {
-  display: inline-block;
-  background: url(stars.png) 0 -16px repeat-x;
-  width: 10px;
-  height: 16px;
+/*span.stars,
+span.stars span {
+	display: inline-block;
+	background: url(stars.png) 0 -16px repeat-x;
+	width: 10px;
+	height: 16px;
 }
 
 span.stars span {
-  background-position: 0 0;
+	background-position: 0 0;
+}*/
+
+.stars {
+	display: inline-block;
+	background: url(stars.png) 0 -16px repeat-x;
+	width: 10px;
+	height: 16px;
+	background-position: 0 0;
 }
