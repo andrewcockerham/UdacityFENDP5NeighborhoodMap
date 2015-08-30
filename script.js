@@ -183,6 +183,10 @@ var ViewModel = function() {
 			console.log(ko.utils.arrayFilter(self.placeList(), function(item) {
 				return item.name().toLowerCase().indexOf(filter) !== -1;
 			}))
+			var filteredArray = ko.utils.arrayFilter(self.placeList(), function(item) {
+				return item.name().toLowerCase().indexOf(filter) !== -1;
+			})
+			console.log(filteredArray);
 			return ko.utils.arrayFilter(self.placeList(), function(item) {
 				return item.name().toLowerCase().indexOf(filter) !== -1;
 			});
