@@ -203,7 +203,7 @@ var ViewModel = function() {
 			  			// console.log(markers[i])
 			  		} else {
 			  			// markers[i].setMap(null);
-			  			console.log(markers[i]);
+			  			// console.log(markers[i]);
 			  		}
 			  	// console.log(markers[i].position[0])
 			  	// if (marker not in filter list) {
