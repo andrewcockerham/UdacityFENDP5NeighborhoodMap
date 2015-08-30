@@ -170,6 +170,13 @@ var ViewModel = function() {
 		return self.listVisible() ? "closeButton" : "openButton";
 	}, self);
 
+	// Sets the map on all markers in the array.
+	this.setMapOnAll = function(markers, map) {
+	  for (var i = 0; i < markers.length; i++) {
+	    markers[i].setMap(map);
+	  }
+	}
+
 	/**
 		* @desc This function handles the filtering box and filters the list.
 		* credit: http://www.knockmeout.net/2011/04/utility-functions-in-knockoutjs.html
@@ -177,7 +184,7 @@ var ViewModel = function() {
 	this.filteredItems = ko.computed(function() {
 		var filter = self.filter().toLowerCase();
 		if (!filter) {
-			// setMapOnAll(map)
+			setMapOnAll(markers, map);
 			return this.placeList();
 		} else {
 			console.log('filter markers');
@@ -191,8 +198,9 @@ var ViewModel = function() {
 			for (var j = 0; j < filteredArray.length; j++) {
 			  for (var i = 0; i < markers.length; i++) {
 			  	// console.log(markers[i].getPosition().lat().toFixed(6))
-			  		if (markers[i].getPosition().lat().toFixed(6) !== filteredArray[j].latitude()) {
-			  			console.log(' no match')
+			  		if (markers[i].getPosition().lat().toFixed(6) == filteredArray[j].latitude()) {
+			  			console.log('match')
+			  		} else {
 			  			markers[i].setMap(null);
 			  		}
 			  	// console.log(markers[i].position[0])
@@ -201,12 +209,7 @@ var ViewModel = function() {
 			  	// }
 			  }
 		  }
-			// // Sets the map on all markers in the array.
-			// function setMapOnAll(map) {
-			//   for (var i = 0; i < markers.length; i++) {
-			//     markers[i].setMap(map);
-			//   }
-			// }
+
 
 			// // Removes the markers from the map, but keeps them in the array.
 			// function clearMarkers() {
