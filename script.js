@@ -392,14 +392,10 @@ var ViewModel = function() {
 			}
 			return this.placeList();
 		} else {
-			// var markersToRemove = [];
 			var filteredArray = ko.utils.arrayFilter(self.placeList(), function(item) {
 				return item.name().toLowerCase().indexOf(filter) !== -1;
 			})
 			self.clearMarkers();
-			// for (var i = 0; i < markers.length; i++) {
-			// 	markers[i].setMap(null);
-			// }
 			for (var i = 0; i < markers.length; i++) {
 				for (var j = 0; j < filteredArray.length; j++) {
 		  		if (markers[i].getPosition().lat().toFixed(6) == filteredArray[j].latitude()) {
@@ -412,19 +408,16 @@ var ViewModel = function() {
 			});
 		}
 	}, this);
-
-
-
-	this.getSelectedIndex = function() {
-		var tabsDivArray = document.getElementsByClassName('tabsDiv');
-		// var i = 0
-		for (var i = 0; i < tabsDivArray.length; i++) {
-			var tabsDiv = tabsDivArray[i];
-			if ($(tabsDiv).is(':visible')) {
-				return i;
-			}
-		}
-	}
+	// this.getSelectedIndex = function() {
+	// 	var tabsDivArray = document.getElementsByClassName('tabsDiv');
+	// 	// var i = 0
+	// 	for (var i = 0; i < tabsDivArray.length; i++) {
+	// 		var tabsDiv = tabsDivArray[i];
+	// 		if ($(tabsDiv).is(':visible')) {
+	// 			return i;
+	// 		}
+	// 	}
+	// }
 
 	/**
 		* @desc shows the content dropdown of the @param place
