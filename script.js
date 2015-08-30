@@ -200,8 +200,10 @@ var ViewModel = function() {
 			  	// console.log(markers[i].getPosition().lat().toFixed(6))
 			  		if (markers[i].getPosition().lat().toFixed(6) == filteredArray[j].latitude()) {
 			  			console.log('match')
+			  			// console.log(markers[i])
 			  		} else {
-			  			markers[i].setMap(null);
+			  			// markers[i].setMap(null);
+			  			console.log(markers[i]);
 			  		}
 			  	// console.log(markers[i].position[0])
 			  	// if (marker not in filter list) {
