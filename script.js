@@ -202,16 +202,11 @@ var ViewModel = function() {
 			  			console.log('match')
 			  			console.log(markers[i])
 			  		} else {
-			  			// markers[i].setMap(null);
+			  			markers[0].setMap(null);
 			  			// console.log(markers[i]);
 			  		}
-			  	// console.log(markers[i].position[0])
-			  	// if (marker not in filter list) {
-			  	// 	markers[i].setMap(null);
-			  	// }
 			  }
 		  }
-
 
 			// // Removes the markers from the map, but keeps them in the array.
 			// function clearMarkers() {
