@@ -177,8 +177,6 @@ var ViewModel = function() {
 	  }
 	}
 
-
-
 	// Initilize google map location to my neighborhood
 	var myLatlng = new google.maps.LatLng(30.2433481,-97.8703633);
 	var mapOptions = {
@@ -405,7 +403,11 @@ var ViewModel = function() {
 			//reset
 			var position = new google.maps.LatLng(30.2433481,-97.8703633);
 			window.map.panTo(position);
-			window.map.setZoom(17);
+			window.map.setZoom(13);
+			// var mapOptions = {
+			// 	zoom: 13,
+			// 	center: myLatlng,
+			// };
 
 			var filteredArray = ko.utils.arrayFilter(self.placeList(), function(item) {
 				return item.name().toLowerCase().indexOf(filter) !== -1;
