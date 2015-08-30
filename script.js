@@ -180,13 +180,24 @@ var ViewModel = function() {
 			return this.placeList();
 		} else {
 			console.log('filter markers');
-			console.log(ko.utils.arrayFilter(self.placeList(), function(item) {
-				return item.name().toLowerCase().indexOf(filter) !== -1;
-			}))
+
 			var filteredArray = ko.utils.arrayFilter(self.placeList(), function(item) {
 				return item.name().toLowerCase().indexOf(filter) !== -1;
 			})
 			console.log(filteredArray);
+			console.log(markers);
+			// // Sets the map on all markers in the array.
+			// function setMapOnAll(map) {
+			//   for (var i = 0; i < markers.length; i++) {
+			//     markers[i].setMap(map);
+			//   }
+			// }
+
+			// // Removes the markers from the map, but keeps them in the array.
+			// function clearMarkers() {
+			//   setMapOnAll(null);
+			// }
+
 			return ko.utils.arrayFilter(self.placeList(), function(item) {
 				return item.name().toLowerCase().indexOf(filter) !== -1;
 			});
