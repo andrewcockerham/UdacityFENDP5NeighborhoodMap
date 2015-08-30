@@ -197,7 +197,7 @@ var ViewModel = function() {
 
 	// function called when you click on a place in the list
 	this.changePlace = function(place, event) {
-		console.log(this.getSelectedIndex)
+		console.log(this.getSelectedIndex())
 		self.currentPlace(place); // set current place to place that was clicked
 		if (this.getSelectedIndex > -1) {
 			self.closeDropdown();
