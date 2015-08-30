@@ -394,15 +394,17 @@ var ViewModel = function() {
 			console.log(filteredArray);
 			console.log(markers);
 			console.log(filteredArray[0].latitude())
-
+			for (var i = 0; i < markers.length; i++) {
+				markers[i].setMap(null);
+			}
 			for (var i = 0; i < markers.length; i++) {
 				for (var j = 0; j < filteredArray.length; j++) {
-			  		if (markers[i].getPosition().lat().toFixed(6) !== filteredArray[j].latitude()) {
+			  		if (markers[i].getPosition().lat().toFixed(6) == filteredArray[j].latitude()) {
 			  			console.log('match')
 			  			// console.log(markers[i])
 			  			// markersToRemove.push(markers[i]);
 			  			// console.log(markersToRemove.length)
-			  			// markers[i].setMap(null);
+			  			markers[i].setMap(map);
 			  		}
 			  }
 		  }
