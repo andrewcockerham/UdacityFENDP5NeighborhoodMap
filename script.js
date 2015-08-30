@@ -399,14 +399,14 @@ var ViewModel = function() {
 				for (var j = 0; j < filteredArray.length; j++) {
 			  		if (markers[i].getPosition().lat().toFixed(6) !== filteredArray[j].latitude()) {
 			  			console.log('match')
-			  			console.log(markers[i])
-			  			markersToRemove.push(markers[i]);
-			  			console.log(markersToRemove.length)
+			  			// console.log(markers[i])
+			  			// markersToRemove.push(markers[i]);
+			  			// console.log(markersToRemove.length)
 			  			// markers[i].setMap(null);
 			  		}
 			  }
 		  }
-		  console.log(markersToRemove)
+		  // console.log(markersToRemove)
 			// // Removes the markers from the map, but keeps them in the array.
 			// function clearMarkers() {
 			//   setMapOnAll(null);
