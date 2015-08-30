@@ -201,7 +201,7 @@ var ViewModel = function() {
 			  		if (markers[i].getPosition().lat().toFixed(6) == filteredArray[j].latitude()) {
 			  			console.log('match')
 			  			console.log(markers[i])
-			  			markers[0].setMap(null);
+			  			markers[i].setMap(null);
 			  		} else {
 			  			// markers[0].setMap(null);
 			  			// console.log(markers[i]);
