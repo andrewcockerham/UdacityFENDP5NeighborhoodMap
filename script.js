@@ -387,10 +387,9 @@ var ViewModel = function() {
 	this.filteredItems = ko.computed(function() {
 		var filter = self.filter().toLowerCase();
 		if (!filter) {
-			self.clearMarkers();
-			// for (var i = 0; i < markers.length; i++) {
-			// 	markers[i].setMap(map);
-			// }
+			for (var i = 0; i < markers.length; i++) {
+				markers[i].setMap(map);
+			}
 			return this.placeList();
 		} else {
 			// var markersToRemove = [];
