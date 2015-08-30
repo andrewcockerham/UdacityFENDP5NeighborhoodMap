@@ -381,7 +381,6 @@ var ViewModel = function() {
 	this.filteredItems = ko.computed(function() {
 		var filter = self.filter().toLowerCase();
 		if (!filter) {
-			// self.setMapOnAll(markers, window.map);
 			for (var i = 0; i < markers.length; i++) {
 				markers[i].setMap(map);
 			}
@@ -398,16 +397,12 @@ var ViewModel = function() {
 
 			for (var i = 0; i < markers.length; i++) {
 				for (var j = 0; j < filteredArray.length; j++) {
-			  	// console.log(markers[i].getPosition().lat().toFixed(6))
 			  		if (markers[i].getPosition().lat().toFixed(6) !== filteredArray[j].latitude()) {
 			  			console.log('match')
 			  			console.log(markers[i])
 			  			markersToRemove.push(markers[i]);
-			  			console.log(markersToRemove.length())
+			  			console.log(markersToRemove.length)
 			  			// markers[i].setMap(null);
-			  		} else {
-			  			// markers[0].setMap(null);
-			  			// console.log(markers[i]);
 			  		}
 			  }
 		  }
