@@ -202,8 +202,6 @@ var ViewModel = function() {
 
 		var tabs = document.getElementById('tabsDiv' + context.$index());
 		if ($(tabs).is(':visible')) {
-			console.log("visible")
-			// self.closeDropdown();
 			$(tabs).slideToggle();
 			$('.extra').remove();
 			// make all placeList items not bold
@@ -400,14 +398,10 @@ var ViewModel = function() {
 			return self.placeList();
 		} else {
 			infobox.close();
-			//reset
+			//reset map location
 			var position = new google.maps.LatLng(30.2433481,-97.8703633);
 			window.map.panTo(position);
 			window.map.setZoom(13);
-			// var mapOptions = {
-			// 	zoom: 13,
-			// 	center: myLatlng,
-			// };
 
 			var filteredArray = ko.utils.arrayFilter(self.placeList(), function(item) {
 				return item.name().toLowerCase().indexOf(filter) !== -1;
