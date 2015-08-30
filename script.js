@@ -198,10 +198,7 @@ var ViewModel = function() {
 	// function called when you click on a place in the list
 	this.changePlace = function(place, event) {
 		self.currentPlace(place); // set current place to place that was clicked
-		// if (self.getSelectedIndex > -1) {
-		// 	self.closeDropdown();
-		// 	return
-		// }
+
 		var context = ko.contextFor(event.target);
 		if (self.currentPlace().yelpID() !== "") {
 			self.callYelpAPI();
@@ -227,6 +224,8 @@ var ViewModel = function() {
 			return
 		}
 
+		self.closeDropdown();
+
 		// make all placeList items not bold
 		var placeItems = document.getElementsByClassName('placeListItem');
 		var l = placeItems.length;
@@ -239,7 +238,6 @@ var ViewModel = function() {
 			* gets all of the DOM elements with ID "tabsDiv" + it's index in the list
 		*/
 		var tabs = document.getElementById('tabsDiv' + context.$index());
-		// close all open tabDivs
 		// close open tabDiv
 		$(tabs).slideToggle();
 		$('.extra').remove();
