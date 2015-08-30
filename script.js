@@ -177,6 +177,7 @@ var ViewModel = function() {
 	this.filteredItems = ko.computed(function() {
 		var filter = self.filter().toLowerCase();
 		if (!filter) {
+			// setMapOnAll(map)
 			return this.placeList();
 		} else {
 			console.log('filter markers');
@@ -186,6 +187,13 @@ var ViewModel = function() {
 			})
 			console.log(filteredArray);
 			console.log(markers);
+			console.log(filteredArray[0].latitude())
+		  for (var i = 0; i < markers.length; i++) {
+		  	console.log(markers[i].position)
+		  	// if (marker not in filter list) {
+		  	// 	markers[i].setMap(null);
+		  	// }
+		  }
 			// // Sets the map on all markers in the array.
 			// function setMapOnAll(map) {
 			//   for (var i = 0; i < markers.length; i++) {
