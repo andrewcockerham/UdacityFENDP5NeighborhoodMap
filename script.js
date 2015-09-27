@@ -1,3 +1,12 @@
+/**
+	* This is writin by Andrew Cockerham in Sep 2015 as part of Project 5 of the Udacity
+	* Front End Web Developer Nanodegree.
+	*
+	* This file uses the Knockoud.js framework to create an interactive single page web
+	* application of a neighborhood map and various places of interest. It also uses
+	* various API's, such as Google Maps and twitter.
+	*
+**/
 "use strict";
 // places is the initial data model
 var places = [
@@ -170,13 +179,6 @@ var ViewModel = function() {
 		return self.listVisible() ? "closeButton" : "openButton";
 	}, self);
 
-	// Sets the map on all markers in the array.
-	this.setMapOnAll = function(markers, map) {
-	  for (var i = 0; i < markers.length; i++) {
-	    markers[i].setMap(map);
-	  }
-	}
-
 	// Initilize google map location to my neighborhood
 	var myLatlng = new google.maps.LatLng(30.2433481,-97.8703633);
 	var mapOptions = {
@@ -211,7 +213,7 @@ var ViewModel = function() {
 				var placeItem = placeItems[i];
 				placeItem.style.fontWeight = "normal";
 			}
-			return
+			return;
 		}
 
 		self.closeDropdown();
@@ -258,7 +260,6 @@ var ViewModel = function() {
 			}
 		});
 
-		console.log('in function')
 		var tabs = $(".extra").parent().find(".tab-content");
 		// loop through and find the one that is visible
 		for (var i = 0; i < tabs.length; i++) {
@@ -383,7 +384,7 @@ var ViewModel = function() {
 		for (var i = 0; i < markers.length; i++) {
 			markers[i].setMap(null);
 		}
-	}
+	};
 
 	/**
 		* @desc This function handles the filtering box and filters the list.
@@ -405,15 +406,15 @@ var ViewModel = function() {
 
 			var filteredArray = ko.utils.arrayFilter(self.placeList(), function(item) {
 				return item.name().toLowerCase().indexOf(filter) !== -1;
-			})
+			});
 			self.clearMarkers();
 			for (var i = 0; i < markers.length; i++) {
 				for (var j = 0; j < filteredArray.length; j++) {
-		  		if (markers[i].getPosition().lat().toFixed(6) == filteredArray[j].latitude()) {
-		  			markers[i].setMap(map);
-		  		}
-			  }
-		  }
+					if (markers[i].getPosition().lat().toFixed(6) == filteredArray[j].latitude()) {
+						markers[i].setMap(map);
+					}
+				}
+			}
 			return ko.utils.arrayFilter(self.placeList(), function(item) {
 				return item.name().toLowerCase().indexOf(filter) !== -1;
 			});
